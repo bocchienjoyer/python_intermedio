@@ -6,8 +6,21 @@ Consigna: [2026_Tarea_1, issue #188](https://github.com/d2cml-ai/Data-Science-Py
 
 ## Estado del trabajo
 
-Inicio: 17 de octubre de 2026 (Perú, UTC-5). Se prepara el piloto y la recolección.
-Los resultados, métricas y hallazgos se incorporarán después de ejecutarlos; todavía no hay un modelo entrenado.
+Inicio: 17 de octubre de 2026 (Perú, UTC-5). **Piloto completado: 40 noticias reales, 10 por categoría**, con las siete columnas y enlaces comprobados (HTTP 200). Se amplía la muestra a 100 noticias por categoría.
+Los resultados de modelado y hallazgos finales se incorporarán después de ejecutarlos; todavía no hay un modelo entrenado.
+
+El RSS ofrece un conjunto reciente reducido; el descubrimiento se amplía con las secciones HTML y noticias relacionadas enlazadas por el medio. Se conserva la procedencia de cada enlace y no se utilizan rutas restringidas de paginación.
+
+## Reproducir la recolección
+
+Entorno local preparado con Python 3.13.5. Desde la raíz del repositorio, crear un entorno virtual e instalar `tarea_1/requirements.txt`. Luego:
+
+```text
+python tarea_1/src/recoleccion.py --piloto --por-categoria 10
+python tarea_1/src/recoleccion.py --por-categoria 100
+```
+
+La caché está en `tarea_1/datos/raw/`. Los HTML completos comprimidos se conservan localmente y no se versionan; los RSS, metadatos y registros sí permiten revisar la procedencia. El recolector puede reutilizar la caché con `--offline`.
 
 ## Método previsto
 
