@@ -121,6 +121,16 @@ streamlit run app.py
 Se abre en `http://localhost:8501`: filtros por medio/categoría, total, F1 de test, acuerdo humano,
 Plotly, tabla, descarga CSV y clasificación en vivo. El despliegue público es opcional.
 
+Prueba funcional automatizada desde la raíz (UTF-8 explícito en Windows):
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 tarea_1/scripts/verificar_app.py
+.\.venv\Scripts\python.exe -m pip check
+```
+
+Se probaron filtros, estados sin resultados, titular vacío e inferencia real en CPU. La descarga
+desde el navegador se contrastó con el dataset: 400 filas y siete columnas idénticas.
+
 ### Reproducir las etapas completas
 
 Desde la raíz, con el entorno activo:
