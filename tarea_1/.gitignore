@@ -1,0 +1,10 @@
+modelo/*.safetensors
+modelo/*.bin
+modelo/checkpoint-*/
+modelo/optimizer.pt
+modelo/scheduler.pt
+modelo/rng_state.pth
+datos/raw/*.html
+datos/raw/*.html.gz
+resultados/*.log
+
