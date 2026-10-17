@@ -6,5 +6,7 @@ modelo/scheduler.pt
 modelo/rng_state.pth
 datos/raw/*.html
 datos/raw/*.html.gz
+datos/raw/*.xml
+datos/raw/*.meta.json
 resultados/*.log
 

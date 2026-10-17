@@ -63,6 +63,7 @@ code("""
         os.environ.setdefault('BROWSER_PATH', str(edge))
     pio.renderers.default = 'plotly_mimetype+png'
     pio.templates.default = 'plotly_white'
+    pd.set_option('display.max_colwidth', None)
     print('Python:', platform.python_version())
     RECOLECTAR = False
     if RECOLECTAR:

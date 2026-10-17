@@ -105,6 +105,7 @@ class PoliteClient:
             self.last_request = time.monotonic()
             try:
                 response = self.session.get(url, timeout=(15, 35), allow_redirects=False)
+                self.last_request = time.monotonic()
                 event = {"fecha_descarga": now(), "url": url, "status": response.status_code,
                          "intento": attempt + 1, "archivo": cache.name,
                          "content_type": response.headers.get("Content-Type", "")}
@@ -119,6 +120,7 @@ class PoliteClient:
                 meta_path.write_text(json.dumps(event, ensure_ascii=False, indent=2), encoding="utf-8")
                 return response.content
             except requests.RequestException as error:
+                self.last_request = time.monotonic()
                 if isinstance(error, requests.HTTPError) and response.status_code not in (429, 500, 502, 503, 504):
                     raise
                 if attempt:
@@ -242,7 +244,7 @@ def discover(client: PoliteClient) -> tuple[list[dict], dict]:
     return list(candidates.values()), sources
 
 
-def collect(per_category: int = 100, offline: bool = False, pilot: bool = False):
+def collect(per_category: int = 100, offline: bool = False, pilot: bool = False, since: str = "2026-01-01"):
     client = PoliteClient(offline=offline)
     candidates, sources = discover(client)
     out = ROOT / "datos"
@@ -280,6 +282,8 @@ def collect(per_category: int = 100, offline: bool = False, pilot: bool = False)
                 raise ValueError("fuera_de_categorias")
             if row["fecha"] > datetime.now(PERU).date().isoformat():
                 raise ValueError("fecha_futura")
+            if row["fecha"] < since:
+                raise ValueError("publicacion_anterior_a_" + since)
             key = title_key(row["titular"])
             if key in keys:
                 raise ValueError("titular_duplicado")
@@ -303,6 +307,7 @@ def collect(per_category: int = 100, offline: bool = False, pilot: bool = False)
     pd.DataFrame(sorted(mapping), columns=["ruta_seccion", "seccion_original", "etiqueta"]).to_csv(out / "mapeo_secciones.csv", index=False, encoding="utf-8")
     summary = {"fecha_descarga": now(), "medio": "La Republica", "opcion": "A", "piloto": pilot,
                "objetivo_por_categoria": per_category, "filas": len(df), "columnas": COLUMNS,
+               "fecha_minima_configurada": since,
                "por_categoria": dict(counts), "candidatos_unicos": len(candidates), "fuentes": sources,
                "descartes": dict(Counter(x["motivo"] for x in discarded)),
                "fecha_min": str(df.fecha.min()), "fecha_max": str(df.fecha.max()),
@@ -322,5 +327,6 @@ if __name__ == "__main__":
     parser.add_argument("--por-categoria", type=int, default=100)
     parser.add_argument("--piloto", action="store_true")
     parser.add_argument("--offline", action="store_true")
+    parser.add_argument("--desde", default="2026-01-01", help="Fecha mínima de publicación, AAAA-MM-DD")
     args = parser.parse_args()
-    collect(args.por_categoria, args.offline, args.piloto)
+    collect(args.por_categoria, args.offline, args.piloto, args.desde)
