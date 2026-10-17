@@ -1,0 +1,17 @@
+{
+  "estado": "correcto",
+  "herramienta": "Streamlit AppTest",
+  "controles": [
+    "400 noticias y mÃ©tricas reales",
+    "filtro deportes: 100",
+    "medio vacÃ­o: 0",
+    "categorÃ­as vacÃ­as: 0",
+    "titular vacÃ­o: aviso",
+    "inferencia real CPU y cuatro probabilidades"
+  ],
+  "titular_prueba": "La selecciÃ³n peruana de fÃºtbol ganÃ³ la final del campeonato",
+  "prediccion": "Deportes",
+  "probabilidad_mostrada": "57.9%",
+  "descarga_csv_navegador": "400 filas, siete columnas e idéntico al dataset",
+  "revision_visual": "Métricas legibles en modo oscuro; inferencia real Deportes 57.9%"
+}

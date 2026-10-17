@@ -1,0 +1,8 @@
+Tarea 1 – Individual
+Medio: La República
+Estudiante: Jose Pablo Navarro Nateros (@bocchienjoyer)
+Dashboard en vivo: ejecución local comprobada (Streamlit: filtros, métricas, descarga CSV y clasificación en vivo).
+Carpeta del trabajo: https://github.com/bocchienjoyer/python_intermedio/tree/main/tarea_1
+Resultados Test: F1 Macro: 0.8198 | Zero-shot: 0.6696 | Acuerdo LLM-Humano: 13/20
+
+Nota: Zero-shot 0.6696 corresponde al diagnóstico inicial de 40 titulares de validación pedido en el paso 1. La comparación adicional sobre el mismo test de 60 noticias obtuvo F1 macro 0.7925 para zero-shot y 0.7609 para Qwen. Ambos notebooks incluyen las salidas ejecutadas.
