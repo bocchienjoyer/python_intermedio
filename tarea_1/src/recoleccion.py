@@ -93,9 +93,11 @@ class PoliteClient:
         suffix = ".html.gz" if not url.endswith((".xml", ".txt")) else Path(urlsplit(url).path).suffix
         cache = self.raw / (digest + suffix)
         meta_path = self.raw / (digest + ".meta.json")
-        if cache.exists() and meta_path.exists():
+        if meta_path.exists():
             metadata = json.loads(meta_path.read_text(encoding="utf-8"))
-            if metadata.get("status") == 200:
+            if metadata.get('location') and metadata.get('status') in (301, 302, 303, 307, 308):
+                return self.get(metadata['location'], bootstrap=bootstrap, _redirects=_redirects + 1)
+            if cache.exists() and metadata.get("status") == 200:
                 return gzip.decompress(cache.read_bytes()) if suffix.endswith(".gz") else cache.read_bytes()
         if self.offline:
             raise FileNotFoundError("Sin caché, modo offline: " + url)
@@ -109,11 +111,14 @@ class PoliteClient:
                 event = {"fecha_descarga": now(), "url": url, "status": response.status_code,
                          "intento": attempt + 1, "archivo": cache.name,
                          "content_type": response.headers.get("Content-Type", "")}
+                if response.is_redirect:
+                    event['location'] = canonical(urljoin(url, response.headers['Location']))
                 self.log(event)
                 if response.is_redirect:
-                    target = canonical(urljoin(url, response.headers["Location"]))
+                    target = event['location']
                     if target == url:
                         raise ValueError("Redirección circular")
+                    meta_path.write_text(json.dumps(event, ensure_ascii=False, indent=2), encoding='utf-8')
                     return self.get(target, bootstrap=bootstrap, _redirects=_redirects + 1)
                 response.raise_for_status()
                 cache.write_bytes(gzip.compress(response.content) if suffix.endswith(".gz") else response.content)

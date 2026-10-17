@@ -1,5 +1,5 @@
 {
-  "fecha_descarga": "2026-10-17T09:10:19-05:00",
+  "fecha_descarga": "2026-10-17T09:31:57-05:00",
   "medio": "La Republica",
   "opcion": "A",
   "piloto": false,
@@ -41,7 +41,8 @@
     "titular_casi_duplicado_095": 13,
     "titular_duplicado": 3,
     "publicacion_anterior_a_2026-01-01": 98,
-    "404 Client Error: Not Found for url: https://larepublica.pe/ciencia/2026/09/16/el-sol-podria-ocultar-las-huellas-de-un-planeta-desaparecido-hasta-10-veces-mas-masivo-que-la-tierra-1243568": 1
+    "404 Client Error: Not Found for url: https://larepublica.pe/ciencia/2026/09/16/el-sol-podria-ocultar-las-huellas-de-un-planeta-desaparecido-hasta-10-veces-mas-masivo-que-la-tierra-1243568": 1,
+    "auditoria_humana_fuera_de_alcance": 2
   },
   "fecha_min": "2026-01-11",
   "fecha_max": "2026-10-17",
@@ -52,5 +53,7 @@
     2.0
   ],
   "max_reintentos": 1,
-  "criterio_muestra": "RSS, sitemaps, secciones y enlaces públicos relacionados; cuota por categoría; no es muestra aleatoria del medio."
+  "criterio_muestra": "RSS, sitemaps, secciones y enlaces públicos relacionados; cuota por categoría; no es muestra aleatoria del medio.",
+  "fecha_recoleccion_inicial": "2026-10-17T09:10:19-05:00",
+  "correcciones_auditoria_humana": 2
 }

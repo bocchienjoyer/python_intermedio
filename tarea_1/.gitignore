@@ -9,4 +9,5 @@ datos/raw/*.html.gz
 datos/raw/*.xml
 datos/raw/*.meta.json
 resultados/*.log
+resultados/*.png
 

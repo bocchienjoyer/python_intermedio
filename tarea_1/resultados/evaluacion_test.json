@@ -1,0 +1,102 @@
+{
+  "zero_shot": {
+    "accuracy": 0.8,
+    "f1_macro": 0.792471264367816
+  },
+  "llm": {
+    "accuracy": 0.7666666666666667,
+    "f1_macro": 0.7609366369446855
+  },
+  "transformer": {
+    "accuracy": 0.8166666666666667,
+    "f1_macro": 0.8197967197967199
+  },
+  "n_test": 60,
+  "fecha": "2026-10-17T09:37:00-05:00",
+  "device": "cuda",
+  "referencia": "etiqueta de sección del diario; independiente del LLM, con posible ruido editorial",
+  "labels": [
+    "politica",
+    "economia",
+    "deportes",
+    "ciencia_tecnologia"
+  ],
+  "matriz_confusion": [
+    [
+      15,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      11,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      12,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      11
+    ]
+  ],
+  "reporte_transformer": {
+    "politica": {
+      "precision": 0.6818181818181818,
+      "recall": 1.0,
+      "f1-score": 0.8108108108108109,
+      "support": 15.0
+    },
+    "economia": {
+      "precision": 0.7333333333333333,
+      "recall": 0.7333333333333333,
+      "f1-score": 0.7333333333333333,
+      "support": 15.0
+    },
+    "deportes": {
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1-score": 0.8888888888888888,
+      "support": 15.0
+    },
+    "ciencia_tecnologia": {
+      "precision": 1.0,
+      "recall": 0.7333333333333333,
+      "f1-score": 0.8461538461538461,
+      "support": 15.0
+    },
+    "accuracy": 0.8166666666666667,
+    "macro avg": {
+      "precision": 0.8537878787878788,
+      "recall": 0.8166666666666667,
+      "f1-score": 0.8197967197967199,
+      "support": 60.0
+    },
+    "weighted avg": {
+      "precision": 0.8537878787878788,
+      "recall": 0.8166666666666667,
+      "f1-score": 0.8197967197967198,
+      "support": 60.0
+    }
+  },
+  "latencia_zero_shot_s_por_titular": 0.015661195000090326,
+  "latencia_transformer_s_por_titular": 0.007125958333199378,
+  "auditoria": {
+    "estado": "completa",
+    "acuerdos": 13,
+    "total": 20,
+    "porcentaje": 65.0,
+    "fecha": "2026-10-17T09:36:52-05:00",
+    "muestreo": "20 casos aleatorios de train/validación antes de las correcciones, random_state=42",
+    "descartados_por_humano": 2,
+    "criterio_acuerdo": "Los descartes humanos cuentan como desacuerdos; no se inventa una quinta clase.",
+    "revisor": "Jose Pablo Navarro Nateros (@bocchienjoyer)"
+  }
+}

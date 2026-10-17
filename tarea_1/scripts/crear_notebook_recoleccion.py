@@ -74,6 +74,10 @@ code("""
     display(pd.DataFrame({'indicador': ['Noticias finales', 'Enlaces candidatos únicos', 'URLs finales con HTTP 200'],
                           'valor': [len(df), resumen['candidatos_unicos'], resumen['url_verificadas_http_200']]}))
     display(pd.DataFrame(list(resumen['fuentes'].items()), columns=['fuente', 'entradas_descubiertas']))
+    urls = pd.read_csv('datos/verificacion_urls.csv')
+    assert set(urls.url) == set(df.url) and urls.http_final.eq(200).all()
+    print('URLs con respuesta final HTTP 200:', len(urls), '· Con redirección:', int(urls.redirige.sum()))
+    display(urls[urls.redirige])
 """)
 md("""
     ## 2. Limpieza, equivalencias y descartes
@@ -106,6 +110,23 @@ code("""
                    df.apply(lambda r: SECTION_MAP.get(section_key(r.url)) == r.etiqueta, axis=1).all()]})
     display(controles)
     assert controles.cumple.all(), 'Revisar controles fallidos antes de modelar'
+""")
+md("""
+    ### Corrección tras la auditoría humana
+
+    El estudiante revisó 20 titulares aleatorios de entrenamiento/validación. Descartó un hallazgo
+    arqueológico por considerarlo historia fuera del alcance, y una noticia de accidente de un alcalde.
+    Ambos estaban en **train**: se sustituyeron por noticias reales de la misma categoría, conservando
+    400 filas y las cuotas. No cambiaron validación, el baseline de 40 ni el test reservado.
+    Los dos descartes permanecen en la auditoría original y cuentan como desacuerdos con el LLM.
+    `noticias_antes_auditoria.csv` conserva la versión anterior para reconstruir el sorteo original.
+""")
+code("""
+    correcciones = pd.read_csv('datos/correcciones_auditoria.csv', keep_default_na=False)
+    display(correcciones[['caso', 'titular_descartado', 'motivo_humano', 'particion', 'titular_reemplazo', 'url_reemplazo']])
+    assert correcciones.particion.eq('train').all()
+    assert set(correcciones.url_reemplazo).issubset(set(df.url))
+    assert not set(correcciones.url_descartada).intersection(df.url)
 """)
 md("""
     ## 3. Análisis exploratorio con Plotly Express

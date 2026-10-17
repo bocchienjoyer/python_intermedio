@@ -1,0 +1,17 @@
+{
+  "modelo": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "filas": 400,
+  "prompt_sha256": "69932530bb900e1ff1d6a73738835d59ae149b4ee5283e58290782e9ee5bbfbf",
+  "fecha": "2026-10-17T09:32:26-05:00",
+  "prompt_reparacion_sha256": "61a17562ba47c219fd2a66844c0e02038fceda707ff5ba5174c903c24952012d",
+  "confianza": "Normalmente declarada por el LLM; en fallback restringido, probabilidad entre cuatro opciones. No calibrada.",
+  "casos_eleccion_restringida": 4,
+  "auditoria": {
+    "estado": "completa",
+    "acuerdos": 13,
+    "total": 20,
+    "porcentaje": 65.0,
+    "descartes_humanos": 2
+  }
+}
