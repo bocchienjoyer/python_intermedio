@@ -61,20 +61,26 @@ de confusión; `modelo/metricas.json` permite que la app presente esos mismos in
 
 ## Cómo ejecutar en local
 
-Desde la raíz del repositorio, con Python 3.13:
+Desde la raíz del repositorio, con Python 3.13, crear el entorno e instalar las dependencias:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r tarea_1/requirements.txt
+python -m pip install -r tarea_1/requirements.txt
+```
+
+En una copia nueva, **antes de iniciar la app**, abrir `tarea_1/02_clasificacion.ipynb` en
+VS Code, seleccionar el entorno `.venv` como kernel y ejecutar todas las celdas. Esto genera
+`modelo/model.safetensors`, cuyos pesos superan 500 MB y están excluidos de GitHub.
+La primera ejecución necesita Internet para descargar los modelos base; el entrenamiento
+admite CPU o GPU. No se necesita una API: se reutilizan las etiquetas LLM y sus respuestas válidas.
+
+Con los pesos disponibles, iniciar la app desde la raíz del repositorio:
+
+```powershell
 cd tarea_1
 streamlit run app.py
 ```
-
-Los pesos `modelo/model.safetensors` superan 500 MB y están excluidos de GitHub. En una copia
-nueva, abrir y ejecutar `02_clasificacion.ipynb` con el Python del entorno `.venv` para generarlos
-antes de iniciar la app. No se necesita una API: las etiquetas LLM entregadas y sus respuestas
-válidas se reutilizan. En este equipo los pesos ya existen. El entrenamiento admite CPU o GPU.
 
 La app se abre en `http://localhost:8501`. Los gráficos de los notebooks incluyen una imagen
 para su lectura en GitHub; para regenerarlas se necesita Chrome/Chromium o Microsoft Edge.
