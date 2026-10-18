@@ -123,7 +123,7 @@ with methodology:
     st.subheader("De noticias reales a un clasificador")
     st.write("La referencia se construye a partir de las secciones del diario. Un LLM genera etiquetas separadas para entrenar un Transformer. La evaluación usa noticias reservadas que no participan en el ajuste del modelo.")
     st.write("Partición estratificada: 70% entrenamiento, 15% validación y 15% test. Semilla: 42. La auditoría consiste en una revisión humana de 20 titulares elegidos al azar fuera del test.")
-    st.write("El estudiante descartó dos casos de entrenamiento por quedar fuera de los cuatro temas. Se reemplazaron por noticias de la misma categoría; validación y test conservaron sus titulares originales. Los dos descartes cuentan como desacuerdos en la auditoría.")
+    st.write("Durante la revisión manual se descartaron dos casos de entrenamiento por quedar fuera de los cuatro temas. Se reemplazaron por noticias de la misma categoría; validación y test conservaron sus titulares originales. Los dos descartes cuentan como desacuerdos en la auditoría.")
     st.caption(f"Publicaciones: {data.fecha.min()} a {data.fecha.max()} · Descarga: 17 de octubre de 2026")
     st.write("**Alcance:** un solo medio y una muestra por cuotas. Las etiquetas editoriales pueden mezclar temas; el resultado mide acuerdo con esa referencia y puede variar en otros medios o períodos.")
     st.markdown("[Ver el código, los datos y los notebooks](https://github.com/bocchienjoyer/python_intermedio/tree/main/tarea_1)")

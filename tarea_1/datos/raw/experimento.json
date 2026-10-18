@@ -2656,7 +2656,7 @@
       "url": "https://larepublica.pe/economia/2026/05/22/retiro-afp-2026-afiliados-podrian-retirar-mas-de-s20600-de-sus-fondos-si-congreso-aprueba-nuevo-proyecto-de-ley-de-4-uit-hnews-1718596",
       "titular": "Retiro AFP 2026: afiliados podrían retirar más de S/20.600 de sus fondos si Congreso aprueba nuevo proyecto de ley de 4 UIT",
       "etiqueta_humana": "economia",
-      "observacion": "Decisión final del estudiante: economía.",
+      "observacion": "Clasifiqué el titular como economía por su tema principal.",
       "decision_humana": "clasificar",
       "etiqueta_llm": "economia",
       "acuerdo": true
@@ -2676,7 +2676,7 @@
       "url": "https://larepublica.pe/politica/2026/10/15/serfor-destina-s41-millones-para-fortalecer-las-plantaciones-forestales-hnews-1301340",
       "titular": "SERFOR destina S/41 millones para fortalecer las plantaciones forestales",
       "etiqueta_humana": "economia",
-      "observacion": "Decisión final del estudiante: economía.",
+      "observacion": "Clasifiqué el titular como economía por su tema principal.",
       "decision_humana": "clasificar",
       "etiqueta_llm": "economia",
       "acuerdo": true
@@ -2696,7 +2696,7 @@
       "url": "https://larepublica.pe/ciencia/2026/10/09/casi-2000-anos-bajo-tierra-arqueologos-encuentran-el-lugar-donde-un-dios-romano-impacto-con-un-rayo-la-villa-de-adriano-165564",
       "titular": "Casi 2.000 años bajo tierra: arqueólogos encuentran el lugar donde un dios romano \"impactó\" con un rayo la Villa de Adriano",
       "etiqueta_humana": "",
-      "observacion": "El estudiante lo considera un tema histórico fuera del alcance de las cuatro categorías.",
+      "observacion": "Lo considero un tema histórico fuera del alcance de las cuatro categorías.",
       "decision_humana": "descartar",
       "etiqueta_llm": "ciencia_tecnologia",
       "acuerdo": false
@@ -2786,7 +2786,7 @@
       "url": "https://larepublica.pe/politica/2026/10/16/puno-alcalde-de-quiaca-muere-tras-caer-a-un-barranco-con-la-camioneta-que-conducia-con-destino-juliaca-hnews-1532880",
       "titular": "Puno: alcalde de Quiaca muere tras caer a un barranco con la camioneta que conducía con destino Juliaca",
       "etiqueta_humana": "",
-      "observacion": "El estudiante considera que es una noticia de accidente, sin tema político central.",
+      "observacion": "El tema principal es un accidente; la mención del alcalde no lo convierte en una noticia política.",
       "decision_humana": "descartar",
       "etiqueta_llm": "politica",
       "acuerdo": false
