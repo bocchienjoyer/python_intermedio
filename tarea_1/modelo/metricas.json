@@ -1,0 +1,30 @@
+{
+  "test": {
+    "accuracy": 0.8166666666666667,
+    "f1_macro": 0.8197967197967199
+  },
+  "auditoria": {
+    "estado": "completa",
+    "acuerdos": 13,
+    "total": 20,
+    "porcentaje": 65.0,
+    "fecha": "2026-10-18T12:13:32-05:00",
+    "muestreo": "20 casos aleatorios de train/validación antes de las correcciones, random_state=42",
+    "descartados_por_humano": 2,
+    "criterio_acuerdo": "Los descartes humanos cuentan como desacuerdos; no se inventa una quinta clase.",
+    "revisor": "Jose Pablo Navarro Nateros (@bocchienjoyer)"
+  },
+  "baseline_40": {
+    "accuracy": 0.675,
+    "f1_macro": 0.6695833333333333,
+    "n": 40,
+    "particion": "validacion",
+    "modelo": "Recognai/bert-base-spanish-wwm-cased-xnli",
+    "revision": "e44f774ea40ee8202311d9e5448263f176e04796",
+    "segundos": 1.1611143999907654,
+    "entrada": "titular",
+    "fecha": "2026-10-18T12:13:04-05:00"
+  },
+  "n_test": 60,
+  "fecha": "2026-10-18T12:13:35-05:00"
+}

@@ -1,6 +1,0 @@
-Tu respuesta no cumple el esquema o usa una categoría no permitida.
-Elige obligatoriamente UNA de estas cuatro cadenas exactas: politica, economia, deportes, ciencia_tecnologia.
-No puedes devolver un subtema ni una categoría genérica. Por ejemplo, informática pertenece a ciencia_tecnologia.
-Vuelve a clasificar el titular original por su tema principal. Responde únicamente con este esquema JSON:
-{"etiqueta_llm":"categoria_exacta_de_la_lista","confianza":0.0}
-La confianza debe ser numérica y estar entre 0 y 1.

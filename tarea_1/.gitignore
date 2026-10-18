@@ -7,7 +7,10 @@ modelo/rng_state.pth
 datos/raw/*.html
 datos/raw/*.html.gz
 datos/raw/*.xml
+!datos/raw/rss_*.xml
+!datos/raw/sitemap_*.xml
 datos/raw/*.meta.json
-resultados/*.log
-resultados/*.png
+__pycache__/
+.ipynb_checkpoints/
+.venv/
 

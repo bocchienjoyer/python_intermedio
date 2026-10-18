@@ -28,11 +28,6 @@ def read_news(modified):
     return pd.read_csv(ROOT / "datos/noticias.csv", keep_default_na=False)
 
 
-def read_json(name):
-    path = ROOT / "resultados" / name
-    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
-
-
 @st.cache_resource
 def load_classifier(modified):
     import torch
@@ -53,10 +48,9 @@ if not data_path.exists():
     st.info("La recolección está en preparación. Las noticias aparecerán al completar esta etapa.")
     st.stop()
 data = read_news(data_path.stat().st_mtime_ns)
-final = read_json("evaluacion_test.json")
-audit = read_json("auditoria.json")
-summary_path = ROOT / "datos/resumen_recoleccion.json"
-summary = json.loads(summary_path.read_text(encoding="utf-8")) if summary_path.exists() else {}
+metricas = json.loads((ROOT / 'modelo/metricas.json').read_text(encoding='utf-8'))
+final = {'transformer': metricas['test']}
+audit = metricas['auditoria']
 
 st.sidebar.header("Explorar la muestra")
 media = st.sidebar.multiselect("Medio", sorted(data.medio.unique()), default=sorted(data.medio.unique()))
@@ -130,7 +124,6 @@ with methodology:
     st.write("La referencia se construye a partir de las secciones del diario. Un LLM genera etiquetas separadas para entrenar un Transformer. La evaluación usa noticias reservadas que no participan en el ajuste del modelo.")
     st.write("Partición estratificada: 70% entrenamiento, 15% validación y 15% test. Semilla: 42. La auditoría consiste en una revisión humana de 20 titulares elegidos al azar fuera del test.")
     st.write("El estudiante descartó dos casos de entrenamiento por quedar fuera de los cuatro temas. Se reemplazaron por noticias de la misma categoría; validación y test conservaron sus titulares originales. Los dos descartes cuentan como desacuerdos en la auditoría.")
-    if summary:
-        st.caption(f"Publicaciones: {summary.get('fecha_min', '')} a {summary.get('fecha_max', '')} · Descarga: {summary.get('fecha_descarga', '')}")
+    st.caption(f"Publicaciones: {data.fecha.min()} a {data.fecha.max()} · Descarga: 17 de octubre de 2026")
     st.write("**Alcance:** un solo medio y una muestra por cuotas. Las etiquetas editoriales pueden mezclar temas; el resultado mide acuerdo con esa referencia y puede variar en otros medios o períodos.")
     st.markdown("[Ver el código, los datos y los notebooks](https://github.com/bocchienjoyer/python_intermedio/tree/main/tarea_1)")
