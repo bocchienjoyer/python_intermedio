@@ -12,7 +12,9 @@ nbclient==0.11.0
 ipykernel==7.4.0
 kaleido==1.5.0
 streamlit==1.66.0
-torch==2.8.0
+--find-links https://download.pytorch.org/whl/cpu/torch/
+torch==2.8.0+cpu; sys_platform == "linux"
+torch==2.8.0; sys_platform != "linux"
 transformers==4.57.1
 datasets==4.2.0
 accelerate==1.10.1

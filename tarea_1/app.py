@@ -1,13 +1,19 @@
 """Exploración de noticias y clasificación de titulares con el modelo entrenado."""
 
+import hashlib
 import json
+import logging
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 import pandas as pd
 import plotly.express as px
+import requests
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parent
+MODEL_URL = "https://github.com/bocchienjoyer/python_intermedio/releases/download/modelo-tarea-1-v1/model.safetensors"
+MODEL_SHA256 = "05dad2bd26bf3abb2ad0d98dc419b7a17829fe513d4bf7f4d9c82a53a585234c"
 LABEL_NAMES = {"politica": "Política", "economia": "Economía", "deportes": "Deportes",
                "ciencia_tecnologia": "Ciencia y tecnología"}
 COLORS = {"Política": "#496E8D", "Economía": "#708A66", "Deportes": "#C69C5C", "Ciencia y tecnología": "#9177A6"}
@@ -29,11 +35,32 @@ def read_news(modified):
 
 
 @st.cache_resource
-def load_classifier(modified):
+def load_classifier():
+    model_path = ROOT / "modelo/model.safetensors"
+    if not model_path.exists():
+        temporary_path = None
+        try:
+            digest = hashlib.sha256()
+            with requests.get(MODEL_URL, stream=True, timeout=(15, 120)) as response:
+                response.raise_for_status()
+                with NamedTemporaryFile(dir=model_path.parent, prefix=".descarga-",
+                                        suffix=".safetensors", delete=False) as download:
+                    temporary_path = Path(download.name)
+                    for chunk in response.iter_content(chunk_size=1024 * 1024):
+                        if chunk:
+                            download.write(chunk)
+                            digest.update(chunk)
+            if digest.hexdigest() != MODEL_SHA256:
+                raise ValueError("La descarga del modelo está incompleta o no coincide con la versión evaluada.")
+            temporary_path.replace(model_path)
+        finally:
+            if temporary_path is not None:
+                temporary_path.unlink(missing_ok=True)
     import torch
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
     tokenizer = AutoTokenizer.from_pretrained(ROOT / "modelo", local_files_only=True)
-    model = AutoModelForSequenceClassification.from_pretrained(ROOT / "modelo", local_files_only=True, use_safetensors=True)
+    model = AutoModelForSequenceClassification.from_pretrained(
+        ROOT / "modelo", local_files_only=True, use_safetensors=True, low_cpu_mem_usage=True)
     model.to("cpu").eval()
     torch.set_num_threads(4)
     return tokenizer, model
@@ -94,18 +121,25 @@ with classify:
     st.subheader("Escribe un titular nuevo")
     st.write("El modelo elige uno de los cuatro temas a partir del titular, sin consultar la sección del diario.")
     headline = st.text_area("Titular", placeholder="Escribe o pega aquí el titular que quieras clasificar", max_chars=2000)
-    model_path = ROOT / "modelo/model.safetensors"
-    ready = model_path.exists() and (ROOT / "modelo/config.json").exists()
+    if not (ROOT / "modelo/model.safetensors").exists():
+        st.caption("La primera clasificación puede tardar unos minutos mientras se prepara el modelo.")
+    ready = (ROOT / "modelo/config.json").exists()
     if not ready:
-        st.info("Faltan los pesos del modelo en este equipo. Sigue la sección de entrenamiento del README para activar el probador.")
+        st.info("Falta la configuración del clasificador. Comprueba que la carpeta modelo esté incluida en la entrega.")
     if st.button("Clasificar titular", type="primary", disabled=not ready):
         text = headline.strip()
         if not text:
             st.warning("Escribe un titular antes de clasificar.")
         else:
+            try:
+                with st.spinner("Preparando el clasificador…"):
+                    tokenizer, model = load_classifier()
+            except (OSError, ValueError, RuntimeError, requests.RequestException):
+                logging.exception("No se pudo preparar el clasificador de titulares")
+                st.error("No se pudo cargar el clasificador. Comprueba la conexión y vuelve a intentarlo.")
+                st.stop()
             import torch
             with st.spinner("Leyendo el titular…"):
-                tokenizer, model = load_classifier(model_path.stat().st_mtime_ns)
                 encoded = tokenizer(text, return_tensors="pt", truncation=True, max_length=128)
                 with torch.inference_mode():
                     probabilities = model(**encoded).logits.float().softmax(dim=-1)[0]

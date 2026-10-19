@@ -61,20 +61,37 @@ de confusión; `modelo/metricas.json` permite que la app presente esos mismos in
 
 ## Cómo ejecutar en local
 
-Desde la raíz del repositorio, con Python 3.13:
+Desde la raíz del repositorio, con Python 3.13, crear el entorno e instalar las dependencias:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r tarea_1/requirements.txt
+python -m pip install -r tarea_1/requirements.txt
+```
+
+Iniciar la app desde la raíz del repositorio:
+
+```powershell
 cd tarea_1
 streamlit run app.py
 ```
 
-Los pesos `modelo/model.safetensors` superan 500 MB y están excluidos de GitHub. En una copia
-nueva, abrir y ejecutar `02_clasificacion.ipynb` con el Python del entorno `.venv` para generarlos
-antes de iniciar la app. No se necesita una API: las etiquetas LLM entregadas y sus respuestas
-válidas se reutilizan. En este equipo los pesos ya existen. El entrenamiento admite CPU o GPU.
+La app se abre en `http://localhost:8501`. Al clasificar por primera vez, si faltan los pesos,
+descarga el modelo evaluado desde la [Release del repositorio](https://github.com/bocchienjoyer/python_intermedio/releases/tag/modelo-tarea-1-v1)
+y comprueba su SHA-256. Después lo reutiliza; no necesita claves API ni entrenamiento al iniciar.
+Los pesos superan 500 MB y siguen excluidos de Git.
 
-La app se abre en `http://localhost:8501`. Los gráficos de los notebooks incluyen una imagen
+Para reproducir el entrenamiento, abrir `tarea_1/02_clasificacion.ipynb` en VS Code con el kernel
+`.venv` y ejecutar todas las celdas. La primera ejecución descarga los modelos base de Internet;
+admite CPU o GPU y reutiliza las etiquetas LLM entregadas.
+
+Los gráficos de los notebooks incluyen una imagen
 para su lectura en GitHub; para regenerarlas se necesita Chrome/Chromium o Microsoft Edge.
+
+## Publicar en Streamlit Community Cloud
+
+En [Streamlit Community Cloud](https://share.streamlit.io/), seleccionar el repositorio
+`bocchienjoyer/python_intermedio`, la rama con esta versión de la app y el archivo
+`tarea_1/app.py`. En **Advanced settings**, elegir **Python 3.13** y dejar **Secrets** vacío.
+Streamlit detecta `tarea_1/requirements.txt`; en Linux se instala PyTorch para CPU.
+No hace falta subir los pesos manualmente: el primer uso del probador los descarga de la Release.
