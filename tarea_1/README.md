@@ -69,18 +69,29 @@ python -m venv .venv
 python -m pip install -r tarea_1/requirements.txt
 ```
 
-En una copia nueva, **antes de iniciar la app**, abrir `tarea_1/02_clasificacion.ipynb` en
-VS Code, seleccionar el entorno `.venv` como kernel y ejecutar todas las celdas. Esto genera
-`modelo/model.safetensors`, cuyos pesos superan 500 MB y están excluidos de GitHub.
-La primera ejecución necesita Internet para descargar los modelos base; el entrenamiento
-admite CPU o GPU. No se necesita una API: se reutilizan las etiquetas LLM y sus respuestas válidas.
-
-Con los pesos disponibles, iniciar la app desde la raíz del repositorio:
+Iniciar la app desde la raíz del repositorio:
 
 ```powershell
 cd tarea_1
 streamlit run app.py
 ```
 
-La app se abre en `http://localhost:8501`. Los gráficos de los notebooks incluyen una imagen
+La app se abre en `http://localhost:8501`. Al clasificar por primera vez, si faltan los pesos,
+descarga el modelo evaluado desde la [Release del repositorio](https://github.com/bocchienjoyer/python_intermedio/releases/tag/modelo-tarea-1-v1)
+y comprueba su SHA-256. Después lo reutiliza; no necesita claves API ni entrenamiento al iniciar.
+Los pesos superan 500 MB y siguen excluidos de Git.
+
+Para reproducir el entrenamiento, abrir `tarea_1/02_clasificacion.ipynb` en VS Code con el kernel
+`.venv` y ejecutar todas las celdas. La primera ejecución descarga los modelos base de Internet;
+admite CPU o GPU y reutiliza las etiquetas LLM entregadas.
+
+Los gráficos de los notebooks incluyen una imagen
 para su lectura en GitHub; para regenerarlas se necesita Chrome/Chromium o Microsoft Edge.
+
+## Publicar en Streamlit Community Cloud
+
+En [Streamlit Community Cloud](https://share.streamlit.io/), seleccionar el repositorio
+`bocchienjoyer/python_intermedio`, la rama con esta versión de la app y el archivo
+`tarea_1/app.py`. En **Advanced settings**, elegir **Python 3.13** y dejar **Secrets** vacío.
+Streamlit detecta `tarea_1/requirements.txt`; en Linux se instala PyTorch para CPU.
+No hace falta subir los pesos manualmente: el primer uso del probador los descarga de la Release.
