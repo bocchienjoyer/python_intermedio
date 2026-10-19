@@ -87,11 +87,3 @@ admite CPU o GPU y reutiliza las etiquetas LLM entregadas.
 
 Los gráficos de los notebooks incluyen una imagen
 para su lectura en GitHub; para regenerarlas se necesita Chrome/Chromium o Microsoft Edge.
-
-## Publicar en Streamlit Community Cloud
-
-En [Streamlit Community Cloud](https://share.streamlit.io/), seleccionar el repositorio
-`bocchienjoyer/python_intermedio`, la rama con esta versión de la app y el archivo
-`tarea_1/app.py`. En **Advanced settings**, elegir **Python 3.13** y dejar **Secrets** vacío.
-Streamlit detecta `tarea_1/requirements.txt`; en Linux se instala PyTorch para CPU.
-No hace falta subir los pesos manualmente: el primer uso del probador los descarga de la Release.
