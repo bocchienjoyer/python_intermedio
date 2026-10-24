@@ -1,0 +1,20 @@
+# Originales y salidas pesadas, recuperables desde datos/fuentes.csv.
+datos/raw/
+
+# Pesos y checkpoints; conservar solo configuraciones o artefactos ligeros.
+modelos/**/*.safetensors
+modelos/**/*.bin
+modelos/**/checkpoint-*/
+modelos/**/*.pt
+modelos/**/*.pth
+modelos/**/*.onnx
+
+# Entornos, cachés y credenciales.
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.cache/
+.env
+.env.*
+.streamlit/secrets.toml
+*.pyc
