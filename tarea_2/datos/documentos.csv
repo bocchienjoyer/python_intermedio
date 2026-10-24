@@ -382,7 +382,6 @@ Cordialmente,
 [FIRMA_1]
 [PERSONA_2]
 [CARGO_1]",PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_005_der,datos/raw/documentos/unidades/doc_005_der.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_006,datos/raw/documentos/unidades/doc_006.png,foto,Wikimedia Commons (CC BY-SA 4.0),"CONSTITUCION
 DE LA REPUBLICA.
 EL LIBERTADOR [PERSONA_1],
@@ -448,3 +447,4 @@ Merengue stuffed with ""chicha morada"" sorbet, guanabana fruit mousse topped wi
 creamy cold sauce, warm ""champu"" with mote (Andean corn) and Chinese
 cinammon
 Caja de Golosinas ( Petit Fours)",PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_029,datos/raw/documentos/unidades/doc_029.png,foto,Wikimedia Commons (PDM),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
