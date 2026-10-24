@@ -1,6 +1,57 @@
 id,archivo,tipo,fuente,texto_ocr,modelo_ocr,texto_referencia
-doc_001,datos/raw/documentos/unidades/doc_001.png,impreso,Wikimedia Commons (CC BY 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_016_p01,datos/raw/documentos/unidades/doc_016_p01.png,impreso,Wikimedia Commons (CC0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_001,datos/raw/documentos/unidades/doc_001.png,impreso,Wikimedia Commons (CC BY 4.0),"SE RESUELVE:
+.- Artículo 1°- RECONOCER como lema ganador en el Concurso Público
+Creación del Lema para el Distrito de Mache: ""MACHE, AMISTAD BELLEZA Y
+CULTURA"" del Autor DR. [PERSONA_1], como Lema
+Oficial del Distrito de Mache, con Resolución de Alcaldía N° o18-2o16 MDM.
+.- Artículo 2°- RECONOCER como símbolo Oficial del Distrito de Mache, EL
+ESCUDO que en concurso público ha obtenido el primer puesto y cuyo anexo
+en diseño forma parte de la presente resolución; propuesta presentada por la
+Señorita [PERSONA_2] y ratificado como símbolo g
+anador mediante Resolución de Alcaldía N° o9o-2o16 MDM.
+.- Artículo 3°- RECONOCER como símbolo Oficial del Distrito de Mache, LA
+BANDERA que en concurso público ha obtenido el primer puesto y cuyo anexo
+en diseño forma parte de la presente resolución; propuesta presentada por la
+Señorita [PERSONA_3] y ratificado como símbolo
+ganador mediante Resolución de Alcaldía N° o91-2o16 MDM.
+.- Artículo 4°- OFICIALIZAR Y PRESENTAR en ceremonia pública el día o7 de
+marzo 2o16 los símbolos que identificaran nuestro distrito, en la plaza de
+armas de Mache con ceremonia especial.
+.- Artículo 5°- PRECISAR
+- Inciso oI: RECONOCER al SR. [PERSONA_4] como autor y
+com positor del HIMNO A MACHE.
+-Inciso o2: OFICIALIZAR, las sagradas notas musicales compuestas por DON
+[PERSONA_4] las mismas que se venían entonando desde el año
+2oo8 fecha de reconocimiento oficial por la MDM.
+.- Artículo 6°- DISPONER las acciones administrativas legales que correspon-
+dan para el registro y formalización de los símbolos para Mache.
+FIRMADO: por el Alcalde [PERSONA_5] con
+Resolución de Alcaldía N° 092-2016 de fecha 04 de Marzo 2016.",PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_016_p01,datos/raw/documentos/unidades/doc_016_p01.png,impreso,Wikimedia Commons (CC0),"Maldonado, 4 de julio de 1914.
+Señor Don [PERSONA_1],
+Lima.
+Muy distinguido señor y respetedo amigo:
+Siento inmenso placer el dirigirle le presente, mensajera
+de mis más efusivas y cordiales feliciteciones por el acto de jus-
+te reparación que acabe de darle el Gobierno Provisorio con su de-
+creto de 26 de meyo dltimo. Su nombramiento de director honorario
+de la BibliotecaNacional que U. recrganizare con tantc tezón, celo
+é inteligencia, es más que un acto de desagravio y de justicia, com-
+pensación débilé lo mucho que el Perú y sus intelectuales le deben.
+Apenaba mi alma considerar que é mi regresc & Lima, después
+de més de tres eños de ausencia, no ibe & hallar al noble y patrio-
+ta enciano, pedre de las letras peruanas, en su sala de trabajo de
+la Bibliotaca, donde tuve el honor de conocerle ahora 24 años; y
+mucho me contristebe tembién, si acaso vuelvo& le Sociedad Geogra-
+fica, no ver con la frecuencia á que estabe acostumbrado al ilustre
+tradicioniste, cuyos consejos y lecciones escuché siempre con inte-
+rés y edmiración.
+Ye esta U., respetedo don [PERSONA_1], nuevamente entre sus es-
+tantos y libros pare U. tan queridos; ya esta U. nuevamente entre
+sus emigos predilectos que piensan sin cerebro y hablen sin boca;
+ye esté U. nuevemente en su case, porque casa suye es, indiscuti-
+blemente, ese viejo palacio de las ciencias y las letras. Allí es-
+pero derle pronto cariñoso ebrazo, y miemtras tal sucede, hago fer-",PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_018_p01,datos/raw/documentos/unidades/doc_018_p01.png,impreso,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_019_p09,datos/raw/documentos/unidades/doc_019_p09.png,impreso,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_019_p10,datos/raw/documentos/unidades/doc_019_p10.png,impreso,Wikimedia Commons (Public domain),"6
