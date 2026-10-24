@@ -41,7 +41,27 @@ mente; y si solo uno, elegirán tambien un suplente.",PaddleOCR 3.7.0; PP-OCRv6_
 doc_019_p11,datos/raw/documentos/unidades/doc_019_p11.png,impreso,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_027_p04,datos/raw/documentos/unidades/doc_027_p04.png,impreso,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_027_p02,datos/raw/documentos/unidades/doc_027_p02.png,impreso,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_004,datos/raw/documentos/unidades/doc_004.png,foto,Wikimedia Commons (CC BY 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_004,datos/raw/documentos/unidades/doc_004.png,foto,Wikimedia Commons (CC BY 4.0),"REPUBLICA
+Lima, 5 de diciembre de 1972.
+Señor Don
+[PERSONA_1]
+[DIRECCION_1]
+De mi especial consideración :
+Me es particularmente grato referirme
+a su atenta de 20 de noviembre último, a través de la cual se sirve usted
+hacerme conocer las noticias del éxito alcanzado por su película ""Espe-
+jismo"", en el Festival Cinematográfico Internacional de Chicago.
+Felicito a usted muy sinceramente
+por este nuevo triunfo, que constituye motivo de satisfacción para los pe
+ruanos y un merecido premio a su reconocido esfuerzo y patriótico empe-
+ño por sacar adelante la industria cinematográfica nacional.
+Tan pronto disponga de un tiempo li-
+bre, dentro de nuestra recargada agenda de trabajo, me será grato ver la
+película cuyo éxito nos place comentar.
+Cordialmente,
+[FIRMA_1]
+[PERSONA_2]
+[CARGO_1]",PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_005_izq,datos/raw/documentos/unidades/doc_005_izq.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_005_der,datos/raw/documentos/unidades/doc_005_der.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_006,datos/raw/documentos/unidades/doc_006.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
