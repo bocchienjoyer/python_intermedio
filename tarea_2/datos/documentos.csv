@@ -211,7 +211,6 @@ Cordialmente,
 [FIRMA_1]
 [PERSONA_2]
 [CARGO_1]",PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_005_izq,datos/raw/documentos/unidades/doc_005_izq.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_005_der,datos/raw/documentos/unidades/doc_005_der.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_006,datos/raw/documentos/unidades/doc_006.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_007,datos/raw/documentos/unidades/doc_007.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
@@ -227,3 +226,4 @@ doc_017_p01,datos/raw/documentos/unidades/doc_017_p01.png,manuscrito,Wikimedia C
 doc_024,datos/raw/documentos/unidades/doc_024.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_025,datos/raw/documentos/unidades/doc_025.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_026,datos/raw/documentos/unidades/doc_026.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_028,datos/raw/documentos/unidades/doc_028.png,foto,Wikimedia Commons (CC BY 2.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
