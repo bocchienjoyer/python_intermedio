@@ -312,17 +312,10 @@
       "sha256_texto_original": "79df38eca221341a8fc4cd76f273767c9a520b21b6f18073b879b03e3e5c813d",
       "sha256_audio": "e89b76e3922cb3f436d9bef7b3afd23aeed595d52ef644eb26e82de74be10374",
       "duracion_seg": 48.4,
-      "protecciones": [
-        {
-          "inicio": 354,
-          "fin": 368,
-          "categoria": "DATO_FAMILIAR",
-          "etiqueta": "[DATO_FAMILIAR_1]",
-          "motivo": "Cantidad concreta de hijos declarada sobre la familia de quien habla."
-        }
-      ],
+      "protecciones": [],
       "observaciones": [
-        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia.",
+        "Se conserva la cantidad de hijos: en este contexto no se vincula con nombres, direcciones u otros datos que permitan identificar a la familia."
       ],
       "atencion_especial": false
     },
@@ -333,24 +326,10 @@
       "sha256_texto_original": "531f760c2a25f888961fa66dc29a9fc4246d5b17ebb24b5f642b02eb7b26c797",
       "sha256_audio": "056649c674cef10d7b0e239ab707db65266b10cde0c4fea7f814bef8caaf2c9c",
       "duracion_seg": 163.384625,
-      "protecciones": [
-        {
-          "inicio": 155,
-          "fin": 169,
-          "categoria": "DATO_FAMILIAR",
-          "etiqueta": "[DATO_FAMILIAR_1]",
-          "motivo": "Cantidad concreta de hijos declarada sobre la familia de quien habla."
-        },
-        {
-          "inicio": 174,
-          "fin": 188,
-          "categoria": "DATO_FAMILIAR",
-          "etiqueta": "[DATO_FAMILIAR_1]",
-          "motivo": "Cantidad concreta de hijos declarada sobre la familia de quien habla."
-        }
-      ],
+      "protecciones": [],
       "observaciones": [
-        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia.",
+        "Se conserva la cantidad de hijos: en este contexto no se vincula con nombres, direcciones u otros datos que permitan identificar a la familia."
       ],
       "atencion_especial": false
     },
@@ -457,13 +436,6 @@
       "duracion_seg": 81.538375,
       "protecciones": [
         {
-          "inicio": 554,
-          "fin": 691,
-          "categoria": "TRAYECTORIA_PERSONAL",
-          "etiqueta": "[TRAYECTORIA_PERSONAL_1]",
-          "motivo": "Rango, servicio y trayectoria militar declarados en primera persona."
-        },
-        {
           "inicio": 1013,
           "fin": 1035,
           "categoria": "PERSONA",
@@ -473,7 +445,7 @@
       ],
       "observaciones": [
         "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia.",
-        "La mención nominal final está muy deformada, pero corresponde al nombre señalado en la escucha. El ASR no recupera de forma completa las voces colectivas del final."
+        "Se conserva el relato general de servicio militar, sin unidad ni fecha exacta. La mención nominal final está muy deformada, pero corresponde al nombre señalado en la escucha. El ASR no recupera de forma completa las voces colectivas del final."
       ],
       "atencion_especial": true
     }
