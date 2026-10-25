@@ -393,15 +393,9 @@ Bajo la proteccion de Dios:—El Congreso de
 la República, autorizado por los pueblos para
 reformar la Constitucion política del año de
 1856, da la siguiente:",PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_007,datos/raw/documentos/unidades/doc_007.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_008,datos/raw/documentos/unidades/doc_008.png,foto,Wikimedia Commons (CC BY 2.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_010,datos/raw/documentos/unidades/doc_010.png,foto,Wikimedia Commons (CC BY-SA 3.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_011,datos/raw/documentos/unidades/doc_011.png,foto,Wikimedia Commons (CC BY 2.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_003,datos/raw/documentos/unidades/doc_003.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_015_p01,datos/raw/documentos/unidades/doc_015_p01.png,manuscrito,Wikimedia Commons (CC0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_015_p02,datos/raw/documentos/unidades/doc_015_p02.png,manuscrito,Wikimedia Commons (CC0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_015_p03,datos/raw/documentos/unidades/doc_015_p03.png,manuscrito,Wikimedia Commons (CC0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
-doc_015_p04,datos/raw/documentos/unidades/doc_015_p04.png,manuscrito,Wikimedia Commons (CC0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_017_p01,datos/raw/documentos/unidades/doc_017_p01.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_024,datos/raw/documentos/unidades/doc_024.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_025,datos/raw/documentos/unidades/doc_025.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
@@ -448,3 +442,9 @@ creamy cold sauce, warm ""champu"" with mote (Andean corn) and Chinese
 cinammon
 Caja de Golosinas ( Petit Fours)",PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
 doc_029,datos/raw/documentos/unidades/doc_029.png,foto,Wikimedia Commons (PDM),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_030,datos/raw/documentos/unidades/doc_030.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_040,datos/raw/documentos/unidades/doc_040.png,foto,Wikimedia Commons (CC BY-SA 4.0),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_033,datos/raw/documentos/unidades/doc_033.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_034,datos/raw/documentos/unidades/doc_034.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_036,datos/raw/documentos/unidades/doc_036.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
+doc_037,datos/raw/documentos/unidades/doc_037.png,manuscrito,Wikimedia Commons (Public domain),,PaddleOCR 3.7.0; PP-OCRv6_medium_det+PP-OCRv6_medium_rec; es; CPU; modelos/ocr_base.json,
