@@ -1,0 +1,555 @@
+{
+  "fecha": "2026-10-25T13:37:14-05:00",
+  "criterio_duplicado": "SHA-256 del archivo de cada página o clip, dentro de su modalidad.",
+  "documentos_activos": 25,
+  "clips_activos": 20,
+  "segundos_audio": 2109.1848125,
+  "duplicados_eliminados": 0,
+  "duplicados": [],
+  "unidades_descartadas_ilegibles": 4,
+  "unidades_reemplazadas_dificultad_lectura": 4,
+  "candidatos_no_seleccionados": 10,
+  "audios_activos_sin_voz": 0,
+  "descartes": [
+    {
+      "id": "doc_007",
+      "seleccion": "descartado_ilegible",
+      "observaciones": "Desenfoque y reflejos que impiden leer con seguridad gran parte del original. Reemplazo: doc_030. Imagen y salida OCR crudas conservadas."
+    },
+    {
+      "id": "doc_008",
+      "seleccion": "descartado_ilegible",
+      "observaciones": "Tabla con escritura pequeña y densa, insuficientemente definida para una transcripción humana segura de gran parte del contenido. Reemplazo: doc_040. Imagen y salida OCR crudas conservadas."
+    },
+    {
+      "id": "doc_005_izq",
+      "seleccion": "descartado_ilegible",
+      "observaciones": "Descarte por revisión humana: parte superior ilegible incluso con zoom; solo algunas palabras legibles. No se basa en la exactitud OCR. Original, salida del modelo y revisión conservados en datos/raw/."
+    },
+    {
+      "id": "doc_005_der",
+      "seleccion": "descartado_ilegible",
+      "observaciones": "Descarte por inspección asistida de la fuente: desenfoque que impide lectura fiable de buena parte del texto; respaldo y OCR privados conservados. Reemplazado por doc_029 antes de evaluar modelos."
+    },
+    {
+      "id": "doc_015_p01",
+      "seleccion": "reemplazado_dificultad_lectura",
+      "observaciones": "Interferencia intensa del reverso y dificultad de lectura humana; se prioriza una fuente más clara para anotación. No se declara toda la página ilegible. Reemplazo: doc_033. Imagen y salida OCR crudas conservadas."
+    },
+    {
+      "id": "doc_015_p02",
+      "seleccion": "reemplazado_dificultad_lectura",
+      "observaciones": "Interferencia intensa del reverso y dificultad de lectura humana; selección por legibilidad, no por puntuación del OCR. Reemplazo: doc_034. Imagen y salida OCR crudas conservadas."
+    },
+    {
+      "id": "doc_015_p03",
+      "seleccion": "reemplazado_dificultad_lectura",
+      "observaciones": "Lectura dificultada por el reverso traslucido; se reemplaza por una fuente más clara para anotación, conservando el resultado original. Reemplazo: doc_036. Imagen y salida OCR crudas conservadas."
+    },
+    {
+      "id": "doc_015_p04",
+      "seleccion": "reemplazado_dificultad_lectura",
+      "observaciones": "Interferencia del reverso y dificultad de lectura humana del anverso; no se descarta por el texto basura que produjo el OCR. Reemplazo: doc_037. Imagen y salida OCR crudas conservadas."
+    }
+  ],
+  "hashes_unidades": [
+    {
+      "id": "doc_001",
+      "modalidad": "documento",
+      "sha256": "d480d2595bda4ec3fdff07c4468a053cc6f0b6bafdf9aa21bbe57697ebc5ebb7"
+    },
+    {
+      "id": "doc_016_p01",
+      "modalidad": "documento",
+      "sha256": "7e07aeec17102fd8222844a7f04f74c59949c7b89f65d6879dd36eaa4541a81e"
+    },
+    {
+      "id": "doc_018_p01",
+      "modalidad": "documento",
+      "sha256": "292f859aab03f3d12e094a77f36ad4cdeaafffbb282431c8f8eecd67d6aced89"
+    },
+    {
+      "id": "doc_019_p09",
+      "modalidad": "documento",
+      "sha256": "0af5e3a4beeb61e87c38cdfd5183941a2e45a1b56ae9076482b5346cff81bcfa"
+    },
+    {
+      "id": "doc_019_p10",
+      "modalidad": "documento",
+      "sha256": "324bc3f19e23f141affae714edb72663d3187dd0545222c4e038e8d8c65730d5"
+    },
+    {
+      "id": "doc_019_p11",
+      "modalidad": "documento",
+      "sha256": "55fb5822e4ada6e8a71601dbd12a9f42c23b54d5c16ed0d64b17b8366290d5d2"
+    },
+    {
+      "id": "doc_027_p04",
+      "modalidad": "documento",
+      "sha256": "9541748526ef1fd4ab73bbfda009d7e4d36cb01b98a387ec67854acbdbf4ac89"
+    },
+    {
+      "id": "doc_027_p02",
+      "modalidad": "documento",
+      "sha256": "db442b0b85468744431d457b41290da6a331d0516b6dc4ecb5942011d81ece17"
+    },
+    {
+      "id": "doc_004",
+      "modalidad": "documento",
+      "sha256": "17d8d2f8e2c81a38fe40575222fa4aca2352b7b071432ddf3449ee75b19bb9ee"
+    },
+    {
+      "id": "doc_006",
+      "modalidad": "documento",
+      "sha256": "52e177debc26fe637700744edde0fb2b5497d7b778920b2081438dbaa79894a6"
+    },
+    {
+      "id": "doc_010",
+      "modalidad": "documento",
+      "sha256": "81f7bf1fe4f75fff7c4cbe67f82928d41eb3a66a139d0d04981026d433677576"
+    },
+    {
+      "id": "doc_011",
+      "modalidad": "documento",
+      "sha256": "57c383d5005a7e0d52bbbbee38747a8d540361bf3e88314f7820e587310176da"
+    },
+    {
+      "id": "doc_003",
+      "modalidad": "documento",
+      "sha256": "215b9a434dddbc025efca04e17ba08a00d282aaa9346ef3186744008db3caa50"
+    },
+    {
+      "id": "doc_017_p01",
+      "modalidad": "documento",
+      "sha256": "a0ebba2716b331f7596064b71cf9f23aa9f018dfc53123d863b4687edbedf60a"
+    },
+    {
+      "id": "doc_024",
+      "modalidad": "documento",
+      "sha256": "c62e486675c93371135f2790c481481d3a806e7db0a5642c42e0df1fb7641d3a"
+    },
+    {
+      "id": "doc_025",
+      "modalidad": "documento",
+      "sha256": "d2a5b5fe7cd7a346833c8b2ca006eed4a97dafab110458cec76a5513b7506893"
+    },
+    {
+      "id": "doc_026",
+      "modalidad": "documento",
+      "sha256": "779a0c2813f24f3cfc0dd801dfbd306deba0e93d244424735f8dc2a4001c27a3"
+    },
+    {
+      "id": "doc_028",
+      "modalidad": "documento",
+      "sha256": "855ead026f0110e28f377cc8ce3d264344945a2696c338772c041fcf76b316b2"
+    },
+    {
+      "id": "doc_029",
+      "modalidad": "documento",
+      "sha256": "bfd8567eb7ee8358f9109a4b2d62161f100c9040257c7b9d24ceaf9fcde60fdd"
+    },
+    {
+      "id": "doc_030",
+      "modalidad": "documento",
+      "sha256": "bf9d8e489237faeb5790ac2421e982229f103211fa6c2b5fc7ea33238260843c"
+    },
+    {
+      "id": "doc_040",
+      "modalidad": "documento",
+      "sha256": "ecdef72ac7841eed3b9a19e119ba7a6e3d7c9e0e669fecd962d009347ffa3642"
+    },
+    {
+      "id": "doc_033",
+      "modalidad": "documento",
+      "sha256": "5d308eda2b52b8f5c8f6687bd09a3797cd5a54478915138a81ecf3a03bf53441"
+    },
+    {
+      "id": "doc_034",
+      "modalidad": "documento",
+      "sha256": "6d13e60341c5270ca79dee9b07241dceb13472a3782db7843d497af171d7b5c9"
+    },
+    {
+      "id": "doc_036",
+      "modalidad": "documento",
+      "sha256": "f90593f6f107d6bc2fa3fc8d26745faf9fae85e87a956c0c26286f1fe1b20248"
+    },
+    {
+      "id": "doc_037",
+      "modalidad": "documento",
+      "sha256": "230d29897909a63c3c0e471510ea7a6fe9877b5239e9ff0821fd43bf2cf50bfb"
+    },
+    {
+      "id": "clip_001",
+      "modalidad": "audio",
+      "sha256": "7e3612cedd87aef56ea58f60bea639dd595c3d1284f2c401817eec108aab42b8"
+    },
+    {
+      "id": "clip_002",
+      "modalidad": "audio",
+      "sha256": "2417dda6d0bb085d949e491602e9adabab1dc4991b11fa82f8b1b40a36556a66"
+    },
+    {
+      "id": "clip_003",
+      "modalidad": "audio",
+      "sha256": "0f14000792cd94353761f3234421260ff96c9637c3f44850ae925937a5bbb693"
+    },
+    {
+      "id": "clip_004",
+      "modalidad": "audio",
+      "sha256": "bcc249225b1c3f5495fcaa6d457051767e8eb3190f38b3c85983f7341c517bed"
+    },
+    {
+      "id": "clip_005",
+      "modalidad": "audio",
+      "sha256": "43a790b2316a27bd0ea146d0789ebe61c2a4e34577c980b627e37990bff5cbfc"
+    },
+    {
+      "id": "clip_006",
+      "modalidad": "audio",
+      "sha256": "bb593490bba0195cc503f0ded582dabb0a38c3627424f14fc0c93c7894cc3a01"
+    },
+    {
+      "id": "clip_007",
+      "modalidad": "audio",
+      "sha256": "b38016eeb96bb94089ebedfb7a7eb287d171748ac0717362313b866e47670198"
+    },
+    {
+      "id": "clip_008",
+      "modalidad": "audio",
+      "sha256": "e655960456de08bc682c85c828c907676af597c0f87d8f10b54880b7ba51447a"
+    },
+    {
+      "id": "clip_009",
+      "modalidad": "audio",
+      "sha256": "b90f224455939b285d698421ae1b7fceb48186dd9561aeb59506dc44fdff0758"
+    },
+    {
+      "id": "clip_010",
+      "modalidad": "audio",
+      "sha256": "e618a5204733a45f5ec8bb6fbf6e1cf68e1b0cb8ea06df6e7f98c4095fcc1dbc"
+    },
+    {
+      "id": "clip_011",
+      "modalidad": "audio",
+      "sha256": "725e09f8c864aa7aef1440126fd7c1ecf9a74fa3749703a7227ba1c5138b28d2"
+    },
+    {
+      "id": "clip_012",
+      "modalidad": "audio",
+      "sha256": "e89b76e3922cb3f436d9bef7b3afd23aeed595d52ef644eb26e82de74be10374"
+    },
+    {
+      "id": "clip_013",
+      "modalidad": "audio",
+      "sha256": "056649c674cef10d7b0e239ab707db65266b10cde0c4fea7f814bef8caaf2c9c"
+    },
+    {
+      "id": "clip_014",
+      "modalidad": "audio",
+      "sha256": "9675a1f836bb34b1e94ef95053546811ba969c78dba0e71e498faf2dfb7ba7c9"
+    },
+    {
+      "id": "clip_015",
+      "modalidad": "audio",
+      "sha256": "8df950c1c425a02e255b9031688582f47fb072eda96cfe54a5873c2970fe5ced"
+    },
+    {
+      "id": "clip_016",
+      "modalidad": "audio",
+      "sha256": "41424c4693816198cdb6929d96071878443149d0cc05a7b265b7fed67cea76c4"
+    },
+    {
+      "id": "clip_017",
+      "modalidad": "audio",
+      "sha256": "0d55279e6d4d300b66dcb513aad3421c244692eaad87d8322bafe957ec690233"
+    },
+    {
+      "id": "clip_018",
+      "modalidad": "audio",
+      "sha256": "a6ca1245e8248ccd8e3f86e1bc9c69e8daed1d5e989b2fa1ce11623792311bc7"
+    },
+    {
+      "id": "clip_019",
+      "modalidad": "audio",
+      "sha256": "0baa11111bf11b01ae5f0370668dd4e88a3aa6d12e82e1c76eb88dd1bb2774f9"
+    },
+    {
+      "id": "clip_020",
+      "modalidad": "audio",
+      "sha256": "c5d42564a7f89d6d1f010e04779b47f3d95add769ba90547c27bbb657f38cd8d"
+    }
+  ],
+  "privacidad": [
+    {
+      "id": "doc_001",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 6,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_016_p01",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_018_p01",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 4,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_019_p09",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_019_p10",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_019_p11",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_027_p04",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_027_p02",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_004",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_006",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_010",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 4,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_011",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_003",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_017_p01",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_024",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_025",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_026",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 1
+    },
+    {
+      "id": "doc_028",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_029",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_030",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 1
+    },
+    {
+      "id": "doc_040",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 13,
+      "limpiezas": 1
+    },
+    {
+      "id": "doc_033",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0
+    },
+    {
+      "id": "doc_034",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 1
+    },
+    {
+      "id": "doc_036",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 1
+    },
+    {
+      "id": "doc_037",
+      "modalidad": "documento",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_001",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 15,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_002",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_003",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_004",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_005",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_006",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_007",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_008",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_009",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_010",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_011",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_012",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_013",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_014",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_015",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_016",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_017",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_018",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_019",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0
+    },
+    {
+      "id": "clip_020",
+      "modalidad": "audio",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0
+    }
+  ],
+  "criterio_calidad": "Se descarta por legibilidad del original o ausencia de voz; una salida OCR o ASR incorrecta sobre una fuente legible se conserva."
+}

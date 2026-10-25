@@ -1,0 +1,169 @@
+{
+  "fecha": "2026-10-25T13:19:33-05:00",
+  "alcance": "Revisión humana de privacidad de veinte transcripciones; conserva errores ASR y no crea referencias manuales.",
+  "clips": [
+    {
+      "id": "clip_001",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 15,
+      "sha256_consulta": "a8792964c0737726530f7bc1264769e7f030ffa0dbf64c86e1f2bc274c3183fd",
+      "sha256_audio": "7e3612cedd87aef56ea58f60bea639dd595c3d1284f2c401817eec108aab42b8"
+    },
+    {
+      "id": "clip_002",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 3,
+      "sha256_consulta": "b9b36810aebc70ec320caf82df58f2baf9c4932ae680057ce459bf7c5b7bdb00",
+      "sha256_audio": "2417dda6d0bb085d949e491602e9adabab1dc4991b11fa82f8b1b40a36556a66"
+    },
+    {
+      "id": "clip_003",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 3,
+      "sha256_consulta": "3f82de1a40b9acde09144ad2ec816063cb97e282cd24930d712b8b4282033b66",
+      "sha256_audio": "0f14000792cd94353761f3234421260ff96c9637c3f44850ae925937a5bbb693"
+    },
+    {
+      "id": "clip_004",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 1,
+      "sha256_consulta": "4bb008f72a58d2032ab4e138dedc898d64d7bf27bfed51456f0f62189206370f",
+      "sha256_audio": "bcc249225b1c3f5495fcaa6d457051767e8eb3190f38b3c85983f7341c517bed"
+    },
+    {
+      "id": "clip_005",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "a8291038809b978a4e59c2e586f54cae0314c63ac8a8827927389869d296ceb3",
+      "sha256_audio": "43a790b2316a27bd0ea146d0789ebe61c2a4e34577c980b627e37990bff5cbfc"
+    },
+    {
+      "id": "clip_006",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "058eb269fe90c813edbf13b4817b8a57bb3320736f9a8e2d4bd91a8173c47af3",
+      "sha256_audio": "bb593490bba0195cc503f0ded582dabb0a38c3627424f14fc0c93c7894cc3a01"
+    },
+    {
+      "id": "clip_007",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "aeab40615150d45bad4a13cc5345c8bf400c59d3893c7384946d92861343b7bc",
+      "sha256_audio": "b38016eeb96bb94089ebedfb7a7eb287d171748ac0717362313b866e47670198"
+    },
+    {
+      "id": "clip_008",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "0bf68c963aec30a35f77d204ba503bc771b74046d9f2af6e3c8c45fe2fc7dddd",
+      "sha256_audio": "e655960456de08bc682c85c828c907676af597c0f87d8f10b54880b7ba51447a"
+    },
+    {
+      "id": "clip_009",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "a0178ec3767ce20682b3652e461dc1f3063ece017f10e36351264905ed3c8db0",
+      "sha256_audio": "b90f224455939b285d698421ae1b7fceb48186dd9561aeb59506dc44fdff0758"
+    },
+    {
+      "id": "clip_010",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "c7022a81b7238284cad22806794d39151c268f75dfb27a99d4ec31c8b5efe2a1",
+      "sha256_audio": "e618a5204733a45f5ec8bb6fbf6e1cf68e1b0cb8ea06df6e7f98c4095fcc1dbc"
+    },
+    {
+      "id": "clip_011",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "ef62023694e9dae0a32654de1a84919e3941ff270527731e69e5ae825911e2a2",
+      "sha256_audio": "725e09f8c864aa7aef1440126fd7c1ecf9a74fa3749703a7227ba1c5138b28d2"
+    },
+    {
+      "id": "clip_012",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "79df38eca221341a8fc4cd76f273767c9a520b21b6f18073b879b03e3e5c813d",
+      "sha256_audio": "e89b76e3922cb3f436d9bef7b3afd23aeed595d52ef644eb26e82de74be10374"
+    },
+    {
+      "id": "clip_013",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "531f760c2a25f888961fa66dc29a9fc4246d5b17ebb24b5f642b02eb7b26c797",
+      "sha256_audio": "056649c674cef10d7b0e239ab707db65266b10cde0c4fea7f814bef8caaf2c9c"
+    },
+    {
+      "id": "clip_014",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "4d71de32a4a37e2e5b6bc708151dccc9f7b921bd65b441795ab378e290836697",
+      "sha256_audio": "9675a1f836bb34b1e94ef95053546811ba969c78dba0e71e498faf2dfb7ba7c9"
+    },
+    {
+      "id": "clip_015",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "25e79d994a48d7a71e65f249c66cae339666bdf6ec699318a5c4b4bbd6c5668e",
+      "sha256_audio": "8df950c1c425a02e255b9031688582f47fb072eda96cfe54a5873c2970fe5ced"
+    },
+    {
+      "id": "clip_016",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "b5849e510879c640b99b7f8a3f94f476c0000fa7a83529ac8ea9796f1149e0f4",
+      "sha256_audio": "41424c4693816198cdb6929d96071878443149d0cc05a7b265b7fed67cea76c4"
+    },
+    {
+      "id": "clip_017",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 2,
+      "sha256_consulta": "528bdace69f7fdbf2dbfb6178079a80ecf0dbbcf1a168d767ecf39a843810978",
+      "sha256_audio": "0d55279e6d4d300b66dcb513aad3421c244692eaad87d8322bafe957ec690233"
+    },
+    {
+      "id": "clip_018",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "82b8c2bd4c90514378a5e5be3e0dcca90cd7582a6099338765a407659c4c41c8",
+      "sha256_audio": "a6ca1245e8248ccd8e3f86e1bc9c69e8daed1d5e989b2fa1ce11623792311bc7"
+    },
+    {
+      "id": "clip_019",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "sha256_consulta": "e15b49724306e169022952ccc82a32a166470e11ccbeacbbf56aa5cf00f16582",
+      "sha256_audio": "0baa11111bf11b01ae5f0370668dd4e88a3aa6d12e82e1c76eb88dd1bb2774f9"
+    },
+    {
+      "id": "clip_020",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 1,
+      "sha256_consulta": "5d2e7c1bb8f5c3044db7438059bcd4af5f77ff57dc6de21fda1390779def431a",
+      "sha256_audio": "c5d42564a7f89d6d1f010e04779b47f3d95add769ba90547c27bbb657f38cd8d"
+    }
+  ],
+  "fragmentos_protegidos": 25,
+  "clips_con_sustituciones": 6,
+  "originales_publicados": false
+}

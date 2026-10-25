@@ -1,0 +1,30 @@
+{
+  "modelo": "WeSpeaker ResNet34 LM (VoxCeleb2)",
+  "origen_pesos": "https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-recongition-models/wespeaker_en_voxceleb_resnet34_LM.onnx",
+  "fuente_original": "https://huggingface.co/Wespeaker/wespeaker-resnet34-LM",
+  "revision_ficha_original": "f0c48c298fd835726c27956a5d617bad7115627e",
+  "licencia": "CC BY 4.0",
+  "runtime": "sherpa-onnx",
+  "versiones": {
+    "sherpa-onnx": "2.0.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "1.26.4"
+  },
+  "sha256_modelo": "e9848563da86f263117134dfd7ad63c92355b37de492b55e325400c9d9c39012",
+  "bytes": 26530550,
+  "parametros": {
+    "provider": "cpu",
+    "num_threads": 4,
+    "agrupamiento": "AgglomerativeClustering",
+    "metric": "cosine",
+    "linkage": "average",
+    "distance_threshold": null,
+    "n_clusters": 2,
+    "min_duracion_segmento_seg": 1.0
+  },
+  "clip": "clip_005",
+  "conteo_hablantes": "Dos voces conocidas por escucha humana previa; el modelo asigna segmentos a los dos grupos, sin estimar su número.",
+  "limite": "Se asigna una voz por segmento ASR; los segmentos mixtos o muy cortos pueden ser imprecisos. Sin medición DER.",
+  "fecha_configuracion": "2026-10-25T12:59:28-05:00",
+  "experimento_previo": "diarizacion_base.json: umbral 0.7 produjo un solo grupo sobre este piloto."
+}

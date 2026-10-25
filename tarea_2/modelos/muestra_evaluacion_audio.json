@@ -1,0 +1,83 @@
+{
+  "criterio": "Diez clips de menor duración del corpus, ordenados por duración e id; seleccionados antes de ejecutar ASR o calcular métricas.",
+  "fecha_seleccion": "2026-10-25",
+  "n_clips": 10,
+  "n_fuentes": 5,
+  "duracion_total_seg": 753.2458124999999,
+  "ids_desarrollo_excluidos": [
+    "clip_005"
+  ],
+  "referencias_manuales_creadas": false,
+  "clips": [
+    {
+      "id": "clip_012",
+      "archivo_audio": "datos/raw/audio/clips/clip_012_v2.wav",
+      "duracion_seg": 48.4,
+      "id_fuente": "audio_fuente_005",
+      "sha256_audio": "e89b76e3922cb3f436d9bef7b3afd23aeed595d52ef644eb26e82de74be10374"
+    },
+    {
+      "id": "clip_009",
+      "archivo_audio": "datos/raw/audio/clips/clip_009_v2.wav",
+      "duracion_seg": 48.5,
+      "id_fuente": "audio_fuente_005",
+      "sha256_audio": "b90f224455939b285d698421ae1b7fceb48186dd9561aeb59506dc44fdff0758"
+    },
+    {
+      "id": "clip_015",
+      "archivo_audio": "datos/raw/audio/clips/clip_015_v2.wav",
+      "duracion_seg": 70.714,
+      "id_fuente": "audio_fuente_006",
+      "sha256_audio": "8df950c1c425a02e255b9031688582f47fb072eda96cfe54a5873c2970fe5ced"
+    },
+    {
+      "id": "clip_018",
+      "archivo_audio": "datos/raw/audio/clips/clip_018_v2.wav",
+      "duracion_seg": 75.3,
+      "id_fuente": "audio_fuente_008",
+      "sha256_audio": "a6ca1245e8248ccd8e3f86e1bc9c69e8daed1d5e989b2fa1ce11623792311bc7"
+    },
+    {
+      "id": "clip_020",
+      "archivo_audio": "datos/raw/audio/clips/clip_020_v2.wav",
+      "duracion_seg": 81.538375,
+      "id_fuente": "audio_fuente_008",
+      "sha256_audio": "c5d42564a7f89d6d1f010e04779b47f3d95add769ba90547c27bbb657f38cd8d"
+    },
+    {
+      "id": "clip_008",
+      "archivo_audio": "datos/raw/audio/clips/clip_008_v2.wav",
+      "duracion_seg": 81.5934375,
+      "id_fuente": "audio_fuente_004",
+      "sha256_audio": "e655960456de08bc682c85c828c907676af597c0f87d8f10b54880b7ba51447a"
+    },
+    {
+      "id": "clip_017",
+      "archivo_audio": "datos/raw/audio/clips/clip_017_v2.wav",
+      "duracion_seg": 85.25,
+      "id_fuente": "audio_fuente_008",
+      "sha256_audio": "0d55279e6d4d300b66dcb513aad3421c244692eaad87d8322bafe957ec690233"
+    },
+    {
+      "id": "clip_006",
+      "archivo_audio": "datos/raw/audio/clips/clip_006_v3.wav",
+      "duracion_seg": 85.5,
+      "id_fuente": "audio_fuente_004",
+      "sha256_audio": "bb593490bba0195cc503f0ded582dabb0a38c3627424f14fc0c93c7894cc3a01"
+    },
+    {
+      "id": "clip_019",
+      "archivo_audio": "datos/raw/audio/clips/clip_019_v2.wav",
+      "duracion_seg": 86.4,
+      "id_fuente": "audio_fuente_008",
+      "sha256_audio": "0baa11111bf11b01ae5f0370668dd4e88a3aa6d12e82e1c76eb88dd1bb2774f9"
+    },
+    {
+      "id": "clip_003",
+      "archivo_audio": "datos/raw/audio/clips/clip_003.wav",
+      "duracion_seg": 90.05,
+      "id_fuente": "audio_fuente_003",
+      "sha256_audio": "0f14000792cd94353761f3234421260ff96c9637c3f44850ae925937a5bbb693"
+    }
+  ]
+}
