@@ -1,0 +1,481 @@
+{
+  "metodo": "anotacion_asistida_contextual_de_posiciones",
+  "revision_humana_no_inferida": true,
+  "clips": [
+    {
+      "id": "clip_001",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_001/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_001.wav",
+      "sha256_texto_original": "f88640aa8ad35a3529dde735a0619f4179cca0e38de9db773999103489c31d51",
+      "sha256_audio": "7e3612cedd87aef56ea58f60bea639dd595c3d1284f2c401817eec108aab42b8",
+      "duracion_seg": 189.0104375,
+      "protecciones": [
+        {
+          "inicio": 162,
+          "fin": 176,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 178,
+          "fin": 197,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 386,
+          "fin": 400,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 610,
+          "fin": 629,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 780,
+          "fin": 794,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 796,
+          "fin": 805,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 942,
+          "fin": 961,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 977,
+          "fin": 986,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 991,
+          "fin": 996,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_4]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 1038,
+          "fin": 1047,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 1236,
+          "fin": 1245,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 1360,
+          "fin": 1374,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 1414,
+          "fin": 1433,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 1611,
+          "fin": 1625,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 1830,
+          "fin": 1844,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        }
+      ],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_002",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_002/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_002.wav",
+      "sha256_texto_original": "c1ad17283d9e26b2a52ee4bf4cb985ce5c15cfd86882649df6a258da882e7b97",
+      "sha256_audio": "2417dda6d0bb085d949e491602e9adabab1dc4991b11fa82f8b1b40a36556a66",
+      "duracion_seg": 136.301125,
+      "protecciones": [
+        {
+          "inicio": 146,
+          "fin": 157,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 179,
+          "fin": 184,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 449,
+          "fin": 455,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        }
+      ],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_003",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_003/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_003.wav",
+      "sha256_texto_original": "76f87ddda337745596589be95b4d95cc704a2be4fe0ab74fb96dd46106c4cb21",
+      "sha256_audio": "0f14000792cd94353761f3234421260ff96c9637c3f44850ae925937a5bbb693",
+      "duracion_seg": 90.05,
+      "protecciones": [
+        {
+          "inicio": 159,
+          "fin": 174,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 176,
+          "fin": 191,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 459,
+          "fin": 472,
+          "categoria": "LUGAR_ORIGEN",
+          "etiqueta": "[LUGAR_ORIGEN_1]",
+          "motivo": "Origen declarado en primera persona; no se retiran las referencias geográficas generales."
+        }
+      ],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia.",
+        "La mención a San Martín se interpreta como lugar de la entrevista; no como nombre de persona."
+      ],
+      "atencion_especial": true
+    },
+    {
+      "id": "clip_004",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_004/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_004.wav",
+      "sha256_texto_original": "736667d45adbb539a871b621d4c797eee010a35fa2ee73faa8bbf1103e4808a3",
+      "sha256_audio": "bcc249225b1c3f5495fcaa6d457051767e8eb3190f38b3c85983f7341c517bed",
+      "duracion_seg": 160.5688125,
+      "protecciones": [
+        {
+          "inicio": 1251,
+          "fin": 1259,
+          "categoria": "DATO_PERSONAL",
+          "etiqueta": "[DATO_PERSONAL_1]",
+          "motivo": "Afiliación religiosa declarada en primera persona."
+        }
+      ],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": true
+    },
+    {
+      "id": "clip_005",
+      "archivo_texto_privado": "datos/raw/audio/diarizacion_conteo_conocido/clip_005/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_005_v2.wav",
+      "sha256_texto_original": "a8291038809b978a4e59c2e586f54cae0314c63ac8a8827927389869d296ceb3",
+      "sha256_audio": "43a790b2316a27bd0ea146d0789ebe61c2a4e34577c980b627e37990bff5cbfc",
+      "duracion_seg": 92.25,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia.",
+        "Dos grupos de voz fijados desde la escucha previa; el modelo asigna los turnos. El conteo libre anterior había producido uno solo."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_006",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_006/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_006_v3.wav",
+      "sha256_texto_original": "058eb269fe90c813edbf13b4817b8a57bb3320736f9a8e2d4bd91a8173c47af3",
+      "sha256_audio": "bb593490bba0195cc503f0ded582dabb0a38c3627424f14fc0c93c7894cc3a01",
+      "duracion_seg": 85.5,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_007",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_007/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_007_v4.wav",
+      "sha256_texto_original": "aeab40615150d45bad4a13cc5345c8bf400c59d3893c7384946d92861343b7bc",
+      "sha256_audio": "b38016eeb96bb94089ebedfb7a7eb287d171748ac0717362313b866e47670198",
+      "duracion_seg": 137.4,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_008",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_008/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_008_v2.wav",
+      "sha256_texto_original": "0bf68c963aec30a35f77d204ba503bc771b74046d9f2af6e3c8c45fe2fc7dddd",
+      "sha256_audio": "e655960456de08bc682c85c828c907676af597c0f87d8f10b54880b7ba51447a",
+      "duracion_seg": 81.5934375,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_009",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_009/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_009_v2.wav",
+      "sha256_texto_original": "a0178ec3767ce20682b3652e461dc1f3063ece017f10e36351264905ed3c8db0",
+      "sha256_audio": "b90f224455939b285d698421ae1b7fceb48186dd9561aeb59506dc44fdff0758",
+      "duracion_seg": 48.5,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_010",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_010/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_010_v2.wav",
+      "sha256_texto_original": "c7022a81b7238284cad22806794d39151c268f75dfb27a99d4ec31c8b5efe2a1",
+      "sha256_audio": "e618a5204733a45f5ec8bb6fbf6e1cf68e1b0cb8ea06df6e7f98c4095fcc1dbc",
+      "duracion_seg": 112.65,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_011",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_011/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_011_v3.wav",
+      "sha256_texto_original": "ef62023694e9dae0a32654de1a84919e3941ff270527731e69e5ae825911e2a2",
+      "sha256_audio": "725e09f8c864aa7aef1440126fd7c1ecf9a74fa3749703a7227ba1c5138b28d2",
+      "duracion_seg": 149.6,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_012",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_012/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_012_v2.wav",
+      "sha256_texto_original": "79df38eca221341a8fc4cd76f273767c9a520b21b6f18073b879b03e3e5c813d",
+      "sha256_audio": "e89b76e3922cb3f436d9bef7b3afd23aeed595d52ef644eb26e82de74be10374",
+      "duracion_seg": 48.4,
+      "protecciones": [
+        {
+          "inicio": 354,
+          "fin": 368,
+          "categoria": "DATO_FAMILIAR",
+          "etiqueta": "[DATO_FAMILIAR_1]",
+          "motivo": "Cantidad concreta de hijos declarada sobre la familia de quien habla."
+        }
+      ],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_013",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_013/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_013.wav",
+      "sha256_texto_original": "531f760c2a25f888961fa66dc29a9fc4246d5b17ebb24b5f642b02eb7b26c797",
+      "sha256_audio": "056649c674cef10d7b0e239ab707db65266b10cde0c4fea7f814bef8caaf2c9c",
+      "duracion_seg": 163.384625,
+      "protecciones": [
+        {
+          "inicio": 155,
+          "fin": 169,
+          "categoria": "DATO_FAMILIAR",
+          "etiqueta": "[DATO_FAMILIAR_1]",
+          "motivo": "Cantidad concreta de hijos declarada sobre la familia de quien habla."
+        },
+        {
+          "inicio": 174,
+          "fin": 188,
+          "categoria": "DATO_FAMILIAR",
+          "etiqueta": "[DATO_FAMILIAR_1]",
+          "motivo": "Cantidad concreta de hijos declarada sobre la familia de quien habla."
+        }
+      ],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_014",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_014/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_014_v2.wav",
+      "sha256_texto_original": "4d71de32a4a37e2e5b6bc708151dccc9f7b921bd65b441795ab378e290836697",
+      "sha256_audio": "9675a1f836bb34b1e94ef95053546811ba969c78dba0e71e498faf2dfb7ba7c9",
+      "duracion_seg": 111.35,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_015",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_015/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_015_v2.wav",
+      "sha256_texto_original": "25e79d994a48d7a71e65f249c66cae339666bdf6ec699318a5c4b4bbd6c5668e",
+      "sha256_audio": "8df950c1c425a02e255b9031688582f47fb072eda96cfe54a5873c2970fe5ced",
+      "duracion_seg": 70.714,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_016",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_016/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_016.wav",
+      "sha256_texto_original": "b5849e510879c640b99b7f8a3f94f476c0000fa7a83529ac8ea9796f1149e0f4",
+      "sha256_audio": "41424c4693816198cdb6929d96071878443149d0cc05a7b265b7fed67cea76c4",
+      "duracion_seg": 103.424,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_017",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_017/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_017_v2.wav",
+      "sha256_texto_original": "080748351d1d48355cb95e2004fa0e1b287b273cbd13e41e6f8d5a0fc502476e",
+      "sha256_audio": "0d55279e6d4d300b66dcb513aad3421c244692eaad87d8322bafe957ec690233",
+      "duracion_seg": 85.25,
+      "protecciones": [
+        {
+          "inicio": 23,
+          "fin": 48,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        },
+        {
+          "inicio": 168,
+          "fin": 314,
+          "categoria": "TRAYECTORIA_PERSONAL",
+          "etiqueta": "[TRAYECTORIA_PERSONAL_1]",
+          "motivo": "Rango, servicio y trayectoria militar declarados en primera persona."
+        }
+      ],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia.",
+        "La trayectoria militar se protege como declaración personal. La avenida mencionada se conserva como referencia pública, no domicilio."
+      ],
+      "atencion_especial": true
+    },
+    {
+      "id": "clip_018",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_018/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_018_v2.wav",
+      "sha256_texto_original": "82b8c2bd4c90514378a5e5be3e0dcca90cd7582a6099338765a407659c4c41c8",
+      "sha256_audio": "a6ca1245e8248ccd8e3f86e1bc9c69e8daed1d5e989b2fa1ce11623792311bc7",
+      "duracion_seg": 75.3,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_019",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_019/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_019_v2.wav",
+      "sha256_texto_original": "e15b49724306e169022952ccc82a32a166470e11ccbeacbbf56aa5cf00f16582",
+      "sha256_audio": "0baa11111bf11b01ae5f0370668dd4e88a3aa6d12e82e1c76eb88dd1bb2774f9",
+      "duracion_seg": 86.4,
+      "protecciones": [],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "clip_020",
+      "archivo_texto_privado": "datos/raw/audio/asr_base/clip_020/texto.txt",
+      "archivo_audio": "datos/raw/audio/clips/clip_020_v2.wav",
+      "sha256_texto_original": "9561fb55c6159f8eaa1b267b7ef814da22cd22ac13cb5db8085eb7cad636969b",
+      "sha256_audio": "c5d42564a7f89d6d1f010e04779b47f3d95add769ba90547c27bbb657f38cd8d",
+      "duracion_seg": 81.538375,
+      "protecciones": [
+        {
+          "inicio": 554,
+          "fin": 691,
+          "categoria": "TRAYECTORIA_PERSONAL",
+          "etiqueta": "[TRAYECTORIA_PERSONAL_1]",
+          "motivo": "Rango, servicio y trayectoria militar declarados en primera persona."
+        },
+        {
+          "inicio": 1013,
+          "fin": 1035,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre o apellido de persona reconocido, incluidas variantes deformadas en contexto nominal."
+        }
+      ],
+      "observaciones": [
+        "Se conservan errores ASR, muletillas y repeticiones. La revisión solicitada es de privacidad, no una transcripción de referencia.",
+        "La mención nominal final está muy deformada, pero corresponde al nombre señalado en la escucha. El ASR no recupera de forma completa las voces colectivas del final."
+      ],
+      "atencion_especial": true
+    }
+  ]
+}
