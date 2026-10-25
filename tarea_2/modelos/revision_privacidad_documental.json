@@ -1,0 +1,123 @@
+{
+  "fecha": "2026-10-25T12:22:56-05:00",
+  "alcance": "Control de privacidad del grupo de catorce textos con conformidad humana; no valida la exactitud del OCR ni crea referencias.",
+  "documentos": [
+    {
+      "id": "doc_010",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 4,
+      "limpiezas": 0,
+      "sha256_consulta": "3a53aaab2343e273a89d68f79bc159c4e0db535b09da94ae9f75995405c873eb"
+    },
+    {
+      "id": "doc_011",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0,
+      "sha256_consulta": "47e28cc489ab64f18646136c285dd06f8040eefb2e6485d3f21aaa204192d9da"
+    },
+    {
+      "id": "doc_003",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0,
+      "sha256_consulta": "a13d76f153625697592e33563ab691669b8012f6bf35d193627067669a88e780"
+    },
+    {
+      "id": "doc_017_p01",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 0,
+      "sha256_consulta": "db80bab2f945c14bcc7f52d732577a69f399a569a231f71e158a286fc56c9b79"
+    },
+    {
+      "id": "doc_024",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 0,
+      "sha256_consulta": "84ff19d77c7a372d63419667aa8a5f8d6c4f93f8581c36303311dc529fe1bfdc"
+    },
+    {
+      "id": "doc_025",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0,
+      "sha256_consulta": "b57d44d8572321b01b9f8cb5e1529c74dae71c1114a2a59a03dee9b7792af11e"
+    },
+    {
+      "id": "doc_026",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 1,
+      "sha256_consulta": "4abf3567e0e53a52e07b495dcd8be310d0d3f1703692603815d7cff5e6fbca2f"
+    },
+    {
+      "id": "doc_029",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "sha256_consulta": "d440b50215aa1413a614b5657d9bc767f76f7e132400ecf6714a6f4ce994c352"
+    },
+    {
+      "id": "doc_030",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_posterior_a_aclaracion_de_firmas",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 1,
+      "sha256_consulta": "a9652bf8d67caed79e5fd7a5829fee4b5ffb014f00056163b3770623647f67ca"
+    },
+    {
+      "id": "doc_040",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 13,
+      "limpiezas": 1,
+      "sha256_consulta": "f601cc0cd41aef9628fbea6dde69b9651c86dad1aa839b6e79f9c8b97a097e71"
+    },
+    {
+      "id": "doc_033",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0,
+      "sha256_consulta": "d984abe4d163ccf73ac2405f238358f4339b9d00d84a855234acadc0a1b1a60e"
+    },
+    {
+      "id": "doc_034",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 1,
+      "sha256_consulta": "2002643e10acfa0508f886f00f637bd95a76de28a408fbb97e21833cfaa8c4c8"
+    },
+    {
+      "id": "doc_036",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_explicita_del_resto_del_paquete",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 1,
+      "sha256_consulta": "bba4306df01178fde9c2a2ddbe928466ee6d7487eeb8e3ea143da3acc43ab3b5"
+    },
+    {
+      "id": "doc_037",
+      "revision_humana_confirmada": true,
+      "resultado_revision": "conformidad_humana_posterior_a_aclaracion_de_firmas",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "sha256_consulta": "b1d8920eafa94d968887faf9c6d5e1c31b8d188ce19b4f8b94350d9b16cb36ad"
+    }
+  ],
+  "firmas_no_recuperadas_por_ocr": {
+    "doc_030": 3,
+    "doc_037": 1
+  },
+  "originales_publicados": false
+}
