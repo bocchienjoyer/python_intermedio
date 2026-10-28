@@ -144,8 +144,15 @@ def main():
             raise ValueError('Las escenas deben ser consecutivas y tener duración positiva.')
     else:tiempos=[{'inicio':i*10,'fin':(i+1)*10} for i in range(6)]
     audio=musica(segundos)
-    if voz is not None:audio+=voz
-    audio=np.clip(audio,-.98,.98);salida=REEL/('reel.mp4' if voz is not None else 'vista_previa.mp4')
+    if voz is not None:
+        rms_voz=float(np.sqrt(np.mean(voz**2)))
+        if rms_voz<1e-5:raise ValueError('La narración no contiene una señal de voz utilizable.')
+        rms_musica=float(np.sqrt(np.mean(audio**2)))
+        audio*=min(1,.1*rms_voz/max(rms_musica,1e-8))
+        audio+=voz
+    pico=float(np.max(np.abs(audio)))
+    if pico>.98:audio*=.98/pico
+    salida=REEL/('reel.mp4' if voz is not None else 'vista_previa.mp4')
     recursos=REEL/'recursos';recursos.mkdir(exist_ok=True)
     with wave.open(str(recursos/'musica_original.wav'),'wb') as w:
         w.setnchannels(1);w.setsampwidth(2);w.setframerate(RATE);w.writeframes((musica(segundos)*32767).astype('<i2').tobytes())
