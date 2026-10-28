@@ -6,6 +6,8 @@
 
 Se analiza el inventario de Contraloría con corte al **30 de junio de 2026**: 2.262 obras. El análisis describe su ubicación, tipo, avance y causas reportadas, con atención a las obras que superan el 90 % de avance físico. La paralización posterga la entrega o mejora de infraestructura. El registro no permite medir por sí solo la disponibilidad efectiva de servicios ni los daños sufridos por la población.
 
+**[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site)**
+
 ## Resultados
 
 - **281 obras (12,4 %) superan el 90 % de avance físico y figuran paralizadas.** El umbral es estrictamente mayor que 90 % y hasta 100 %, conforme al rango utilizado en el anexo. Tres obras con exactamente 90 % pertenecen al rango anterior.
@@ -41,9 +43,13 @@ python -m pip install -r tarea_3/requirements.txt
 python tarea_3/scripts/obtener_datos.py
 python tarea_3/scripts/procesar_datos.py
 python tarea_3/scripts/analizar_datos.py
+python tarea_3/scripts/preparar_web.py
+python -m http.server 8000 --directory tarea_3/web
 ```
 
-Si ya se dispone de los originales, los dos últimos comandos reproducen las tablas sin conexión. `datos/procesados/calidad.json` registra controles de calidad y `resumen.json` los resultados principales.
+Abrir `http://localhost:8000`. Si ya se dispone de los originales, procesamiento y análisis reproducen las tablas sin conexión. La preparación web descarga la cartografía del MEF únicamente si no está presente. `datos/procesados/calidad.json` registra controles de calidad y `resumen.json` los resultados principales.
+
+El dashboard incluye cuatro indicadores, mapa departamental, gráficos por tipo, avance y causa, cuatro filtros, búsqueda y descarga CSV de la selección. La cartografía procede del servicio del MEF, atribuido al INEI en sus metadatos, y se utiliza con fines referenciales. Las geometrías y su fuente se conservan en `web/data/`.
 
 ## Uso de inteligencia artificial
 
