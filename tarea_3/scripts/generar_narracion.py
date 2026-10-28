@@ -7,6 +7,8 @@ from pathlib import Path
 import argparse,json,os
 
 RAIZ=Path(__file__).resolve().parents[1]
+MODELO='Qwen/Qwen3-TTS-12Hz-0.6B-Base'
+REVISION='5d83992436eae1d760afd27aff78a71d676296fc'
 
 def main():
     p=argparse.ArgumentParser()
@@ -28,7 +30,7 @@ def main():
     transcripcion=args.transcripcion.read_text(encoding='utf-8').strip()
     if not transcripcion:raise ValueError('La transcripción exacta de la referencia es necesaria.')
     device='cuda:0' if torch.cuda.is_available() else 'cpu'
-    model=Qwen3TTSModel.from_pretrained('Qwen/Qwen3-TTS-12Hz-0.6B-Base',device_map=device,
+    model=Qwen3TTSModel.from_pretrained(MODELO,revision=REVISION,device_map=device,
                                      dtype=torch.float16 if device.startswith('cuda') else torch.float32,
                                      attn_implementation='eager')
     prompt=model.create_voice_clone_prompt(ref_audio=str(args.referencia),ref_text=transcripcion,x_vector_only_mode=False)
@@ -44,7 +46,7 @@ def main():
         print('Escena',i+1,round(duracion,2),'segundos',flush=True)
     sf.write(args.salida/'narracion.wav',np.concatenate(trozos),tasa)
     (args.salida/'tiempos_escenas.json').write_text(json.dumps(tiempos,indent=2),encoding='utf-8')
-    (args.salida/'modelo.json').write_text(json.dumps({'modelo':'Qwen/Qwen3-TTS-12Hz-0.6B-Base','device':device,
+    (args.salida/'modelo.json').write_text(json.dumps({'modelo':MODELO,'revision':REVISION,'device':device,
         'sample_rate':tasa,'segundos':inicio,'fuente_api':'https://github.com/QwenLM/Qwen3-TTS',
         'torch':torch.__version__},indent=2),encoding='utf-8')
     print('Duración total',round(inicio,2),'s. Revisar pronunciación y subtítulos antes del montaje final.')
