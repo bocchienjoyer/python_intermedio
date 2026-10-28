@@ -130,12 +130,20 @@ def marca(t):
     ms=round(t*1000);return f'{ms//3600000:02}:{ms//60000%60:02}:{ms//1000%60:02},{ms%1000:03}'
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--narracion',type=Path);parser.add_argument('--fps',type=int,default=24);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--narracion',type=Path);parser.add_argument('--tiempos',type=Path);parser.add_argument('--fps',type=int,default=24);args=parser.parse_args()
     guion=json.loads((REEL/'guion.json').read_text(encoding='utf-8'))
     voz=leer_voz(args.narracion) if args.narracion else None
     segundos=len(voz)/RATE if voz is not None else 60
     if not 45<=segundos<=75:raise ValueError('La narración debe durar entre 45 y 75 segundos.')
-    duracion=segundos/6;audio=musica(segundos)
+    if voz is not None:
+        if not args.tiempos:raise ValueError('Proporcionar --tiempos con los límites reales de las seis escenas.')
+        tiempos=json.loads(args.tiempos.read_text(encoding='utf-8'))
+        if len(tiempos)!=6 or abs(tiempos[0]['inicio'])>.01 or abs(tiempos[-1]['fin']-segundos)>.1:
+            raise ValueError('Los tiempos no corresponden a la narración completa.')
+        if any(e['fin']<=e['inicio'] for e in tiempos) or any(abs(tiempos[i]['inicio']-tiempos[i-1]['fin'])>.01 for i in range(1,6)):
+            raise ValueError('Las escenas deben ser consecutivas y tener duración positiva.')
+    else:tiempos=[{'inicio':i*10,'fin':(i+1)*10} for i in range(6)]
+    audio=musica(segundos)
     if voz is not None:audio+=voz
     audio=np.clip(audio,-.98,.98);salida=REEL/('reel.mp4' if voz is not None else 'vista_previa.mp4')
     recursos=REEL/'recursos';recursos.mkdir(exist_ok=True)
@@ -145,10 +153,12 @@ def main():
         video=cont.add_stream('libx264',rate=args.fps);video.width=W;video.height=H;video.pix_fmt='yuv420p';video.options={'crf':'24','preset':'veryfast'}
         sonido=cont.add_stream('aac',rate=RATE);sonido.layout='mono';sonido.bit_rate=96000
         for i in range(round(segundos*args.fps)):
-            ti=i/args.fps;num=min(5,int(ti/duracion));im=escena(num,ti-num*duracion,duracion,guion,voz is not None)
+            ti=i/args.fps;num=next((j for j,e in enumerate(tiempos) if ti<e['fin']),5)
+            duracion=tiempos[num]['fin']-tiempos[num]['inicio']
+            im=escena(num,ti-tiempos[num]['inicio'],duracion,guion,voz is not None)
             if i%args.fps==0:
                 if int(ti)%10==0:print('Segundo',round(ti),flush=True)
-                if abs(ti-num*duracion)<1:im.save(recursos/f'escena_{num+1:02}.png')
+                if abs(ti-tiempos[num]['inicio'])<1:im.save(recursos/f'escena_{num+1:02}.png')
             frame=av.VideoFrame.from_ndarray(np.asarray(im),format='rgb24')
             for packet in video.encode(frame):cont.mux(packet)
         for packet in video.encode():cont.mux(packet)
@@ -159,8 +169,9 @@ def main():
         for packet in sonido.encode():cont.mux(packet)
     srt=[]
     for i,e in enumerate(guion['escenas']):
+        duracion=tiempos[i]['fin']-tiempos[i]['inicio']
         for j,frase in enumerate(e['subtitulos']):
-            ini=i*duracion+j*duracion/2;fin=ini+duracion/2
+            ini=tiempos[i]['inicio']+j*duracion/2;fin=ini+duracion/2
             srt.append(f'{len(srt)+1}\n{marca(ini)} --> {marca(fin)}\n{frase}\n')
     (REEL/'subtitulos.srt').write_text('\n'.join(srt),encoding='utf-8')
     print('Exportado',salida,round(segundos,2),'s',flush=True)
