@@ -1,0 +1,29 @@
+[
+  {
+    "archivo": "8489152-informe-de-obras-publicas-paralizadas-junio-2026f.PDF",
+    "url": "https://cdn.www.gob.pe/uploads/document/file/10466636/8489152-informe-de-obras-publicas-paralizadas-junio-2026f.PDF?v=1787003153",
+    "publicacion": "https://www.gob.pe/institucion/contraloria/informes-publicaciones/8489152-informe-de-obras-paralizadas-en-el-territorio-nacional-a-junio-de-2026",
+    "corte": "2026-06-30",
+    "recuperado_utc": "2026-10-28T06:39:25.024677+00:00",
+    "sha256": "e997e28402b5a0d8108de26d6a5aee5225e6e3824448cb0e9d5a10d938dac7a6",
+    "bytes": 857130
+  },
+  {
+    "archivo": "8489152-anexo-n-01-base-de-datos-con-la-lista-de-obras-publicas-paralizadas-en-el-territorio-nacional.XLSX",
+    "url": "https://cdn.www.gob.pe/uploads/document/file/10466637/8489152-anexo-n-01-base-de-datos-con-la-lista-de-obras-publicas-paralizadas-en-el-territorio-nacional.XLSX?v=1787003153",
+    "publicacion": "https://www.gob.pe/institucion/contraloria/informes-publicaciones/8489152-informe-de-obras-paralizadas-en-el-territorio-nacional-a-junio-de-2026",
+    "corte": "2026-06-30",
+    "recuperado_utc": "2026-10-28T06:39:25.130770+00:00",
+    "sha256": "aee166f5f864722222b67f4e36926c05308efaecba1db81f3652d926e1d30b35",
+    "bytes": 736608
+  },
+  {
+    "archivo": "8489152-anexo-n-02-base-de-datos-con-la-lista-de-servicios-de-control-efectuados-a-obras-paralizadas.XLSX",
+    "url": "https://cdn.www.gob.pe/uploads/document/file/10466638/8489152-anexo-n-02-base-de-datos-con-la-lista-de-servicios-de-control-efectuados-a-obras-paralizadas.XLSX?v=1787003153",
+    "publicacion": "https://www.gob.pe/institucion/contraloria/informes-publicaciones/8489152-informe-de-obras-paralizadas-en-el-territorio-nacional-a-junio-de-2026",
+    "corte": "2026-06-30",
+    "recuperado_utc": "2026-10-28T06:39:25.253648+00:00",
+    "sha256": "af5719eac3de995233c1595ce59a7bca249586b2ee8163f46a8e77452c74f019",
+    "bytes": 823791
+  }
+]
