@@ -8,6 +8,10 @@ Se analiza el inventario de Contraloría con corte al **30 de junio de 2026**: 2
 
 **[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site)**
 
+![Vista general del dashboard Obras que esperan](reel/recursos/dashboard_general.png)
+
+![Exploración filtrada de las obras con avance mayor que 90 %](reel/recursos/dashboard_exploracion.png)
+
 ## Resultados
 
 - **281 obras (12,4 %) superan el 90 % de avance físico y figuran paralizadas.** El umbral es estrictamente mayor que 90 % y hasta 100 %, conforme al rango utilizado en el anexo. Tres obras con exactamente 90 % pertenecen al rango anterior.
