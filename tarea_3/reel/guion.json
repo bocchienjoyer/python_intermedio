@@ -1,3 +1,16 @@
 {
-  "escenas": []
+  "titulo": "Obras que esperan",
+  "duracion_objetivo_segundos": 60,
+  "formato": "9:16, 1080x1920",
+  "corte_datos": "2026-06-30",
+  "fuente": "Contraloría General de la República, informe y Anexo 1 a junio de 2026",
+  "fuente_url": "https://www.gob.pe/institucion/contraloria/informes-publicaciones/8489152-informe-de-obras-paralizadas-en-el-territorio-nacional-a-junio-de-2026",
+  "escenas": [
+    {"inicio": 0, "fin": 10, "titulo": "Obras que esperan", "visual": "Mapa de las obras que superan el 90 %; aparición progresiva del total", "narracion": "Una obra puede avanzar mucho y seguir paralizada. ¿Qué queda esperando cuando la construcción se detiene?", "subtitulos": ["Una obra puede avanzar mucho y seguir paralizada.", "¿Qué queda esperando cuando la construcción se detiene?"]},
+    {"inicio": 10, "fin": 20, "titulo": "281 obras", "visual": "Mapa departamental y contador de obras de mayor avance", "narracion": "En junio de dos mil veintiséis, la Contraloría registró dos mil doscientas sesenta y dos obras paralizadas. Doscientas ochenta y una superaban el noventa por ciento de avance físico.", "subtitulos": ["2.262 obras paralizadas al 30 de junio de 2026.", "281 superan el 90 % de avance físico reportado."]},
+    {"inicio": 20, "fin": 30, "titulo": "169 sin PIM positivo", "visual": "Barra de 281 obras: 169 sin asignación PIM positiva y 112 con asignación", "narracion": "Entre esas obras, ciento sesenta y nueve no registraban presupuesto PIM positivo para ese año. Son seis de cada diez. Es una fotografía presupuestaria, no una explicación de todas las causas.", "subtitulos": ["169 de 281 no registran PIM positivo para 2026: 60,1 %.", "PIM es presupuesto asignado; no mide gasto ni explica por sí solo la paralización."]},
+    {"inicio": 30, "fin": 40, "titulo": "Infraestructura que importa", "visual": "Barras por tipo de obra de mayor avance y captura del dashboard", "narracion": "Vivienda, construcción y saneamiento, junto con transportes y comunicaciones, reúnen casi la mitad de las obras de mayor avance. Cada registro merece seguimiento y una verificación del servicio previsto.", "subtitulos": ["79 en vivienda, construcción y saneamiento; 57 en transportes y comunicaciones.", "136 de 281 obras de mayor avance: 48,4 %."]},
+    {"inicio": 40, "fin": 50, "titulo": "Avance no confirma servicio", "visual": "Distinción gráfica entre avance reportado y puesta en servicio; captura de metodología", "narracion": "El avance físico no confirma que una obra funcione. Incluso hay veintitrés que reportan cien por ciento y siguen en el inventario. Los datos describen registros, no miden todos sus impactos sociales.", "subtitulos": ["23 obras reportan 100 % y siguen en el inventario oficial.", "Avance físico y funcionamiento son hitos diferentes."]},
+    {"inicio": 50, "fin": 60, "titulo": "Una pregunta abierta", "visual": "Dashboard y cierre con pregunta, fuente, créditos y aviso IA en versión narrada", "narracion": "Explora los datos en el dashboard. ¿Qué deberíamos exigir para que una obra deje de esperar y cumpla su propósito para la población?", "subtitulos": ["Explora el inventario y sus fuentes en el dashboard.", "¿Qué deberíamos exigir para que una obra deje de esperar?"]}
+  ]
 }

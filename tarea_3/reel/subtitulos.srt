@@ -1,1 +1,47 @@
+1
+00:00:00,000 --> 00:00:05,000
+Una obra puede avanzar mucho y seguir paralizada.
 
+2
+00:00:05,000 --> 00:00:10,000
+¿Qué queda esperando cuando la construcción se detiene?
+
+3
+00:00:10,000 --> 00:00:15,000
+2.262 obras paralizadas al 30 de junio de 2026.
+
+4
+00:00:15,000 --> 00:00:20,000
+281 superan el 90 % de avance físico reportado.
+
+5
+00:00:20,000 --> 00:00:25,000
+169 de 281 no registran PIM positivo para 2026: 60,1 %.
+
+6
+00:00:25,000 --> 00:00:30,000
+PIM es presupuesto asignado; no mide gasto ni explica por sí solo la paralización.
+
+7
+00:00:30,000 --> 00:00:35,000
+79 en vivienda, construcción y saneamiento; 57 en transportes y comunicaciones.
+
+8
+00:00:35,000 --> 00:00:40,000
+136 de 281 obras de mayor avance: 48,4 %.
+
+9
+00:00:40,000 --> 00:00:45,000
+23 obras reportan 100 % y siguen en el inventario oficial.
+
+10
+00:00:45,000 --> 00:00:50,000
+Avance físico y funcionamiento son hitos diferentes.
+
+11
+00:00:50,000 --> 00:00:55,000
+Explora el inventario y sus fuentes en el dashboard.
+
+12
+00:00:55,000 --> 00:01:00,000
+¿Qué deberíamos exigir para que una obra deje de esperar?
