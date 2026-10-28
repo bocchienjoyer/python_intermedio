@@ -55,6 +55,15 @@ Abrir `http://localhost:8000`. Si ya se dispone de los originales, procesamiento
 
 El dashboard incluye cuatro indicadores, mapa departamental, gráficos por tipo, avance y causa, cuatro filtros, búsqueda y descarga CSV de la selección. La cartografía procede del servicio del MEF, atribuido al INEI en sus metadatos, y se utiliza con fines referenciales. Las geometrías y su fuente se conservan en `web/data/`.
 
+El material audiovisual utiliza Python 3.12 en un entorno separado:
+
+```console
+python -m pip install -r tarea_3/reel/requirements.txt
+python tarea_3/scripts/generar_reel.py
+```
+
+Sin narración, este comando reproduce `reel/vista_previa.mp4`, de 60 segundos, con música original y aviso visible de ausencia de voz. La síntesis utiliza otro entorno con `reel/requirements_voz.txt` y una referencia de voz propia mantenida fuera de la carpeta pública. Los créditos están en `reel/recursos/creditos.md`.
+
 ## Uso de inteligencia artificial
 
 Se utilizó IA para explorar bibliografía, desarrollar el código y apoyar la redacción. Los resultados publicados se calculan a partir de archivos oficiales y se contrastan con el informe y los controles de calidad. Las interpretaciones se limitan a lo que permiten los datos.
