@@ -4,7 +4,7 @@ API: documentación oficial de QwenLM/Qwen3-TTS, modelo Base 0.6B.
 Las salidas se guardan fuera de tarea_3, en una carpeta privada indicada al ejecutar.
 """
 from pathlib import Path
-import argparse,json,os,re
+import argparse,hashlib,json,os,re
 
 RAIZ=Path(__file__).resolve().parents[1]
 MODELO='Qwen/Qwen3-TTS-12Hz-0.6B-Base'
@@ -21,7 +21,7 @@ def main():
     p.add_argument('--salida',type=Path,required=True)
     args=p.parse_args()
     # Mantener tanto la referencia como las salidas biométricas fuera del árbol público.
-    for ruta in [args.referencia,args.salida]:
+    for ruta in [args.referencia,args.transcripcion,args.salida]:
         if ruta.resolve().is_relative_to(RAIZ.resolve()):
             raise ValueError('Usar una carpeta privada fuera de tarea_3 para voz y salidas.')
     os.environ.setdefault('HF_HOME',str(RAIZ.parent/'.cache/tarea3-modelos'))
@@ -46,16 +46,34 @@ def main():
     prompt=model.create_voice_clone_prompt(ref_audio=str(args.referencia),ref_text=transcripcion,x_vector_only_mode=False)
     guion=json.loads((RAIZ/'reel/guion.json').read_text(encoding='utf-8'))
     args.salida.mkdir(parents=True,exist_ok=True)
+    cache_fragmentos=args.salida/'fragmentos';cache_fragmentos.mkdir(exist_ok=True)
+    firma_referencia=hashlib.sha256(args.referencia.read_bytes()).hexdigest()
     trozos=[];tiempos=[];inicio=0;subtitulos=[];tasa_comun=None
     for i,escena in enumerate(guion['escenas']):
         inicio_escena=inicio;fragmentos=[]
         # Cada subtítulo reproduce una oración completa y usa su duración sintetizada.
         frases=re.split(r'(?<=[.!?])\s+',escena['narracion'].strip())
         for j,frase in enumerate(frases):
-            wavs,tasa=model.generate_voice_clone(text=frase,language='Spanish',voice_clone_prompt=prompt)
+            semilla=20261031+i*10+j
+            metadatos={'modelo':MODELO,'revision':REVISION,'referencia_sha256':firma_referencia,
+                       'referencia_texto':transcripcion,'texto':frase,'semilla':semilla,
+                       'non_streaming_mode':True,'max_new_tokens':512,'qwen_tts':'0.1.1'}
+            clave=hashlib.sha256(json.dumps(metadatos,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+            archivo=cache_fragmentos/f'{clave}.wav';ficha=archivo.with_suffix('.json')
+            if archivo.exists() and ficha.exists() and json.loads(ficha.read_text(encoding='utf-8'))==metadatos:
+                fragmento,tasa=sf.read(archivo,dtype='float32')
+                print('Reutilizado fragmento',i+1,j+1,flush=True)
+            else:
+                print('Generando fragmento',i+1,j+1,flush=True)
+                torch.manual_seed(semilla)
+                wavs,tasa=model.generate_voice_clone(text=frase,language='Spanish',voice_clone_prompt=prompt,
+                                                     non_streaming_mode=True,max_new_tokens=512)
+                fragmento=np.asarray(wavs[0],dtype=np.float32).reshape(-1)
+                if not len(fragmento) or not np.isfinite(fragmento).all():raise ValueError('Audio generado inválido.')
+                sf.write(archivo,fragmento,tasa,subtype='FLOAT')
+                ficha.write_text(json.dumps(metadatos,ensure_ascii=False,indent=2),encoding='utf-8')
             if tasa_comun is None:tasa_comun=tasa
             if tasa!=tasa_comun:raise ValueError('La frecuencia de muestreo debe ser constante.')
-            fragmento=np.asarray(wavs[0],dtype=np.float32).reshape(-1)
             pausa=.3 if j==len(frases)-1 else .18
             fragmento=np.concatenate([fragmento,np.zeros(round(pausa*tasa),dtype=np.float32)])
             fin=inicio+len(fragmento)/tasa
@@ -70,7 +88,8 @@ def main():
     (args.salida/'subtitulos.srt').write_text('\n'.join(subtitulos),encoding='utf-8')
     (args.salida/'modelo.json').write_text(json.dumps({'modelo':MODELO,'revision':REVISION,'device':device,
         'sample_rate':tasa,'segundos':inicio,'fuente_api':'https://github.com/QwenLM/Qwen3-TTS',
-        'torch':torch.__version__},indent=2),encoding='utf-8')
+        'torch':torch.__version__,'sintesis':'por oraciones, caché privada y semillas por fragmento',
+        'non_streaming_mode':True,'max_new_tokens':512},indent=2),encoding='utf-8')
     print('Duración total',round(inicio,2),'s. Revisar pronunciación y subtítulos antes del montaje final.')
     if not 45<=inicio<=75:print('La narración requiere ajustar ritmo o guion para cumplir 45–75 s.')
 
