@@ -32,6 +32,10 @@ def main():
     datos['causa']=datos['causa'].str.replace(r'^\d+\s+','',regex=True)
     datos['corte']='2026-06-30'
     datos['avance_alto']=datos['avance'].gt(90)&datos['avance'].le(100)
+    # Tabla 12 del informe: NO PIM incluye obras sin CUI. No equiparar ambos casos.
+    datos['estado_presupuesto']='sin_asignacion_registrada'
+    datos.loc[datos.pim_2026.gt(0),'estado_presupuesto']='con_asignacion'
+    datos.loc[datos.cui.isna(),'estado_presupuesto']='sin_cui'
     if datos['infobras'].isna().any() or datos['infobras'].duplicated().any():
         raise ValueError('El código INFOBRAS debe identificar una obra única.')
     if ((datos['avance']<0)|(datos['avance']>100)).any():
@@ -40,11 +44,14 @@ def main():
         raise ValueError('El umbral de avance alto no coincide con el rango de la fuente.')
     if not datos.tiene_pim.eq('SI').eq(datos.pim_2026.gt(0)).all():
         raise ValueError('La bandera de PIM difiere de la asignación numérica.')
+    if (datos.cui.isna()&datos.pim_2026.gt(0)).any():
+        raise ValueError('Revisar obras sin CUI que registren PIM positivo.')
     salida=RAIZ/'datos/procesados';salida.mkdir(exist_ok=True)
     datos.to_csv(salida/'obras.csv',index=False,encoding='utf-8')
     calidad={'filas_originales':len(fuente),'obras':len(datos),'duplicados_infobras':int(datos.infobras.duplicated().sum()),
              'cui_unicos':int(datos.cui.nunique()),'cui_faltantes':int(datos.cui.isna().sum()),
              'obras_con_cui_repetido':int((datos.cui.notna()&datos.cui.duplicated(keep=False)).sum()),
+             'estado_presupuesto':datos.estado_presupuesto.value_counts().to_dict(),
              'faltantes':{c:int(datos[c].isna().sum()) for c in datos},
              'costos_obra_cero':int(datos.costo_obra.eq(0).sum()),
              'avance_cien':int(datos.avance.eq(100).sum()),
