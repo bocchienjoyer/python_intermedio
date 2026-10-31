@@ -19,31 +19,31 @@
     },
     {
       "inicio": 9.36,
-      "fin": 21.04,
+      "fin": 18.54,
       "titulo": "281 obras paralizadas",
       "visual": "Mapa y contador de obras de mayor avance",
-      "narracion": "En el Perú, doscientas ochenta y una construcciones públicas están paralizadas y reportan más del noventa por ciento de avance físico. El corte es junio de dos mil veintiséis.",
+      "narracion": "En el Perú, doscientas ochenta y una construcciones públicas están paralizadas y reportan más del noventa por ciento de avance físico.",
       "subtitulos": [
         "281 obras paralizadas reportan más del 90 % de avance físico.",
-        "Inventario de Contraloría al 30 de junio de 2026."
+        "Reportan más del 90 % de avance físico."
       ]
     },
     {
-      "inicio": 21.04,
-      "fin": 30.72,
-      "titulo": "155 sin presupuesto para 2026",
-      "visual": "Barra de 281 registros, destacando los 155 con asignación cero identificable",
+      "inicio": 18.54,
+      "fin": 28.22,
+      "titulo": "",
+      "visual": "155 en gran formato, presupuesto registrado para 2026 y barra proporcional dentro de las 281 obras de mayor avance",
       "narracion": "De ellas, ciento cincuenta y cinco figuran sin presupuesto asignado para dos mil veintiséis. Tener mucho construido no garantiza recursos para continuar.",
       "subtitulos": [
         "155 de ese grupo figuran sin presupuesto para 2026.",
-        "Asignación registrada al corte; puede cambiar durante el año."
+        "Tener mucho construido no garantiza recursos para continuar."
       ]
     },
     {
-      "inicio": 30.72,
-      "fin": 40.72,
+      "inicio": 28.22,
+      "fin": 38.22,
       "titulo": "¿Por qué importa?",
-      "visual": "Fotografía real referencial de una construcción abandonada como fondo transparente, billete que se aleja junto a financiera y reloj con agujas animadas junto a puede demorarse; referencia OCDE 2025",
+      "visual": "Fotografía real referencial con baja opacidad; entrada inicial de Sin continuidad financiera y segunda entrada de la culminación puede demorarse a los 3,53 segundos, junto al mensaje hablado genera demoras; billete que se aleja y reloj animado; referencia OCDE 2025",
       "narracion": "La OCDE advierte que no asegurar financiamiento entre años genera demoras. Cuando faltan recursos para terminar, la población puede seguir esperando el servicio.",
       "subtitulos": [
         "OCDE (2025): la falta de continuidad financiera genera demoras en Perú.",
@@ -51,10 +51,10 @@
       ]
     },
     {
-      "inicio": 40.72,
-      "fin": 50.56,
-      "titulo": "23 reportan 100 %",
-      "visual": "Dato llamativo, acompañado del contraste entre avance y funcionamiento",
+      "inicio": 38.22,
+      "fin": 48.06,
+      "titulo": "",
+      "visual": "23 y 100 % en gran formato, señal gráfica de pausa y PARALIZADAS destacada en naranja; avance físico reportado, no funcionamiento certificado",
       "narracion": "Además, veintitrés obras reportan cien por ciento de avance y siguen paralizadas. El avance físico no confirma que una obra esté funcionando.",
       "subtitulos": [
         "23 reportan 100 % de avance y siguen paralizadas.",
@@ -62,9 +62,9 @@
       ]
     },
     {
-      "inicio": 50.56,
-      "fin": 59.2,
-      "titulo": "Una pregunta abierta",
+      "inicio": 48.06,
+      "fin": 56.7,
+      "titulo": "¿Cómo asegurar que lo construido llegue a cumplir su propósito?",
       "visual": "Dos capturas del dashboard aprobado: portada y exploración, con cierre y fuentes",
       "narracion": "¿Cómo asegurar que lo construido llegue a cumplir su propósito? Explora el dashboard, sus fuentes y los casos que merecen seguimiento.",
       "subtitulos": [
@@ -78,5 +78,5 @@
     "https://documents1.worldbank.org/curated/en/099030325150510528/pdf/P177645-b964994f-03e4-4ce8-aa59-7642a26b538e.pdf"
   ],
   "nota_metodologica_presupuesto": "El grupo de mayor avance reúne 155 obras con CUI sin asignación registrada, 112 con asignación y 14 sin CUI. La ausencia de identificación se distingue de presupuesto cero confirmado; la metodología completa está en el dashboard y el README.",
-  "duracion_final_segundos": 59.2
+  "duracion_final_segundos": 56.7
 }
