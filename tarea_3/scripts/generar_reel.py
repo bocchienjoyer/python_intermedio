@@ -5,7 +5,7 @@ Con --narracion utiliza el audio proporcionado y ajusta las seis escenas a su du
 La referencia de voz propia debe mantenerse fuera del repositorio público.
 """
 from pathlib import Path
-import argparse,json,math,textwrap,wave
+import argparse,json,re,wave
 from functools import lru_cache
 import av
 import numpy as np
@@ -59,11 +59,11 @@ def mapa(im,d,fraccion=1):
                 vertices=[(180+(v[0]-xmin)*escala,570+(ymax-v[1])*escala) for v in ring]
                 d.polygon(vertices,fill=c,outline=PAPEL,width=2)
 
-def escena(numero,t,duracion,guion,narrada):
+def escena(numero,t,duracion,guion,narrada,subtitulo=None):
     im=Image.new('RGB',(W,H),PAPEL);d=ImageDraw.Draw(im)
     d.text((72,80),'OBRAS QUE ESPERAN / PERÚ',font=fuente(26),fill=VERDE)
     d.line((72,135,1008,135),fill='#c5d3be',width=2)
-    titulo=guion['escenas'][numero]['titulo'];texto(d,titulo,(72,205),78,serif=True)
+    titulo=guion['escenas'][numero]['titulo'];texto(d,titulo,(72,205),62 if numero==0 else 78,serif=True)
     anim=min(1,max(0,t/2))
     if numero in [0,1]:
         mapa(im,d,anim)
@@ -75,31 +75,28 @@ def escena(numero,t,duracion,guion,narrada):
         texto(d,'de 281 obras de mayor avance',(72,710),47)
         d.rounded_rectangle((72,880,1008,1030),radius=10,fill='#d9e4d3')
         d.rounded_rectangle((72,880,72+936*(155/281)*anim,1030),radius=10,fill=VERDE)
-        texto(d,'155 sin asignación registrada (con CUI)',(72,1080),39)
-        texto(d,'112 con asignación · 14 sin CUI aparte',(72,1150),39)
-        texto(d,'CUI: código de inversión. Sin código, no se verifica el presupuesto.',(72,1290),34,color=GRIS)
-        texto(d,'Presupuesto de 2026: asignación anual, no gasto.',(72,1430),34,color=GRIS)
+        texto(d,'Figuran sin presupuesto para 2026',(72,1080),46)
+        texto(d,'Asignación registrada al 30 de junio de 2026.',(72,1240),36,color=GRIS)
+        texto(d,'Puede cambiar durante el año; no predice una paralización definitiva.',(72,1380),34,color=GRIS)
     elif numero==3:
-        texto(d,'SI FALTAN TRABAJOS INDISPENSABLES…',(72,500),34,color=VERDE)
-        texto(d,'1. Resolver su financiamiento',(72,650),56,serif=True)
-        texto(d,'2. Completar los trabajos',(72,890),56,serif=True)
-        texto(d,'3. Habilitar el servicio previsto',(72,1130),56,serif=True)
-        texto(d,'Una demora puede postergar el beneficio esperado.',(72,1430),39,color=NARANJA)
-    elif numero==4:
         texto(d,'OCDE · PERÚ · 2025',(72,500),36,color=VERDE)
-        texto(d,'Financiamiento sin continuidad entre años',(72,660),62,serif=True)
-        texto(d,'Demoras e ineficiencias',(72,970),58,color=NARANJA,serif=True)
-        texto(d,'Este mecanismo general no demuestra qué pasó en cada obra.',(72,1320),44,color=GRIS)
+        texto(d,'Sin continuidad financiera…',(72,680),62,serif=True)
+        texto(d,'…la culminación puede demorarse.',(72,970),58,color=NARANJA,serif=True)
+        texto(d,'Cuando faltan recursos para terminar, el servicio puede seguir esperando.',(72,1320),43)
+    elif numero==4:
+        d.text((72,475),'23',font=fuente(190,True),fill=NARANJA)
+        texto(d,'Reportan 100 % de avance, pero siguen paralizadas.',(72,720),60,serif=True)
+        texto(d,'Avance físico y funcionamiento son cosas distintas.',(72,1210),48,color=VERDE)
     else:
-        captura=REEL/'recursos/dashboard_general.png'
+        captura=REEL/'recursos'/('dashboard_general.png' if t<duracion/2 else 'dashboard_exploracion.png')
         if captura.exists():
             shot=Image.open(captura).convert('RGB');shot.thumbnail((936,650));im.paste(shot,(72,450))
         texto(d,'¿Cómo asegurar que lo construido llegue a cumplir su propósito?',(72,1150),66,serif=True)
         texto(d,'Explora los datos y sus fuentes en el dashboard.',(72,1470),35,color=VERDE)
-    # Subtítulos de la maqueta, ajustados por escena. Se recalculan al incorporar narración.
-    frase=guion['escenas'][numero]['subtitulos'][min(1,int(t/(duracion/2)))]
-    d.rectangle((0,1600,W,1790),fill=TINTA);texto(d,frase,(72,1630),38,color=PAPEL)
-    referencia='OCDE (2025) · Banco Mundial (2025, cap. 4)' if numero in [3,4] else 'Fuente: Contraloría · corte 30/06/2026'
+    # El montaje narrado conserva los intervalos del audio; la maqueta usa referencias.
+    frase=subtitulo if narrada else guion['escenas'][numero]['subtitulos'][min(1,int(t/(duracion/2)))]
+    d.rectangle((0,1600,W,1790),fill=TINTA);texto(d,frase,(72,1630),32,color=PAPEL)
+    referencia='OCDE (2025) · Estudio económico de Perú' if numero==3 else 'Fuente: Contraloría · corte 30/06/2026'
     d.text((72,1820),referencia,font=fuente(25),fill=GRIS)
     aviso='Voz generada con IA a partir de voz propia' if narrada else 'VISTA PREVIA · SIN NARRACIÓN'
     d.text((72,1855),'Gráficos y música: elaboración propia',font=fuente(21),fill=GRIS)
@@ -128,13 +125,32 @@ def leer_voz(path):
 def marca(t):
     ms=round(t*1000);return f'{ms//3600000:02}:{ms//60000%60:02}:{ms//1000%60:02},{ms%1000:03}'
 
+def leer_subtitulos(path,segundos):
+    def instante(s):
+        h,m,s,ms=map(int,re.split('[:,]',s));return h*3600+m*60+s+ms/1000
+    bloques=[]
+    for bloque in re.split(r'\n\s*\n',path.read_text(encoding='utf-8-sig').strip()):
+        lineas=bloque.splitlines()
+        if len(lineas)<3:raise ValueError('Subtítulo incompleto.')
+        inicio,fin=lineas[1].split(' --> ')
+        bloques.append((instante(inicio),instante(fin),' '.join(lineas[2:])))
+    if not bloques or abs(bloques[0][0])>.02 or abs(bloques[-1][1]-segundos)>.1:
+        raise ValueError('Los subtítulos deben cubrir la narración completa.')
+    if any(a<0 or b<=a or b>segundos+.1 for a,b,_ in bloques):raise ValueError('Tiempos de subtítulos inválidos.')
+    if any(abs(bloques[i][0]-bloques[i-1][1])>.02 for i in range(1,len(bloques))):
+        raise ValueError('Los subtítulos deben ser consecutivos y no solaparse.')
+    return bloques
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--narracion',type=Path);parser.add_argument('--tiempos',type=Path);parser.add_argument('--fps',type=int,default=24);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--narracion',type=Path);parser.add_argument('--tiempos',type=Path);parser.add_argument('--subtitulos',type=Path);parser.add_argument('--fps',type=int,default=24);args=parser.parse_args()
     guion=json.loads((REEL/'guion.json').read_text(encoding='utf-8'))
     voz=leer_voz(args.narracion) if args.narracion else None
     segundos=len(voz)/RATE if voz is not None else 60
     if not 45<=segundos<=75:raise ValueError('La narración debe durar entre 45 y 75 segundos.')
+    subtitulos_reales=[]
     if voz is not None:
+        if not args.subtitulos:raise ValueError('Proporcionar --subtitulos con el SRT de la narración real.')
+        subtitulos_reales=leer_subtitulos(args.subtitulos,segundos)
         if not args.tiempos:raise ValueError('Proporcionar --tiempos con los límites reales de las seis escenas.')
         tiempos=json.loads(args.tiempos.read_text(encoding='utf-8'))
         if len(tiempos)!=6 or abs(tiempos[0]['inicio'])>.01 or abs(tiempos[-1]['fin']-segundos)>.1:
@@ -161,7 +177,8 @@ def main():
         for i in range(round(segundos*args.fps)):
             ti=i/args.fps;num=next((j for j,e in enumerate(tiempos) if ti<e['fin']),5)
             duracion=tiempos[num]['fin']-tiempos[num]['inicio']
-            im=escena(num,ti-tiempos[num]['inicio'],duracion,guion,voz is not None)
+            frase=next((texto for inicio,fin,texto in subtitulos_reales if inicio<=ti<fin),'')
+            im=escena(num,ti-tiempos[num]['inicio'],duracion,guion,voz is not None,frase)
             if i%args.fps==0:
                 if int(ti)%10==0:print('Segundo',round(ti),flush=True)
                 if abs(ti-tiempos[num]['inicio'])<1:im.save(recursos/f'escena_{num+1:02}.png')
@@ -179,7 +196,8 @@ def main():
         for j,frase in enumerate(e['subtitulos']):
             ini=tiempos[i]['inicio']+j*duracion/2;fin=ini+duracion/2
             srt.append(f'{len(srt)+1}\n{marca(ini)} --> {marca(fin)}\n{frase}\n')
-    (REEL/'subtitulos.srt').write_text('\n'.join(srt),encoding='utf-8')
+    contenido=args.subtitulos.read_text(encoding='utf-8-sig') if voz is not None else '\n'.join(srt)
+    (REEL/'subtitulos.srt').write_text(contenido,encoding='utf-8')
     print('Exportado',salida,round(segundos,2),'s',flush=True)
 
 if __name__=='__main__':main()

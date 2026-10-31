@@ -4,11 +4,15 @@ API: documentación oficial de QwenLM/Qwen3-TTS, modelo Base 0.6B.
 Las salidas se guardan fuera de tarea_3, en una carpeta privada indicada al ejecutar.
 """
 from pathlib import Path
-import argparse,json,os
+import argparse,json,os,re
 
 RAIZ=Path(__file__).resolve().parents[1]
 MODELO='Qwen/Qwen3-TTS-12Hz-0.6B-Base'
 REVISION='5d83992436eae1d760afd27aff78a71d676296fc'
+
+def marca(t):
+    ms=round(t*1000)
+    return f'{ms//3600000:02}:{ms//60000%60:02}:{ms//1000%60:02},{ms%1000:03}'
 
 def main():
     p=argparse.ArgumentParser()
@@ -36,16 +40,28 @@ def main():
     prompt=model.create_voice_clone_prompt(ref_audio=str(args.referencia),ref_text=transcripcion,x_vector_only_mode=False)
     guion=json.loads((RAIZ/'reel/guion.json').read_text(encoding='utf-8'))
     args.salida.mkdir(parents=True,exist_ok=True)
-    trozos=[];tiempos=[];inicio=0
+    trozos=[];tiempos=[];inicio=0;subtitulos=[];tasa_comun=None
     for i,escena in enumerate(guion['escenas']):
-        wavs,tasa=model.generate_voice_clone(text=escena['narracion'],language='Spanish',voice_clone_prompt=prompt)
-        voz=np.asarray(wavs[0],dtype=np.float32).reshape(-1)
-        voz=np.concatenate([voz,np.zeros(round(.3*tasa),dtype=np.float32)])
+        inicio_escena=inicio;fragmentos=[]
+        # Cada subtítulo reproduce una oración completa y usa su duración sintetizada.
+        frases=re.split(r'(?<=[.!?])\s+',escena['narracion'].strip())
+        for j,frase in enumerate(frases):
+            wavs,tasa=model.generate_voice_clone(text=frase,language='Spanish',voice_clone_prompt=prompt)
+            if tasa_comun is None:tasa_comun=tasa
+            if tasa!=tasa_comun:raise ValueError('La frecuencia de muestreo debe ser constante.')
+            fragmento=np.asarray(wavs[0],dtype=np.float32).reshape(-1)
+            pausa=.3 if j==len(frases)-1 else .18
+            fragmento=np.concatenate([fragmento,np.zeros(round(pausa*tasa),dtype=np.float32)])
+            fin=inicio+len(fragmento)/tasa
+            subtitulos.append(f'{len(subtitulos)+1}\n{marca(inicio)} --> {marca(fin)}\n{frase}\n')
+            inicio=fin;fragmentos.append(fragmento)
+        voz=np.concatenate(fragmentos)
         sf.write(args.salida/f'escena_{i+1:02}.wav',voz,tasa)
-        duracion=len(voz)/tasa;tiempos.append({'inicio':inicio,'fin':inicio+duracion});inicio+=duracion;trozos.append(voz)
+        duracion=inicio-inicio_escena;tiempos.append({'inicio':inicio_escena,'fin':inicio});trozos.append(voz)
         print('Escena',i+1,round(duracion,2),'segundos',flush=True)
     sf.write(args.salida/'narracion.wav',np.concatenate(trozos),tasa)
     (args.salida/'tiempos_escenas.json').write_text(json.dumps(tiempos,indent=2),encoding='utf-8')
+    (args.salida/'subtitulos.srt').write_text('\n'.join(subtitulos),encoding='utf-8')
     (args.salida/'modelo.json').write_text(json.dumps({'modelo':MODELO,'revision':REVISION,'device':device,
         'sample_rate':tasa,'segundos':inicio,'fuente_api':'https://github.com/QwenLM/Qwen3-TTS',
         'torch':torch.__version__},indent=2),encoding='utf-8')
