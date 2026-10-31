@@ -5,8 +5,9 @@ Con --narracion utiliza el audio proporcionado y ajusta las seis escenas a su du
 La referencia de voz propia debe mantenerse fuera del repositorio público.
 """
 from pathlib import Path
-import argparse,json,re,wave
+import argparse,json,re
 from functools import lru_cache
+from fractions import Fraction
 import av
 import numpy as np
 from PIL import Image,ImageDraw,ImageFont,ImageOps
@@ -17,10 +18,40 @@ W,H,FPS,RATE=1080,1920,24,48000
 PAPEL='#f6f4ec';TINTA='#163e36';VERDE='#196b54';NARANJA='#b94720';GRIS='#53655f'
 
 @lru_cache(maxsize=64)
-def fuente(n,serif=False):
-    ruta=Path('C:/Windows/Fonts')/('georgia.ttf' if serif else 'arial.ttf')
-    if not ruta.exists():ruta=Path('/usr/share/fonts/truetype/dejavu')/('DejaVuSerif.ttf' if serif else 'DejaVuSans.ttf')
+def fuente(n,serif=False,negrita=False):
+    nombre=('georgiab.ttf' if negrita else 'georgia.ttf') if serif else ('arialbd.ttf' if negrita else 'arial.ttf')
+    ruta=Path('C:/Windows/Fonts')/nombre
+    if not ruta.exists():
+        nombre=('DejaVuSerif' if serif else 'DejaVuSans')+('-Bold.ttf' if negrita else '.ttf')
+        ruta=Path('/usr/share/fonts/truetype/dejavu')/nombre
     return ImageFont.truetype(str(ruta),n)
+
+def lineas_texto(draw,contenido,font,ancho):
+    lineas=[]
+    for parrafo in contenido.split('\n'):
+        linea=''
+        for palabra in parrafo.split():
+            prueba=(linea+' '+palabra).strip()
+            if draw.textlength(prueba,font=font)>ancho and linea:
+                lineas.append(linea);linea=palabra
+            else:linea=prueba
+        if linea:lineas.append(linea)
+    return lineas
+
+def centrado(draw,contenido,y,tamano=44,color=TINTA,ancho=936,serif=False,negrita=False):
+    font=fuente(tamano,serif,negrita)
+    for linea in lineas_texto(draw,contenido,font,ancho):
+        draw.text((W/2,y),linea,font=font,fill=color,anchor='mt');y+=tamano*1.2
+    return y
+
+def entrada(im,contenido,y,t,desde,tamano,color=TINTA,ancho=936,serif=False):
+    """Entrada breve con desplazamiento y transparencia, sin modificar la voz."""
+    progreso=float(np.clip((t-desde)/.45,0,1))
+    if progreso==0:return
+    capa=Image.new('RGBA',(W,H),(0,0,0,0));d=ImageDraw.Draw(capa)
+    centrado(d,contenido,y+24*(1-progreso),tamano,color,ancho,serif,True)
+    capa.putalpha(capa.getchannel('A').point(lambda a:round(a*progreso)))
+    im.paste(capa,(0,0),capa)
 
 def texto(draw,contenido,xy,tamano=44,color=TINTA,ancho=930,serif=False):
     font=fuente(tamano,serif);x,y=xy;palabras=contenido.split();linea=''
@@ -51,12 +82,12 @@ def datos_mapa(solo_mayor90=True):
 
 def mapa(im,d,fraccion=1,solo_mayor90=True):
     polys,cuentas,xmin,ymax=datos_mapa(solo_mayor90)
-    escala=42;mx=max(cuentas.values())
+    escala=44;mx=max(cuentas.values())
     for nombre,poligonos in polys:
         n=cuentas.get(nombre,0);a=(n/mx)*fraccion;c=tuple(int(v) for v in np.array([220,233,214])*(1-a)+np.array([25,107,84])*a)
         for pol in poligonos:
             for ring in pol[:1]:
-                vertices=[(130+(v[0]-xmin)*escala,570+(ymax-v[1])*escala) for v in ring]
+                vertices=[(85+(v[0]-xmin)*escala,500+(ymax-v[1])*escala) for v in ring]
                 d.polygon(vertices,fill=c,outline=PAPEL,width=2)
 
 @lru_cache(maxsize=1)
@@ -64,7 +95,7 @@ def fondo_obra():
     """Fotografía de archivo, utilizada como fondo referencial con transparencia."""
     foto=Image.open(REEL/'recursos/obra_referencial.jpg').convert('RGB')
     foto=ImageOps.fit(foto,(W,1070),method=Image.Resampling.LANCZOS,centering=(.5,.52)).convert('RGBA')
-    intensidad=.36*np.sin(np.linspace(0,np.pi,1070))**.7
+    intensidad=.22*np.sin(np.linspace(0,np.pi,1070))**.7
     alfa=np.repeat((intensidad*255).astype(np.uint8)[:,None],W,axis=1)
     foto.putalpha(Image.fromarray(alfa));return foto
 
@@ -82,78 +113,152 @@ def billete():
 
 def continuidad_grafica(im,t):
     """Foto real de fondo, billete que se aleja y reloj de espera animado."""
-    foto=fondo_obra();im.paste(foto,(0,440),foto)
+    foto=fondo_obra();im.paste(foto,(0,330),foto)
     avance=np.clip((t-.2)/9,0,1)**1.15
     nota=billete().rotate(8*np.sin(t*1.8)-4,resample=Image.Resampling.BICUBIC,expand=True)
-    cx=885+350*avance;cy=590-55*avance+6*np.sin(t*1.5)
+    cx=945+300*avance;cy=710-45*avance+6*np.sin(t*1.5)
     im.paste(nota,(round(cx-nota.width/2),round(cy-nota.height/2)),nota)
     d=ImageDraw.Draw(im)
-    cx,cy,r=960,1205,44
-    d.ellipse((cx-r,cy-r,cx+r,cy+r),fill=PAPEL,outline=NARANJA,width=5)
-    for angulo in [-np.pi/2,0,np.pi/2,np.pi]:
-        d.line((cx+34*np.cos(angulo),cy+34*np.sin(angulo),cx+38*np.cos(angulo),cy+38*np.sin(angulo)),fill=NARANJA,width=3)
-    for angulo,largo,grosor in [(-np.pi/2+.10*t,28,4),(-2.5+.025*t,19,5)]:
-        d.line((cx,cy,cx+largo*np.cos(angulo),cy+largo*np.sin(angulo)),fill=NARANJA,width=grosor)
-    d.ellipse((cx-4,cy-4,cx+4,cy+4),fill=NARANJA)
-    d.text((72,1505),'Foto referencial · EE. UU. · Strange Happenings / Pexels',font=fuente(22),fill=GRIS)
+    if t>=3.53:
+        cx,cy,r=540,1175,63
+        d.ellipse((cx-r,cy-r,cx+r,cy+r),fill=PAPEL,outline=NARANJA,width=6)
+        for angulo in [-np.pi/2,0,np.pi/2,np.pi]:
+            d.line((cx+49*np.cos(angulo),cy+49*np.sin(angulo),cx+55*np.cos(angulo),cy+55*np.sin(angulo)),fill=NARANJA,width=4)
+        for angulo,largo,grosor in [(-np.pi/2+.10*t,42,5),(-2.5+.025*t,28,7)]:
+            d.line((cx,cy,cx+largo*np.cos(angulo),cy+largo*np.sin(angulo)),fill=NARANJA,width=grosor)
+        d.ellipse((cx-5,cy-5,cx+5,cy+5),fill=NARANJA)
+    centrado(d,'Foto referencial · EE. UU. · Strange Happenings / Pexels',1378,21,color='#7b8580')
+
+def senal_pausa(d,t):
+    """La señal representa la clasificación de paralización, no su causa."""
+    radio=76+3*np.sin(t*2)
+    d.line((180,945,420,945),fill='#d4dcd1',width=5)
+    d.line((660,945,900,945),fill='#d4dcd1',width=5)
+    d.ellipse((540-radio,945-radio,540+radio,945+radio),fill='#f3e4d9',outline=NARANJA,width=5)
+    for x in [512,550]:d.rounded_rectangle((x,910,x+18,980),radius=4,fill=NARANJA)
+
+@lru_cache(maxsize=2)
+def captura_dashboard(nombre):
+    with Image.open(REEL/'recursos'/nombre) as archivo:
+        return ImageOps.contain(archivo.convert('RGB'),(936,810),method=Image.Resampling.LANCZOS)
 
 def escena(numero,t,duracion,guion,narrada,subtitulo=None):
     im=Image.new('RGB',(W,H),PAPEL);d=ImageDraw.Draw(im)
-    d.text((72,80),'OBRAS QUE ESPERAN / PERÚ',font=fuente(26),fill=VERDE)
-    d.line((72,135,1008,135),fill='#c5d3be',width=2)
     aviso='Voz generada con IA a partir de voz propia' if narrada else 'VISTA PREVIA · SIN NARRACIÓN'
-    d.text((72,155),aviso,font=fuente(30),fill=NARANJA)
-    titulo=guion['escenas'][numero]['titulo'];texto(d,titulo,(72,205),62 if numero==0 else 78,serif=True)
+    centrado(d,aviso,66,26,color='#7b8580')
+    titulo=guion['escenas'][numero]['titulo']
+    if numero in [0,1,3,5]:centrado(d,titulo,165,76 if numero in [0,5] else 86,serif=True,negrita=True)
     anim=min(1,max(0,t/2))
     if numero in [0,1]:
         mapa(im,d,anim,solo_mayor90=numero==1)
         total=2262 if numero==0 else 281
-        d.text((700,525),str(round(total*anim)),font=fuente(104 if numero==0 else 118,True),fill=NARANJA)
-        descripcion='obras paralizadas en el inventario nacional' if numero==0 else 'obras con más de 90 % de avance físico'
-        texto(d,descripcion,(700,680),34,ancho=300)
-        texto(d,'Perú · corte al 30 de junio de 2026',(72,1430),36)
+        d.text((855,615),str(round(total*anim)),font=fuente(112 if numero==0 else 142,True,True),fill=NARANJA,anchor='mt')
+        descripcion='obras públicas paralizadas al corte del informe' if numero==0 else 'obras con más de 90 % de avance físico'
+        # La columna del dato queda fuera de la silueta del mapa.
+        font=fuente(38)
+        for j,linea in enumerate(lineas_texto(d,descripcion,font,285)):
+            d.text((855,800+j*47),linea,font=font,fill=TINTA,anchor='mt')
+        centrado(d,'Perú · corte al 30 de junio de 2026',1355,30,color=GRIS)
     elif numero==2:
-        d.text((72,480),str(round(155*anim)),font=fuente(190,True),fill=NARANJA)
-        texto(d,'de 281 obras de mayor avance',(72,710),47)
-        d.rounded_rectangle((72,880,1008,1030),radius=10,fill='#d9e4d3')
-        d.rounded_rectangle((72,880,72+936*(155/281)*anim,1030),radius=10,fill=VERDE)
-        texto(d,'Figuran sin presupuesto para 2026',(72,1080),46)
-        texto(d,'Asignación registrada al 30 de junio de 2026.',(72,1240),36,color=GRIS)
-        texto(d,'Puede cambiar durante el año; no predice una paralización definitiva.',(72,1380),34,color=GRIS)
+        centrado(d,str(round(155*anim)),280,310,color=NARANJA,serif=True,negrita=True)
+        centrado(d,'figuran sin presupuesto\npara 2026',665,66,negrita=True)
+        d.rounded_rectangle((100,915,980,985),radius=12,fill='#d9e4d3')
+        if anim>0:d.rounded_rectangle((100,915,100+880*(155/281)*anim,985),radius=12,fill=VERDE)
+        centrado(d,'de 281 obras con más del 90 %\nde avance físico',1050,46)
+        centrado(d,'Asignación registrada al 30 de junio de 2026',1270,28,color='#7b8580')
     elif numero==3:
         continuidad_grafica(im,t)
-        texto(d,'OCDE · PERÚ · 2025',(72,440),36,color=VERDE)
-        texto(d,'Sin continuidad financiera…',(72,555),55,serif=True)
-        texto(d,'…la culminación puede demorarse.',(72,1170),54,color=NARANJA,serif=True)
-        texto(d,'Cuando faltan recursos para terminar, el servicio puede seguir esperando.',(72,1360),40)
+        centrado(d,'OCDE · PERÚ · 2025',345,32,color=VERDE)
+        entrada(im,'Sin continuidad\nfinanciera…',480,t,0,90,serif=True)
+        # «Genera demoras» comienza en 3,53 s de la voz conservada.
+        entrada(im,'…la culminación\npuede demorarse.',850,t,3.53,80,color=NARANJA,serif=True)
     elif numero==4:
-        d.text((72,475),'23',font=fuente(190,True),fill=NARANJA)
-        texto(d,'Reportan 100 % de avance, pero siguen paralizadas.',(72,720),60,serif=True)
-        texto(d,'Avance físico y funcionamiento son cosas distintas.',(72,1210),48,color=VERDE)
+        centrado(d,'23',195,300,color=NARANJA,serif=True,negrita=True)
+        centrado(d,'obras reportan',530,48)
+        centrado(d,'100 %',605,132,serif=True,negrita=True)
+        centrado(d,'de avance físico',775,48)
+        senal_pausa(d,t)
+        centrado(d,'y siguen',1050,46)
+        d.rounded_rectangle((188,1140,892,1250),radius=18,fill=NARANJA)
+        font=fuente(66,negrita=True);caja=d.textbbox((0,0),'PARALIZADAS',font=font)
+        d.text(((W-caja[2]+caja[0])/2,1195-(caja[1]+caja[3])/2),'PARALIZADAS',font=font,fill=PAPEL)
     else:
-        captura=REEL/'recursos'/('dashboard_general.png' if t<duracion/2 else 'dashboard_exploracion.png')
-        if captura.exists():
-            shot=Image.open(captura).convert('RGB');shot.thumbnail((936,650));im.paste(shot,(72,450))
-        texto(d,'¿Cómo asegurar que lo construido llegue a cumplir su propósito?',(72,1150),66,serif=True)
-        texto(d,'Explora los datos y sus fuentes en el dashboard.',(72,1470),35,color=VERDE)
+        nombre='dashboard_general.png' if t<duracion/2 else 'dashboard_exploracion.png'
+        if (REEL/'recursos'/nombre).exists():
+            shot=captura_dashboard(nombre)
+            im.paste(shot,((W-shot.width)//2,500+(810-shot.height)//2))
+        centrado(d,'Explora los datos y sus fuentes\nen el dashboard.',1320,40,color=VERDE,negrita=True)
     # El montaje narrado conserva los intervalos del audio; la maqueta usa referencias.
     frase=subtitulo if narrada else guion['escenas'][numero]['subtitulos'][min(1,int(t/(duracion/2)))]
-    d.rectangle((0,1600,W,1790),fill=TINTA);texto(d,frase,(72,1630),38,color=PAPEL)
+    d.rounded_rectangle((40,1450,1040,1775),radius=22,fill=TINTA)
+    tamano=48
+    while len(lineas_texto(d,frase,fuente(tamano),900))*tamano*1.2>280:tamano-=1
+    n_lineas=len(lineas_texto(d,frase,fuente(tamano),900))
+    centrado(d,frase,1450+(325-n_lineas*tamano*1.2)/2,tamano,color=PAPEL,ancho=900)
     referencia='OCDE (2025) · Estudio económico de Perú' if numero==3 else 'Fuente: Contraloría · corte 30/06/2026'
-    d.text((72,1820),referencia,font=fuente(25),fill=GRIS)
-    d.text((72,1855),'Gráficos y música: elaboración propia',font=fuente(21),fill=GRIS)
-    d.rectangle((0,1908,int(W*(numero+t/duracion)/6),1920),fill=NARANJA)
+    centrado(d,referencia,1820,25,color=GRIS)
+    centrado(d,'Divider · Chris Zabriskie · álbum Divider',1858,21,color=GRIS)
+    centrado(d,'chriszabriskie.com · CC BY 4.0 · creativecommons.org/licenses/by/4.0/',1888,18,color=GRIS)
     return im
 
+@lru_cache(maxsize=1)
+def pista_musical():
+    return leer_voz(REEL/'recursos/divider.m4a')
+
 def musica(segundos):
-    n=round(segundos*RATE);audio=np.zeros(n,dtype=np.float32)
-    for i,inicio in enumerate(np.arange(0,segundos,2.5)):
-        largo=min(round(2.3*RATE),n-round(inicio*RATE));t=np.arange(largo)/RATE
-        frecuencia=[220,261.6256,329.6276,293.6648,246.9417,196][i%6]
-        env=np.minimum(t/.15,1)*np.maximum(0,1-t/2.3)**2
-        nota=(np.sin(2*np.pi*frecuencia*t)+.3*np.sin(2*np.pi*2*frecuencia*t))*env*.014
-        start=round(inicio*RATE);audio[start:start+largo]+=nota.astype(np.float32)
+    """Fragmento de Divider, CC BY 4.0, con entradas y salidas suaves."""
+    n=round(segundos*RATE);inicio=8*RATE
+    audio=pista_musical()[inicio:inicio+n].copy()
+    if len(audio)!=n:raise ValueError('La pista musical no cubre el montaje.')
+    entrada=min(n,round(.4*RATE));salida=min(n,round(1.5*RATE))
+    audio[:entrada]*=np.linspace(0,1,entrada)
+    audio[-salida:]*=np.linspace(1,0,salida)
     return audio
+
+def filtrar_audio(voz,filtros):
+    """Aplica filtros de audio sin alterar la cantidad de muestras."""
+    grafo=av.filter.Graph()
+    entrada=grafo.add_abuffer(sample_rate=RATE,format='fltp',layout='mono',time_base=Fraction(1,RATE))
+    nodos=[grafo.add(nombre,parametros) for nombre,parametros in filtros]
+    salida=grafo.add('abuffersink');grafo.link_nodes(entrada,*nodos,salida);grafo.configure()
+    partes=[]
+    def recoger():
+        while True:
+            try:partes.append(salida.pull().to_ndarray().reshape(-1))
+            except (av.error.BlockingIOError,av.error.EOFError):break
+    for inicio in range(0,len(voz),4096):
+        frame=av.AudioFrame.from_ndarray(voz[inicio:inicio+4096].astype(np.float32).reshape(1,-1),format='fltp',layout='mono')
+        frame.sample_rate=RATE;frame.time_base=Fraction(1,RATE);frame.pts=inicio
+        entrada.push(frame);recoger()
+    entrada.push(None);recoger()
+    resultado=np.concatenate(partes).astype(np.float32)
+    if len(resultado)!=len(voz) or not np.isfinite(resultado).all():raise ValueError('Procesamiento de voz inválido.')
+    return resultado
+
+def procesar_voz(voz):
+    """Presencia y compresión suave, conservando palabras, tono y duración."""
+    return filtrar_audio(voz,[('highpass','f=80'),('equalizer','f=2800:t=q:w=0.8:g=2.5'),
+        ('acompressor','threshold=0.05:ratio=3:attack=8:release=120:makeup=2')])
+
+def mezclar_audio(voz,base):
+    """Música presente, con reducción suave durante la voz y prioridad de narración."""
+    rms_voz=float(np.sqrt(np.mean(voz**2)))
+    if rms_voz<1e-5:raise ValueError('La narración no contiene una señal de voz utilizable.')
+    musica=base.copy();rms_musica=float(np.sqrt(np.mean(musica**2)))
+    musica*=10**(-14/20)*rms_voz/max(rms_musica,1e-8)
+    salto=round(.01*RATE);controles=[];nivel=1.
+    for inicio in range(0,len(voz),salto):
+        rms=float(np.sqrt(np.mean(voz[inicio:inicio+salto]**2)))
+        objetivo=.65 if rms>max(.012,.08*rms_voz) else 1.
+        constante=.025 if objetivo<nivel else .25
+        nivel=objetivo+(nivel-objetivo)*np.exp(-.01/constante);controles.append(nivel)
+    musica*=np.interp(np.arange(len(voz)),np.arange(len(controles))*salto,controles)
+    # Dar densidad a la voz y contener los picos aislados con anticipación de 5 ms.
+    ganancia=10**(-15.5/20)/rms_voz;previa=(voz+musica)*ganancia
+    mezcla=filtrar_audio(previa,[('alimiter','limit=0.95:attack=5:release=100:level=false:latency=true')])
+    atenuacion=np.divide(mezcla,previa,out=np.ones_like(previa),where=np.abs(previa)>1e-6)
+    ganancia_final=ganancia*np.clip(atenuacion,0,1)
+    return mezcla,musica*ganancia_final,ganancia_final
 
 def leer_voz(path):
     partes=[];res=av.AudioResampler(format='s16',layout='mono',rate=RATE)
@@ -185,7 +290,7 @@ def leer_subtitulos(path,segundos):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--narracion',type=Path);parser.add_argument('--tiempos',type=Path);parser.add_argument('--subtitulos',type=Path);parser.add_argument('--fps',type=int,default=24);args=parser.parse_args()
     guion=json.loads((REEL/'guion.json').read_text(encoding='utf-8'))
-    voz=leer_voz(args.narracion) if args.narracion else None
+    voz=procesar_voz(leer_voz(args.narracion)) if args.narracion else None
     segundos=len(voz)/RATE if voz is not None else 60
     if not 45<=segundos<=75:raise ValueError('La narración debe durar entre 45 y 75 segundos.')
     subtitulos_reales=[]
@@ -201,19 +306,14 @@ def main():
     else:tiempos=[{'inicio':i*10,'fin':(i+1)*10} for i in range(6)]
     audio=musica(segundos)
     if voz is not None:
-        rms_voz=float(np.sqrt(np.mean(voz**2)))
-        if rms_voz<1e-5:raise ValueError('La narración no contiene una señal de voz utilizable.')
-        rms_musica=float(np.sqrt(np.mean(audio**2)))
-        audio*=min(1,.1*rms_voz/max(rms_musica,1e-8))
-        audio+=voz
-    pico=float(np.max(np.abs(audio)))
-    if pico>0:audio*=.95/pico
+        audio,_,_=mezclar_audio(voz,audio)
+    else:
+        pico=float(np.max(np.abs(audio)))
+        if pico>0:audio*=.95/pico
     salida=REEL/('reel.mp4' if voz is not None else 'vista_previa.mp4')
     recursos=REEL/'recursos';recursos.mkdir(exist_ok=True)
-    with wave.open(str(recursos/'musica_original.wav'),'wb') as w:
-        w.setnchannels(1);w.setsampwidth(2);w.setframerate(RATE);w.writeframes((musica(segundos)*32767).astype('<i2').tobytes())
     with av.open(str(salida),'w',options={'movflags':'+faststart'}) as cont:
-        video=cont.add_stream('libx264',rate=args.fps);video.width=W;video.height=H;video.pix_fmt='yuv420p';video.options={'crf':'24','preset':'veryfast'}
+        video=cont.add_stream('libx264',rate=args.fps);video.width=W;video.height=H;video.pix_fmt='yuv420p';video.sample_aspect_ratio=Fraction(1,1);video.options={'crf':'24','preset':'veryfast'}
         sonido=cont.add_stream('aac',rate=RATE);sonido.layout='mono';sonido.bit_rate=96000
         for i in range(round(segundos*args.fps)):
             ti=i/args.fps;num=next((j for j,e in enumerate(tiempos) if ti<e['fin']),5)
