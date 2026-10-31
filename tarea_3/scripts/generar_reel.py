@@ -64,7 +64,7 @@ def escena(numero,t,duracion,guion,narrada,subtitulo=None):
     d.text((72,80),'OBRAS QUE ESPERAN / PERÚ',font=fuente(26),fill=VERDE)
     d.line((72,135,1008,135),fill='#c5d3be',width=2)
     aviso='Voz generada con IA a partir de voz propia' if narrada else 'VISTA PREVIA · SIN NARRACIÓN'
-    d.text((72,155),aviso,font=fuente(25),fill=NARANJA)
+    d.text((72,155),aviso,font=fuente(30),fill=NARANJA)
     titulo=guion['escenas'][numero]['titulo'];texto(d,titulo,(72,205),62 if numero==0 else 78,serif=True)
     anim=min(1,max(0,t/2))
     if numero in [0,1]:
@@ -99,7 +99,7 @@ def escena(numero,t,duracion,guion,narrada,subtitulo=None):
         texto(d,'Explora los datos y sus fuentes en el dashboard.',(72,1470),35,color=VERDE)
     # El montaje narrado conserva los intervalos del audio; la maqueta usa referencias.
     frase=subtitulo if narrada else guion['escenas'][numero]['subtitulos'][min(1,int(t/(duracion/2)))]
-    d.rectangle((0,1600,W,1790),fill=TINTA);texto(d,frase,(72,1630),32,color=PAPEL)
+    d.rectangle((0,1600,W,1790),fill=TINTA);texto(d,frase,(72,1630),38,color=PAPEL)
     referencia='OCDE (2025) · Estudio económico de Perú' if numero==3 else 'Fuente: Contraloría · corte 30/06/2026'
     d.text((72,1820),referencia,font=fuente(25),fill=GRIS)
     d.text((72,1855),'Gráficos y música: elaboración propia',font=fuente(21),fill=GRIS)
@@ -168,12 +168,12 @@ def main():
         audio*=min(1,.1*rms_voz/max(rms_musica,1e-8))
         audio+=voz
     pico=float(np.max(np.abs(audio)))
-    if pico>.98:audio*=.98/pico
+    if pico>0:audio*=.95/pico
     salida=REEL/('reel.mp4' if voz is not None else 'vista_previa.mp4')
     recursos=REEL/'recursos';recursos.mkdir(exist_ok=True)
     with wave.open(str(recursos/'musica_original.wav'),'wb') as w:
         w.setnchannels(1);w.setsampwidth(2);w.setframerate(RATE);w.writeframes((musica(segundos)*32767).astype('<i2').tobytes())
-    with av.open(str(salida),'w') as cont:
+    with av.open(str(salida),'w',options={'movflags':'+faststart'}) as cont:
         video=cont.add_stream('libx264',rate=args.fps);video.width=W;video.height=H;video.pix_fmt='yuv420p';video.options={'crf':'24','preset':'veryfast'}
         sonido=cont.add_stream('aac',rate=RATE);sonido.layout='mono';sonido.bit_rate=96000
         for i in range(round(segundos*args.fps)):
@@ -183,7 +183,6 @@ def main():
             im=escena(num,ti-tiempos[num]['inicio'],duracion,guion,voz is not None,frase)
             if i%args.fps==0:
                 if int(ti)%10==0:print('Segundo',round(ti),flush=True)
-                if abs(ti-tiempos[num]['inicio'])<1:im.save(recursos/f'escena_{num+1:02}.png')
             frame=av.VideoFrame.from_ndarray(np.asarray(im),format='rgb24')
             for packet in video.encode(frame):cont.mux(packet)
         for packet in video.encode():cont.mux(packet)

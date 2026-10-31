@@ -5,9 +5,10 @@
 - Cartografía referencial: servicio del MEF, atribución INEI en los metadatos de la capa departamental.
 - Gráficos y composición: elaboración a partir de los datos oficiales mediante `scripts/generar_reel.py`.
 - Capturas: dashboard Obras que esperan, de Jose Pablo Navarro Nateros.
+- Narración: generada con [Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS), modelo Base 0.6B, a partir de una grabación de voz propia de 19,84 segundos. La referencia se mantiene en privado.
 - Música: composición instrumental original mediante síntesis de ondas sinusoidales en `scripts/generar_reel.py`. Sin muestras ni grabaciones de terceros. Código y composición disponibles para reutilización bajo CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/.
 - Tipografías: fuentes del sistema operativo; no se redistribuyen sus archivos.
 
-`vista_previa.mp4` contiene música y subtítulos, con aviso visible de ausencia de narración. La narración final se incorpora con `--narracion` después de generar y verificar el audio IA a partir de una referencia de voz propia.
+`reel.mp4` incorpora narración IA, música original, subtítulos y un aviso visible del origen de la voz.
 
-La generación de voz utiliza un entorno separado con `reel/requirements_voz.txt`. El montaje requiere `reel/requirements.txt`. `scripts/generar_narracion.py` sintetiza por oraciones y produce un WAV por escena, un WAV concatenado, los tiempos reales de las escenas y un SRT con el texto pronunciado. Las salidas se mantienen en una carpeta privada. El montaje recibe `--narracion`, `--tiempos` y `--subtitulos`; conserva los tiempos del SRT y comprueba que cubran el audio. Se debe revisar pronunciación y sincronización al escuchar el resultado. La mezcla limita la música a un nivel RMS al menos 20 dB inferior al de la narración. El reel incorpora dos capturas del dashboard en el cierre.
+La generación de voz utiliza un entorno separado con `reel/requirements_voz.txt`. El montaje requiere `reel/requirements.txt`. `scripts/generar_narracion.py` sintetiza por oraciones y guarda fragmentos en una caché privada para reanudar sin repetir los que coinciden en texto, referencia y parámetros. Produce un WAV por escena, uno concatenado, los tiempos reales y un SRT con el texto pronunciado. El montaje recibe `--narracion`, `--tiempos` y `--subtitulos`; conserva los tiempos del SRT y comprueba que cubran el audio. La mezcla limita la música a un nivel RMS al menos 20 dB inferior al de la narración. El reel incorpora dos capturas del dashboard en el cierre.
