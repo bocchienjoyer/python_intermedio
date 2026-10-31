@@ -30,18 +30,18 @@
     },
     {
       "inicio": 14.54,
-      "fin": 28.86,
+      "fin": 25.42,
       "titulo": "",
       "visual": "155 en gran formato, presupuesto registrado para 2026 y barra proporcional dentro de las 281 obras de mayor avance",
-      "narracion": "De ellas, ciento cincuenta y cinco figuran sin presupuesto asignado para dos mil veintiséis. O sea, si todavía faltan trabajos por completar, necesitan recursos para retomarlos; sin ese financiamiento, no pueden continuar.",
+      "narracion": "De ellas, ciento cincuenta y cinco figuran sin presupuesto asignado para dos mil veintiséis. O sea, sin recursos, los trabajos pendientes no pueden continuar.",
       "subtitulos": [
         "155 de ese grupo figuran sin presupuesto para 2026.",
-        "Si todavía faltan trabajos por completar, necesitan recursos para retomarlos; sin ese financiamiento, no pueden continuar."
+        "Sin recursos, los trabajos pendientes no pueden continuar."
       ]
     },
     {
-      "inicio": 28.86,
-      "fin": 39.42,
+      "inicio": 25.42,
+      "fin": 35.98,
       "titulo": "¿Por qué importa?",
       "visual": "Fotografía real referencial con baja opacidad; entrada inicial de Sin continuidad financiera y segunda entrada de la culminación puede demorarse a los 3,53 segundos, junto al mensaje hablado genera demoras; billete que se aleja y reloj animado; referencia OCDE 2025",
       "narracion": "La OCDE advierte que no asegurar financiamiento entre años genera demoras. Cuando faltan recursos para terminar, la población puede seguir esperando el servicio público.",
@@ -51,8 +51,8 @@
       ]
     },
     {
-      "inicio": 39.42,
-      "fin": 51.66,
+      "inicio": 35.98,
+      "fin": 48.22,
       "titulo": "",
       "visual": "23 y 100 % en gran formato, señal gráfica de pausa y PARALIZADAS destacada en naranja; avance físico reportado, no funcionamiento certificado",
       "narracion": "Además, veintitrés obras reportan cien por ciento de avance y siguen paralizadas. Entonces, que la obra pública esté construida no significa que ya esté brindando el servicio público previsto.",
@@ -62,8 +62,8 @@
       ]
     },
     {
-      "inicio": 51.66,
-      "fin": 60.3,
+      "inicio": 48.22,
+      "fin": 56.86,
       "titulo": "¿Cómo asegurar que lo construido llegue a cumplir su propósito?",
       "visual": "Dos capturas del dashboard aprobado: portada y exploración, con cierre y fuentes",
       "narracion": "¿Cómo asegurar que lo construido llegue a cumplir su propósito? Explora el dashboard, sus fuentes y los casos que merecen seguimiento.",
@@ -78,5 +78,5 @@
     "https://documents1.worldbank.org/curated/en/099030325150510528/pdf/P177645-b964994f-03e4-4ce8-aa59-7642a26b538e.pdf"
   ],
   "nota_metodologica_presupuesto": "El grupo de mayor avance reúne 155 obras con CUI sin asignación registrada, 112 con asignación y 14 sin CUI. La ausencia de identificación se distingue de presupuesto cero confirmado; la metodología completa está en el dashboard y el README.",
-  "duracion_final_segundos": 60.3
+  "duracion_final_segundos": 56.86
 }

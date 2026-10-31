@@ -15,29 +15,29 @@ De ese total, doscientas ochenta y una obras reportan más del noventa por cient
 De ellas, ciento cincuenta y cinco figuran sin presupuesto asignado para dos mil veintiséis.
 
 5
-00:00:20,160 --> 00:00:28,860
-O sea, si todavía faltan trabajos por completar, necesitan recursos para retomarlos; sin ese financiamiento, no pueden continuar.
+00:00:20,160 --> 00:00:25,420
+O sea, sin recursos, los trabajos pendientes no pueden continuar.
 
 6
-00:00:28,860 --> 00:00:33,760
+00:00:25,420 --> 00:00:30,320
 La OCDE advierte que no asegurar financiamiento entre años genera demoras.
 
 7
-00:00:33,760 --> 00:00:39,420
+00:00:30,320 --> 00:00:35,980
 Cuando faltan recursos para terminar, la población puede seguir esperando el servicio público.
 
 8
-00:00:39,420 --> 00:00:44,960
+00:00:35,980 --> 00:00:41,520
 Además, veintitrés obras reportan cien por ciento de avance y siguen paralizadas.
 
 9
-00:00:44,960 --> 00:00:51,660
+00:00:41,520 --> 00:00:48,220
 Entonces, que la obra pública esté construida no significa que ya esté brindando el servicio público previsto.
 
 10
-00:00:51,660 --> 00:00:55,360
+00:00:48,220 --> 00:00:51,920
 ¿Cómo asegurar que lo construido llegue a cumplir su propósito?
 
 11
-00:00:55,360 --> 00:01:00,300
+00:00:51,920 --> 00:00:56,860
 Explora el dashboard, sus fuentes y los casos que merecen seguimiento.
