@@ -38,12 +38,9 @@ def main():
     # La ruta local evita consultas de metadatos del procesador con pesos ya disponibles.
     cache_modelo=Path(os.environ['HF_HOME'])/'hub/models--Qwen--Qwen3-TTS-12Hz-0.6B-Base/snapshots'/REVISION
     origen=str(cache_modelo.resolve()) if cache_modelo.is_dir() else MODELO
-    print('Cargando modelo de voz en',device,flush=True)
-    model=Qwen3TTSModel.from_pretrained(origen,revision=REVISION,device_map=device,
-                                     dtype=torch.float16 if device.startswith('cuda') else torch.float32,
-                                     attn_implementation='eager')
-    print('Preparando referencia de voz',flush=True)
-    prompt=model.create_voice_clone_prompt(ref_audio=str(args.referencia),ref_text=transcripcion,x_vector_only_mode=False)
+    # Una edición puede recomponerse enteramente con fragmentos existentes.
+    # Cargar pesos y preparar la voz únicamente si falta un fragmento.
+    model=None;prompt=None
     guion=json.loads((RAIZ/'reel/guion.json').read_text(encoding='utf-8'))
     args.salida.mkdir(parents=True,exist_ok=True)
     cache_fragmentos=args.salida/'fragmentos';cache_fragmentos.mkdir(exist_ok=True)
@@ -64,6 +61,12 @@ def main():
                 fragmento,tasa=sf.read(archivo,dtype='float32')
                 print('Reutilizado fragmento',i+1,j+1,flush=True)
             else:
+                if model is None:
+                    print('Cargando modelo de voz en',device,flush=True)
+                    model=Qwen3TTSModel.from_pretrained(origen,revision=REVISION,device_map=device,
+                        dtype=torch.float16 if device.startswith('cuda') else torch.float32,
+                        attn_implementation='eager')
+                    prompt=model.create_voice_clone_prompt(ref_audio=str(args.referencia),ref_text=transcripcion,x_vector_only_mode=False)
                 print('Generando fragmento',i+1,j+1,flush=True)
                 torch.manual_seed(semilla)
                 wavs,tasa=model.generate_voice_clone(text=frase,language='Spanish',voice_clone_prompt=prompt,

@@ -3,45 +3,41 @@
 Mucho avance, pero las obras siguen esperando.
 
 2
-00:00:02,820 --> 00:00:09,360
-Una obra paralizada retrasa el acceso de la población a nuevos o mejores servicios públicos.
+00:00:02,820 --> 00:00:08,800
+Al corte del informe, el Perú registra dos mil doscientas sesenta y dos obras públicas paralizadas.
 
 3
-00:00:09,360 --> 00:00:18,420
-En el Perú, doscientas ochenta y una construcciones públicas están paralizadas y reportan más del noventa por ciento de avance físico.
+00:00:08,800 --> 00:00:14,540
+De ese total, doscientas ochenta y una obras reportan más del noventa por ciento de avance físico.
 
 4
-00:00:18,420 --> 00:00:21,040
-El corte es junio de dos mil veintiséis.
-
-5
-00:00:21,040 --> 00:00:26,660
+00:00:14,540 --> 00:00:20,160
 De ellas, ciento cincuenta y cinco figuran sin presupuesto asignado para dos mil veintiséis.
 
-6
-00:00:26,660 --> 00:00:30,720
-Tener mucho construido no garantiza recursos para continuar.
+5
+00:00:20,160 --> 00:00:25,420
+O sea, sin recursos, los trabajos pendientes no pueden continuar.
 
-7
-00:00:30,720 --> 00:00:35,620
+6
+00:00:25,420 --> 00:00:30,320
 La OCDE advierte que no asegurar financiamiento entre años genera demoras.
 
-8
-00:00:35,620 --> 00:00:40,720
-Cuando faltan recursos para terminar, la población puede seguir esperando el servicio.
+7
+00:00:30,320 --> 00:00:35,980
+Cuando faltan recursos para terminar, la población puede seguir esperando el servicio público.
 
-9
-00:00:40,720 --> 00:00:46,260
+8
+00:00:35,980 --> 00:00:41,520
 Además, veintitrés obras reportan cien por ciento de avance y siguen paralizadas.
 
-10
-00:00:46,260 --> 00:00:50,560
-El avance físico no confirma que una obra esté funcionando.
+9
+00:00:41,520 --> 00:00:48,220
+Entonces, que la obra pública esté construida no significa que ya esté brindando el servicio público previsto.
 
-11
-00:00:50,560 --> 00:00:54,260
+10
+00:00:48,220 --> 00:00:51,920
 ¿Cómo asegurar que lo construido llegue a cumplir su propósito?
 
-12
-00:00:54,260 --> 00:00:59,200
+11
+00:00:51,920 --> 00:00:56,860
 Explora el dashboard, sus fuentes y los casos que merecen seguimiento.
