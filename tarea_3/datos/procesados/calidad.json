@@ -5,6 +5,11 @@
   "cui_unicos": 2084,
   "cui_faltantes": 134,
   "obras_con_cui_repetido": 73,
+  "estado_presupuesto": {
+    "sin_asignacion_registrada": 1379,
+    "con_asignacion": 749,
+    "sin_cui": 134
+  },
   "faltantes": {
     "infobras": 0,
     "cui": 134,
@@ -34,7 +39,8 @@
     "informe_situacional": 1529,
     "url_informe": 1941,
     "corte": 0,
-    "avance_alto": 0
+    "avance_alto": 0,
+    "estado_presupuesto": 0
   },
   "costos_obra_cero": 28,
   "avance_cien": 23,

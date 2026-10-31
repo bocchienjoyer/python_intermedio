@@ -10,7 +10,7 @@ def main():
     destino=RAIZ/'web/data';destino.mkdir(exist_ok=True)
     d=pd.read_csv(RAIZ/'datos/procesados/obras.csv',dtype={'infobras':'string','cui':'string'})
     campos=['infobras','cui','obra','entidad','modalidad','costo_obra','departamento','provincia','distrito',
-            'anio_inicio','avance','tipo_obra','nivel_gobierno','causa','pim_2026','url_informe']
+            'anio_inicio','avance','tipo_obra','nivel_gobierno','causa','pim_2026','estado_presupuesto','url_informe']
     (destino/'obras.json').write_text(d[campos].to_json(orient='records',force_ascii=False),encoding='utf-8')
     mapa=destino/'departamentos.geojson'
     if not mapa.exists():
