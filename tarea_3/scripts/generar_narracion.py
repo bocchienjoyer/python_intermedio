@@ -34,9 +34,15 @@ def main():
     transcripcion=args.transcripcion.read_text(encoding='utf-8').strip()
     if not transcripcion:raise ValueError('La transcripción exacta de la referencia es necesaria.')
     device='cuda:0' if torch.cuda.is_available() else 'cpu'
-    model=Qwen3TTSModel.from_pretrained(MODELO,revision=REVISION,device_map=device,
+    if device=='cpu':torch.set_num_threads(min(4,os.cpu_count() or 1))
+    # La ruta local evita consultas de metadatos del procesador con pesos ya disponibles.
+    cache_modelo=Path(os.environ['HF_HOME'])/'hub/models--Qwen--Qwen3-TTS-12Hz-0.6B-Base/snapshots'/REVISION
+    origen=str(cache_modelo.resolve()) if cache_modelo.is_dir() else MODELO
+    print('Cargando modelo de voz en',device,flush=True)
+    model=Qwen3TTSModel.from_pretrained(origen,revision=REVISION,device_map=device,
                                      dtype=torch.float16 if device.startswith('cuda') else torch.float32,
                                      attn_implementation='eager')
+    print('Preparando referencia de voz',flush=True)
     prompt=model.create_voice_clone_prompt(ref_audio=str(args.referencia),ref_text=transcripcion,x_vector_only_mode=False)
     guion=json.loads((RAIZ/'reel/guion.json').read_text(encoding='utf-8'))
     args.salida.mkdir(parents=True,exist_ok=True)
