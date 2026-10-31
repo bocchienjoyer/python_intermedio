@@ -6,7 +6,7 @@
 
 Una obra paralizada retrasa el acceso de la población a nuevos o mejores servicios públicos. Este proyecto explora ubicación, avance físico, presupuesto y causas reportadas de las **2.262 obras** del inventario de Contraloría al **30 de junio de 2026**, con atención a las de mayor avance.
 
-**[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site)**
+**[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site) · [Reel de divulgación — 59,2 segundos](reel/reel.mp4)**
 
 <details>
 <summary>Dos vistas del dashboard</summary>
@@ -89,7 +89,7 @@ python -m pip install -r tarea_3/reel/requirements_voz.txt
 python tarea_3/scripts/generar_narracion.py --referencia .cache/tarea3-voz/referencia.wav --transcripcion .cache/tarea3-voz/referencia.txt --salida .cache/tarea3-voz/salida
 ```
 
-El modelo Base Qwen3-TTS 0.6B se descarga en la caché privada. Se sintetiza por oraciones para obtener audio, tiempos por escena y subtítulos con el texto pronunciado. Desde el entorno de montaje:
+El modelo Base Qwen3-TTS 0.6B se descarga en la caché privada. Se sintetiza por oraciones y se reutilizan los fragmentos que coinciden en texto, referencia y parámetros. Se obtienen audio, tiempos por escena y subtítulos con el texto pronunciado. Desde el entorno de montaje:
 
 ```console
 python tarea_3/scripts/generar_reel.py --narracion .cache/tarea3-voz/salida/narracion.wav --tiempos .cache/tarea3-voz/salida/tiempos_escenas.json --subtitulos .cache/tarea3-voz/salida/subtitulos.srt
@@ -99,4 +99,4 @@ El montaje exige 45–75 segundos y tiempos consecutivos para escenas y subtítu
 
 ## Uso de inteligencia artificial
 
-Se utilizó IA para explorar bibliografía, desarrollar el código y apoyar la redacción. Los resultados publicados se calculan a partir de archivos oficiales y se contrastan con el informe y los controles de calidad. Las interpretaciones se limitan a lo que permiten los datos.
+Se utilizó IA para explorar bibliografía, desarrollar el código y apoyar la redacción. La narración se generó con Qwen3-TTS Base 0.6B a partir de una grabación de voz propia de 19,84 segundos, conservada en privado. Las cifras pronunciadas se contrastaron mediante transcripción automática. Los resultados del análisis se calculan a partir de archivos oficiales y se contrastan con el informe y los controles de calidad. Las interpretaciones se limitan a lo que permiten los datos.
