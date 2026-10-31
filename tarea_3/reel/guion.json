@@ -10,7 +10,7 @@
       "inicio": 0,
       "fin": 10,
       "titulo": "Mucho avance, pero las obras siguen esperando.",
-      "visual": "Mapa animado de las obras de mayor avance",
+      "visual": "Mapa animado del inventario nacional de 2.262 obras paralizadas",
       "narracion": "Mucho avance, pero las obras siguen esperando. Una obra paralizada retrasa el acceso de la población a nuevos o mejores servicios públicos.",
       "subtitulos": [
         "Mucho avance, pero las obras siguen esperando.",
@@ -77,5 +77,5 @@
     "https://www.oecd.org/en/publications/2025/09/oecd-economic-surveys-peru-2025_d9bfa904/full-report/achieving-strong-growth-and-safeguarding-fiscal-sustainability_000545c6.html",
     "https://documents1.worldbank.org/curated/en/099030325150510528/pdf/P177645-b964994f-03e4-4ce8-aa59-7642a26b538e.pdf"
   ],
-  "nota_metodologica_presupuesto": "155 obras con CUI sin asignación registrada; 112 con asignación y 14 sin CUI. Se omiten códigos y desglose técnico de la narración; la metodología completa está en el dashboard y el README."
+  "nota_metodologica_presupuesto": "El grupo de mayor avance reúne 155 obras con CUI sin asignación registrada, 112 con asignación y 14 sin CUI. La ausencia de identificación se distingue de presupuesto cero confirmado; la metodología completa está en el dashboard y el README."
 }
