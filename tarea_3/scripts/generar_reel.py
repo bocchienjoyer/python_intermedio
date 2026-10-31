@@ -197,16 +197,16 @@ def escena(numero,t,duracion,guion,narrada,subtitulo=None):
     centrado(d,frase,1450+(325-n_lineas*tamano*1.2)/2,tamano,color=PAPEL,ancho=900)
     referencia='OCDE (2025) · Estudio económico de Perú' if numero==3 else 'Fuente: Contraloría · corte 30/06/2026'
     centrado(d,referencia,1820,25,color=GRIS)
-    centrado(d,'Tech Live · Kevin MacLeod / incompetech.com',1858,21,color=GRIS)
-    centrado(d,'CC BY 4.0 · creativecommons.org/licenses/by/4.0/',1888,18,color=GRIS)
+    centrado(d,'Divider · Chris Zabriskie · álbum Divider',1858,21,color=GRIS)
+    centrado(d,'chriszabriskie.com · CC BY 4.0 · creativecommons.org/licenses/by/4.0/',1888,18,color=GRIS)
     return im
 
 @lru_cache(maxsize=1)
 def pista_musical():
-    return leer_voz(REEL/'recursos/tech_live.mp3')
+    return leer_voz(REEL/'recursos/divider.m4a')
 
 def musica(segundos):
-    """Fragmento de Tech Live, CC BY 4.0, con entradas y salidas suaves."""
+    """Fragmento de Divider, CC BY 4.0, con entradas y salidas suaves."""
     n=round(segundos*RATE);inicio=8*RATE
     audio=pista_musical()[inicio:inicio+n].copy()
     if len(audio)!=n:raise ValueError('La pista musical no cubre el montaje.')
@@ -215,12 +215,37 @@ def musica(segundos):
     audio[-salida:]*=np.linspace(1,0,salida)
     return audio
 
+def filtrar_audio(voz,filtros):
+    """Aplica filtros de audio sin alterar la cantidad de muestras."""
+    grafo=av.filter.Graph()
+    entrada=grafo.add_abuffer(sample_rate=RATE,format='fltp',layout='mono',time_base=Fraction(1,RATE))
+    nodos=[grafo.add(nombre,parametros) for nombre,parametros in filtros]
+    salida=grafo.add('abuffersink');grafo.link_nodes(entrada,*nodos,salida);grafo.configure()
+    partes=[]
+    def recoger():
+        while True:
+            try:partes.append(salida.pull().to_ndarray().reshape(-1))
+            except (av.error.BlockingIOError,av.error.EOFError):break
+    for inicio in range(0,len(voz),4096):
+        frame=av.AudioFrame.from_ndarray(voz[inicio:inicio+4096].astype(np.float32).reshape(1,-1),format='fltp',layout='mono')
+        frame.sample_rate=RATE;frame.time_base=Fraction(1,RATE);frame.pts=inicio
+        entrada.push(frame);recoger()
+    entrada.push(None);recoger()
+    resultado=np.concatenate(partes).astype(np.float32)
+    if len(resultado)!=len(voz) or not np.isfinite(resultado).all():raise ValueError('Procesamiento de voz inválido.')
+    return resultado
+
+def procesar_voz(voz):
+    """Presencia y compresión suave, conservando palabras, tono y duración."""
+    return filtrar_audio(voz,[('highpass','f=80'),('equalizer','f=2800:t=q:w=0.8:g=2.5'),
+        ('acompressor','threshold=0.05:ratio=3:attack=8:release=120:makeup=2')])
+
 def mezclar_audio(voz,base):
     """Música presente, con reducción suave durante la voz y prioridad de narración."""
     rms_voz=float(np.sqrt(np.mean(voz**2)))
     if rms_voz<1e-5:raise ValueError('La narración no contiene una señal de voz utilizable.')
     musica=base.copy();rms_musica=float(np.sqrt(np.mean(musica**2)))
-    musica*=10**(-13/20)*rms_voz/max(rms_musica,1e-8)
+    musica*=10**(-14/20)*rms_voz/max(rms_musica,1e-8)
     salto=round(.01*RATE);controles=[];nivel=1.
     for inicio in range(0,len(voz),salto):
         rms=float(np.sqrt(np.mean(voz[inicio:inicio+salto]**2)))
@@ -228,8 +253,12 @@ def mezclar_audio(voz,base):
         constante=.025 if objetivo<nivel else .25
         nivel=objetivo+(nivel-objetivo)*np.exp(-.01/constante);controles.append(nivel)
     musica*=np.interp(np.arange(len(voz)),np.arange(len(controles))*salto,controles)
-    mezcla=voz+musica;ganancia=.95/max(float(np.max(np.abs(mezcla))),1e-8)
-    return mezcla*ganancia,musica*ganancia,ganancia
+    # Dar densidad a la voz y contener los picos aislados con anticipación de 5 ms.
+    ganancia=10**(-15.5/20)/rms_voz;previa=(voz+musica)*ganancia
+    mezcla=filtrar_audio(previa,[('alimiter','limit=0.95:attack=5:release=100:level=false:latency=true')])
+    atenuacion=np.divide(mezcla,previa,out=np.ones_like(previa),where=np.abs(previa)>1e-6)
+    ganancia_final=ganancia*np.clip(atenuacion,0,1)
+    return mezcla,musica*ganancia_final,ganancia_final
 
 def leer_voz(path):
     partes=[];res=av.AudioResampler(format='s16',layout='mono',rate=RATE)
@@ -261,7 +290,7 @@ def leer_subtitulos(path,segundos):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--narracion',type=Path);parser.add_argument('--tiempos',type=Path);parser.add_argument('--subtitulos',type=Path);parser.add_argument('--fps',type=int,default=24);args=parser.parse_args()
     guion=json.loads((REEL/'guion.json').read_text(encoding='utf-8'))
-    voz=leer_voz(args.narracion) if args.narracion else None
+    voz=procesar_voz(leer_voz(args.narracion)) if args.narracion else None
     segundos=len(voz)/RATE if voz is not None else 60
     if not 45<=segundos<=75:raise ValueError('La narración debe durar entre 45 y 75 segundos.')
     subtitulos_reales=[]
