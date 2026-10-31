@@ -9,72 +9,73 @@
     {
       "inicio": 0,
       "fin": 10,
-      "titulo": "Mucho avance. ¿Y después?",
-      "visual": "Mapa y aparición de las 281 obras; pregunta inicial",
-      "narracion": "Una obra puede avanzar mucho y seguir paralizada. Lo construido todavía necesita continuidad para llegar a cumplir su propósito.",
+      "titulo": "Mucho avance, pero las obras siguen esperando.",
+      "visual": "Mapa animado de las obras de mayor avance",
+      "narracion": "Mucho avance, pero las obras siguen esperando. Una obra paralizada retrasa el acceso de la población a nuevos o mejores servicios públicos.",
       "subtitulos": [
-        "Una obra puede avanzar mucho y seguir paralizada.",
-        "Mucho avance no garantiza continuidad ni funcionamiento."
+        "Mucho avance, pero las obras siguen esperando.",
+        "La paralización retrasa el acceso a nuevos o mejores servicios públicos."
       ]
     },
     {
       "inicio": 10,
       "fin": 20,
-      "titulo": "281 obras",
-      "visual": "Mapa departamental y contador de obras de mayor avance",
-      "narracion": "En junio de dos mil veintiséis, doscientas ochenta y una obras del inventario de paralizadas de la Contraloría superaban el noventa por ciento de avance físico.",
+      "titulo": "281 obras paralizadas",
+      "visual": "Mapa y contador de obras de mayor avance",
+      "narracion": "En el Perú, doscientas ochenta y una obras paralizadas reportan más del noventa por ciento de avance físico. El corte es junio de dos mil veintiséis.",
       "subtitulos": [
-        "2.262 obras en el inventario al 30 de junio de 2026.",
-        "281 reportan más del 90 % de avance y figuran paralizadas."
+        "281 obras paralizadas reportan más del 90 % de avance físico.",
+        "Inventario de Contraloría al 30 de junio de 2026."
       ]
     },
     {
       "inicio": 20,
       "fin": 30,
-      "titulo": "155 sin asignación registrada",
-      "visual": "281 obras: 155 sin asignación con CUI, 112 con asignación y 14 sin CUI",
-      "narracion": "Entre ellas, ciento cincuenta y cinco tenían código de inversión y no registraban presupuesto asignado para dos mil veintiséis. Las que no tienen código se analizan aparte.",
+      "titulo": "155 sin presupuesto para 2026",
+      "visual": "Barra de 281 registros, destacando los 155 con asignación cero identificable",
+      "narracion": "De ellas, ciento cincuenta y cinco figuran sin presupuesto asignado para dos mil veintiséis. Tener mucho construido no garantiza recursos para continuar.",
       "subtitulos": [
-        "155 con código de inversión no registran asignación para 2026.",
-        "112 con asignación; 14 sin código, analizadas aparte."
+        "155 de ese grupo figuran sin presupuesto para 2026.",
+        "Asignación registrada al corte; puede cambiar durante el año."
       ]
     },
     {
       "inicio": 30,
       "fin": 40,
-      "titulo": "¿Qué implica?",
-      "visual": "Secuencia condicional: financiar trabajos pendientes, continuarlos y habilitar el servicio",
-      "narracion": "Si faltan trabajos indispensables, conseguir recursos permite financiarlos. Mientras no puedan completarse, el servicio que justificó la inversión puede seguir esperando.",
+      "titulo": "¿Por qué importa?",
+      "visual": "Continuidad del financiamiento y servicios, con referencia OCDE 2025",
+      "narracion": "La OCDE advierte que no asegurar financiamiento entre años genera demoras. Cuando faltan recursos para terminar, la población puede seguir esperando el servicio.",
       "subtitulos": [
-        "Si faltan trabajos indispensables, hace falta financiar su continuación.",
-        "La demora puede postergar el servicio previsto."
+        "OCDE (2025): la falta de continuidad financiera genera demoras en Perú.",
+        "La espera por el servicio puede prolongarse si no se financia lo pendiente."
       ]
     },
     {
       "inicio": 40,
       "fin": 50,
-      "titulo": "El problema de la continuidad",
-      "visual": "OCDE 2025: financiamiento entre años, demoras e ineficiencias",
-      "narracion": "La OCDE advierte que, en Perú, no asegurar financiamiento entre años genera demoras. Es un problema de continuidad; nuestros datos no explican la causa de cada paralización.",
+      "titulo": "23 reportan 100 %",
+      "visual": "Dato llamativo, acompañado del contraste entre avance y funcionamiento",
+      "narracion": "Además, veintitrés obras reportan cien por ciento de avance y siguen paralizadas. El avance físico no confirma que una obra esté funcionando.",
       "subtitulos": [
-        "OCDE (2025): la falta de continuidad financiera genera demoras en Perú.",
-        "El inventario no demuestra la causa de cada paralización."
+        "23 reportan 100 % de avance y siguen paralizadas.",
+        "El avance físico no confirma funcionamiento."
       ]
     },
     {
       "inicio": 50,
       "fin": 60,
-      "titulo": "De lo construido al servicio",
-      "visual": "Dashboard, pregunta abierta, fuentes y créditos",
-      "narracion": "¿Cómo asegurar que lo construido llegue a cumplir su propósito? Explora el dashboard y sus fuentes para seguir la discusión.",
+      "titulo": "Una pregunta abierta",
+      "visual": "Dos capturas del dashboard aprobado: portada y exploración, con cierre y fuentes",
+      "narracion": "¿Cómo asegurar que lo construido llegue a cumplir su propósito? Explora el dashboard, sus fuentes y los casos que merecen seguimiento.",
       "subtitulos": [
         "¿Cómo asegurar que lo construido llegue a cumplir su propósito?",
-        "Explora los datos y sus fuentes en el dashboard."
+        "Explora el dashboard y sus fuentes."
       ]
     }
   ],
   "referencias_interpretacion": [
     "https://www.oecd.org/en/publications/2025/09/oecd-economic-surveys-peru-2025_d9bfa904/full-report/achieving-strong-growth-and-safeguarding-fiscal-sustainability_000545c6.html",
     "https://documents1.worldbank.org/curated/en/099030325150510528/pdf/P177645-b964994f-03e4-4ce8-aa59-7642a26b538e.pdf"
-  ]
+  ],
+  "nota_metodologica_presupuesto": "155 obras con CUI sin asignación registrada; 112 con asignación y 14 sin CUI. Se omiten códigos y desglose técnico de la narración; la metodología completa está en el dashboard y el README."
 }

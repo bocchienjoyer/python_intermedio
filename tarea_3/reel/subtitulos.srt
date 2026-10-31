@@ -1,42 +1,42 @@
 1
 00:00:00,000 --> 00:00:05,000
-Una obra puede avanzar mucho y seguir paralizada.
+Mucho avance, pero las obras siguen esperando.
 
 2
 00:00:05,000 --> 00:00:10,000
-Mucho avance no garantiza continuidad ni funcionamiento.
+La paralización retrasa el acceso a nuevos o mejores servicios públicos.
 
 3
 00:00:10,000 --> 00:00:15,000
-2.262 obras en el inventario al 30 de junio de 2026.
+281 obras paralizadas reportan más del 90 % de avance físico.
 
 4
 00:00:15,000 --> 00:00:20,000
-281 reportan más del 90 % de avance y figuran paralizadas.
+Inventario de Contraloría al 30 de junio de 2026.
 
 5
 00:00:20,000 --> 00:00:25,000
-155 con código de inversión no registran asignación para 2026.
+155 de ese grupo figuran sin presupuesto para 2026.
 
 6
 00:00:25,000 --> 00:00:30,000
-112 con asignación; 14 sin código, analizadas aparte.
+Asignación registrada al corte; puede cambiar durante el año.
 
 7
 00:00:30,000 --> 00:00:35,000
-Si faltan trabajos indispensables, hace falta financiar su continuación.
+OCDE (2025): la falta de continuidad financiera genera demoras en Perú.
 
 8
 00:00:35,000 --> 00:00:40,000
-La demora puede postergar el servicio previsto.
+La espera por el servicio puede prolongarse si no se financia lo pendiente.
 
 9
 00:00:40,000 --> 00:00:45,000
-OCDE (2025): la falta de continuidad financiera genera demoras en Perú.
+23 reportan 100 % de avance y siguen paralizadas.
 
 10
 00:00:45,000 --> 00:00:50,000
-El inventario no demuestra la causa de cada paralización.
+El avance físico no confirma funcionamiento.
 
 11
 00:00:50,000 --> 00:00:55,000
@@ -44,4 +44,4 @@ El inventario no demuestra la causa de cada paralización.
 
 12
 00:00:55,000 --> 00:01:00,000
-Explora los datos y sus fuentes en el dashboard.
+Explora el dashboard y sus fuentes.
