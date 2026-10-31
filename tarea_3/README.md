@@ -10,7 +10,7 @@ Se analiza el inventario de Contraloría con corte al **30 de junio de 2026**: 2
 
 ![Vista general del dashboard Obras que esperan](reel/recursos/dashboard_general.png)
 
-![Exploración filtrada de las obras con avance mayor que 90 %](reel/recursos/dashboard_exploracion.png)
+![Exploración de las obras con 100 % de avance reportado que siguen en el inventario](reel/recursos/dashboard_exploracion.png)
 
 ## Resultados
 
@@ -57,7 +57,7 @@ python -m http.server 8000 --directory tarea_3/web
 
 Abrir `http://localhost:8000`. Si ya se dispone de los originales, procesamiento y análisis reproducen las tablas sin conexión. La preparación web descarga la cartografía del MEF únicamente si no está presente. `datos/procesados/calidad.json` registra controles de calidad y `resumen.json` los resultados principales.
 
-El dashboard incluye cuatro indicadores, mapa departamental, gráficos por tipo, avance y causa, cuatro filtros, búsqueda y descarga CSV de la selección. La cartografía procede del servicio del MEF, atribuido al INEI en sus metadatos, y se utiliza con fines referenciales. Las geometrías y su fuente se conservan en `web/data/`.
+El dashboard presenta portada, pregunta, exploración, tres hallazgos, cierre y consulta de casos. Incluye cuatro indicadores, mapa departamental y gráficos por tipo, avance y causa. El avance se segmenta sin solapamientos y separa el 100 % reportado. La búsqueda del final funciona por nombre, entidad o código INFOBRAS, muestra ocho resultados por página y empieza sin una lista de obras. Se puede descargar el CSV de la selección. La cartografía procede del servicio del MEF, atribuido al INEI en sus metadatos, y se utiliza con fines referenciales. Las geometrías y su fuente se conservan en `web/data/`.
 
 El material audiovisual utiliza Python 3.12 en un entorno separado:
 
