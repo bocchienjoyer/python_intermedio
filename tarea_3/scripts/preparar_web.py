@@ -12,6 +12,7 @@ def main():
     campos=['infobras','cui','obra','entidad','modalidad','costo_obra','departamento','provincia','distrito',
             'anio_inicio','avance','tipo_obra','nivel_gobierno','causa','pim_2026','estado_presupuesto','url_informe']
     (destino/'obras.json').write_text(d[campos].to_json(orient='records',force_ascii=False),encoding='utf-8')
+    (destino/'hallazgos.json').write_bytes((RAIZ/'datos/procesados/hallazgos.json').read_bytes())
     mapa=destino/'departamentos.geojson'
     if not mapa.exists():
         contenido=urlopen(MAPA,timeout=90).read()
