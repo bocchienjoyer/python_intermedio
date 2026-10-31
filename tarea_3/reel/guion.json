@@ -19,18 +19,18 @@
     },
     {
       "inicio": 8.8,
-      "fin": 17.98,
+      "fin": 14.54,
       "titulo": "281 obras paralizadas",
       "visual": "Mapa y contador de obras de mayor avance",
-      "narracion": "En el Perú, doscientas ochenta y una construcciones públicas están paralizadas y reportan más del noventa por ciento de avance físico.",
+      "narracion": "De ese total, doscientas ochenta y una obras reportan más del noventa por ciento de avance físico.",
       "subtitulos": [
-        "281 obras paralizadas reportan más del 90 % de avance físico.",
+        "De ese total, 281 obras reportan más del 90 % de avance físico.",
         "Reportan más del 90 % de avance físico."
       ]
     },
     {
-      "inicio": 17.98,
-      "fin": 27.66,
+      "inicio": 14.54,
+      "fin": 24.22,
       "titulo": "",
       "visual": "155 en gran formato, presupuesto registrado para 2026 y barra proporcional dentro de las 281 obras de mayor avance",
       "narracion": "De ellas, ciento cincuenta y cinco figuran sin presupuesto asignado para dos mil veintiséis. Tener mucho construido no garantiza recursos para continuar.",
@@ -40,8 +40,8 @@
       ]
     },
     {
-      "inicio": 27.66,
-      "fin": 37.66,
+      "inicio": 24.22,
+      "fin": 34.22,
       "titulo": "¿Por qué importa?",
       "visual": "Fotografía real referencial con baja opacidad; entrada inicial de Sin continuidad financiera y segunda entrada de la culminación puede demorarse a los 3,53 segundos, junto al mensaje hablado genera demoras; billete que se aleja y reloj animado; referencia OCDE 2025",
       "narracion": "La OCDE advierte que no asegurar financiamiento entre años genera demoras. Cuando faltan recursos para terminar, la población puede seguir esperando el servicio.",
@@ -51,8 +51,8 @@
       ]
     },
     {
-      "inicio": 37.66,
-      "fin": 47.5,
+      "inicio": 34.22,
+      "fin": 44.06,
       "titulo": "",
       "visual": "23 y 100 % en gran formato, señal gráfica de pausa y PARALIZADAS destacada en naranja; avance físico reportado, no funcionamiento certificado",
       "narracion": "Además, veintitrés obras reportan cien por ciento de avance y siguen paralizadas. El avance físico no confirma que una obra esté funcionando.",
@@ -62,8 +62,8 @@
       ]
     },
     {
-      "inicio": 47.5,
-      "fin": 56.14,
+      "inicio": 44.06,
+      "fin": 52.7,
       "titulo": "¿Cómo asegurar que lo construido llegue a cumplir su propósito?",
       "visual": "Dos capturas del dashboard aprobado: portada y exploración, con cierre y fuentes",
       "narracion": "¿Cómo asegurar que lo construido llegue a cumplir su propósito? Explora el dashboard, sus fuentes y los casos que merecen seguimiento.",
@@ -78,5 +78,5 @@
     "https://documents1.worldbank.org/curated/en/099030325150510528/pdf/P177645-b964994f-03e4-4ce8-aa59-7642a26b538e.pdf"
   ],
   "nota_metodologica_presupuesto": "El grupo de mayor avance reúne 155 obras con CUI sin asignación registrada, 112 con asignación y 14 sin CUI. La ausencia de identificación se distingue de presupuesto cero confirmado; la metodología completa está en el dashboard y el README.",
-  "duracion_final_segundos": 56.14
+  "duracion_final_segundos": 52.7
 }
