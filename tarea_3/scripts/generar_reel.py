@@ -5,7 +5,7 @@ Con --narracion utiliza el audio proporcionado y ajusta las seis escenas a su du
 La referencia de voz propia debe mantenerse fuera del repositorio público.
 """
 from pathlib import Path
-import argparse,json,re,wave
+import argparse,json,re
 from functools import lru_cache
 from fractions import Fraction
 import av
@@ -153,7 +153,7 @@ def escena(numero,t,duracion,guion,narrada,subtitulo=None):
         mapa(im,d,anim,solo_mayor90=numero==1)
         total=2262 if numero==0 else 281
         d.text((855,615),str(round(total*anim)),font=fuente(112 if numero==0 else 142,True,True),fill=NARANJA,anchor='mt')
-        descripcion='obras paralizadas en el inventario nacional' if numero==0 else 'obras con más de 90 % de avance físico'
+        descripcion='obras públicas paralizadas al corte del informe' if numero==0 else 'obras con más de 90 % de avance físico'
         # La columna del dato queda fuera de la silueta del mapa.
         font=fuente(38)
         for j,linea in enumerate(lineas_texto(d,descripcion,font,285)):
@@ -180,7 +180,8 @@ def escena(numero,t,duracion,guion,narrada,subtitulo=None):
         senal_pausa(d,t)
         centrado(d,'y siguen',1050,46)
         d.rounded_rectangle((188,1140,892,1250),radius=18,fill=NARANJA)
-        centrado(d,'PARALIZADAS',1160,66,color=PAPEL,negrita=True)
+        font=fuente(66,negrita=True);caja=d.textbbox((0,0),'PARALIZADAS',font=font)
+        d.text(((W-caja[2]+caja[0])/2,1195-(caja[1]+caja[3])/2),'PARALIZADAS',font=font,fill=PAPEL)
     else:
         nombre='dashboard_general.png' if t<duracion/2 else 'dashboard_exploracion.png'
         if (REEL/'recursos'/nombre).exists():
@@ -196,18 +197,39 @@ def escena(numero,t,duracion,guion,narrada,subtitulo=None):
     centrado(d,frase,1450+(325-n_lineas*tamano*1.2)/2,tamano,color=PAPEL,ancho=900)
     referencia='OCDE (2025) · Estudio económico de Perú' if numero==3 else 'Fuente: Contraloría · corte 30/06/2026'
     centrado(d,referencia,1820,25,color=GRIS)
-    centrado(d,'Gráficos y música: elaboración propia',1858,21,color=GRIS)
+    centrado(d,'Tech Live · Kevin MacLeod / incompetech.com',1858,21,color=GRIS)
+    centrado(d,'CC BY 4.0 · creativecommons.org/licenses/by/4.0/',1888,18,color=GRIS)
     return im
 
+@lru_cache(maxsize=1)
+def pista_musical():
+    return leer_voz(REEL/'recursos/tech_live.mp3')
+
 def musica(segundos):
-    n=round(segundos*RATE);audio=np.zeros(n,dtype=np.float32)
-    for i,inicio in enumerate(np.arange(0,segundos,2.5)):
-        largo=min(round(2.3*RATE),n-round(inicio*RATE));t=np.arange(largo)/RATE
-        frecuencia=[220,261.6256,329.6276,293.6648,246.9417,196][i%6]
-        env=np.minimum(t/.15,1)*np.maximum(0,1-t/2.3)**2
-        nota=(np.sin(2*np.pi*frecuencia*t)+.3*np.sin(2*np.pi*2*frecuencia*t))*env*.014
-        start=round(inicio*RATE);audio[start:start+largo]+=nota.astype(np.float32)
+    """Fragmento de Tech Live, CC BY 4.0, con entradas y salidas suaves."""
+    n=round(segundos*RATE);inicio=8*RATE
+    audio=pista_musical()[inicio:inicio+n].copy()
+    if len(audio)!=n:raise ValueError('La pista musical no cubre el montaje.')
+    entrada=min(n,round(.4*RATE));salida=min(n,round(1.5*RATE))
+    audio[:entrada]*=np.linspace(0,1,entrada)
+    audio[-salida:]*=np.linspace(1,0,salida)
     return audio
+
+def mezclar_audio(voz,base):
+    """Música presente, con reducción suave durante la voz y prioridad de narración."""
+    rms_voz=float(np.sqrt(np.mean(voz**2)))
+    if rms_voz<1e-5:raise ValueError('La narración no contiene una señal de voz utilizable.')
+    musica=base.copy();rms_musica=float(np.sqrt(np.mean(musica**2)))
+    musica*=10**(-13/20)*rms_voz/max(rms_musica,1e-8)
+    salto=round(.01*RATE);controles=[];nivel=1.
+    for inicio in range(0,len(voz),salto):
+        rms=float(np.sqrt(np.mean(voz[inicio:inicio+salto]**2)))
+        objetivo=.65 if rms>max(.012,.08*rms_voz) else 1.
+        constante=.025 if objetivo<nivel else .25
+        nivel=objetivo+(nivel-objetivo)*np.exp(-.01/constante);controles.append(nivel)
+    musica*=np.interp(np.arange(len(voz)),np.arange(len(controles))*salto,controles)
+    mezcla=voz+musica;ganancia=.95/max(float(np.max(np.abs(mezcla))),1e-8)
+    return mezcla*ganancia,musica*ganancia,ganancia
 
 def leer_voz(path):
     partes=[];res=av.AudioResampler(format='s16',layout='mono',rate=RATE)
@@ -255,17 +277,12 @@ def main():
     else:tiempos=[{'inicio':i*10,'fin':(i+1)*10} for i in range(6)]
     audio=musica(segundos)
     if voz is not None:
-        rms_voz=float(np.sqrt(np.mean(voz**2)))
-        if rms_voz<1e-5:raise ValueError('La narración no contiene una señal de voz utilizable.')
-        rms_musica=float(np.sqrt(np.mean(audio**2)))
-        audio*=min(1,.1*rms_voz/max(rms_musica,1e-8))
-        audio+=voz
-    pico=float(np.max(np.abs(audio)))
-    if pico>0:audio*=.95/pico
+        audio,_,_=mezclar_audio(voz,audio)
+    else:
+        pico=float(np.max(np.abs(audio)))
+        if pico>0:audio*=.95/pico
     salida=REEL/('reel.mp4' if voz is not None else 'vista_previa.mp4')
     recursos=REEL/'recursos';recursos.mkdir(exist_ok=True)
-    with wave.open(str(recursos/'musica_original.wav'),'wb') as w:
-        w.setnchannels(1);w.setsampwidth(2);w.setframerate(RATE);w.writeframes((musica(segundos)*32767).astype('<i2').tobytes())
     with av.open(str(salida),'w',options={'movflags':'+faststart'}) as cont:
         video=cont.add_stream('libx264',rate=args.fps);video.width=W;video.height=H;video.pix_fmt='yuv420p';video.sample_aspect_ratio=Fraction(1,1);video.options={'crf':'24','preset':'veryfast'}
         sonido=cont.add_stream('aac',rate=RATE);sonido.layout='mono';sonido.bit_rate=96000

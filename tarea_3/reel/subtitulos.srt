@@ -3,41 +3,41 @@
 Mucho avance, pero las obras siguen esperando.
 
 2
-00:00:02,820 --> 00:00:09,360
-Una obra paralizada retrasa el acceso de la población a nuevos o mejores servicios públicos.
+00:00:02,820 --> 00:00:08,800
+Al corte del informe, el Perú registra dos mil doscientas sesenta y dos obras públicas paralizadas.
 
 3
-00:00:09,360 --> 00:00:18,540
+00:00:08,800 --> 00:00:17,980
 En el Perú, doscientas ochenta y una construcciones públicas están paralizadas y reportan más del noventa por ciento de avance físico.
 
 4
-00:00:18,540 --> 00:00:24,160
+00:00:17,980 --> 00:00:23,600
 De ellas, ciento cincuenta y cinco figuran sin presupuesto asignado para dos mil veintiséis.
 
 5
-00:00:24,160 --> 00:00:28,220
+00:00:23,600 --> 00:00:27,660
 Tener mucho construido no garantiza recursos para continuar.
 
 6
-00:00:28,220 --> 00:00:33,120
+00:00:27,660 --> 00:00:32,560
 La OCDE advierte que no asegurar financiamiento entre años genera demoras.
 
 7
-00:00:33,120 --> 00:00:38,220
+00:00:32,560 --> 00:00:37,660
 Cuando faltan recursos para terminar, la población puede seguir esperando el servicio.
 
 8
-00:00:38,220 --> 00:00:43,760
+00:00:37,660 --> 00:00:43,200
 Además, veintitrés obras reportan cien por ciento de avance y siguen paralizadas.
 
 9
-00:00:43,760 --> 00:00:48,060
+00:00:43,200 --> 00:00:47,500
 El avance físico no confirma que una obra esté funcionando.
 
 10
-00:00:48,060 --> 00:00:51,760
+00:00:47,500 --> 00:00:51,200
 ¿Cómo asegurar que lo construido llegue a cumplir su propósito?
 
 11
-00:00:51,760 --> 00:00:56,700
+00:00:51,200 --> 00:00:56,140
 Explora el dashboard, sus fuentes y los casos que merecen seguimiento.
