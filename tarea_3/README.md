@@ -6,7 +6,7 @@
 
 Una obra paralizada retrasa el acceso de la población a nuevos o mejores servicios públicos. Este proyecto explora ubicación, avance físico, presupuesto y causas reportadas de las **2.262 obras** del inventario de Contraloría al **30 de junio de 2026**, con atención a las de mayor avance.
 
-**[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site) · [Reel de divulgación — 59,2 segundos](reel/reel.mp4)**
+**[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site) · [Reel de divulgación — 56,9 segundos](reel/reel.mp4)**
 
 <details>
 <summary>Dos vistas del dashboard</summary>
@@ -80,7 +80,7 @@ python -m pip install -r tarea_3/reel/requirements.txt
 python tarea_3/scripts/generar_reel.py
 ```
 
-Sin narración, este comando reproduce `reel/vista_previa.mp4`, de 60 segundos, con música original y aviso visible de ausencia de voz. La síntesis utiliza otro entorno con `reel/requirements_voz.txt` y una referencia de voz propia mantenida fuera de la carpeta pública. Los créditos están en `reel/recursos/creditos.md`.
+Sin narración, este comando reproduce `reel/vista_previa.mp4`, de 60 segundos, con la pista «Divider», de Chris Zabriskie, bajo licencia CC BY 4.0, y aviso visible de ausencia de voz. La síntesis utiliza otro entorno con `reel/requirements_voz.txt` y una referencia de voz propia mantenida fuera de la carpeta pública. Los créditos y enlaces de licencia están en `reel/recursos/creditos.md`.
 
 Para sintetizar la narración, la referencia de 15–25 segundos y su transcripción exacta se ubican en una carpeta privada. Desde el entorno de voz:
 
@@ -95,7 +95,7 @@ El modelo Base Qwen3-TTS 0.6B se descarga en la caché privada. Se sintetiza por
 python tarea_3/scripts/generar_reel.py --narracion .cache/tarea3-voz/salida/narracion.wav --tiempos .cache/tarea3-voz/salida/tiempos_escenas.json --subtitulos .cache/tarea3-voz/salida/subtitulos.srt
 ```
 
-El montaje exige 45–75 segundos y tiempos consecutivos para escenas y subtítulos. La pronunciación y la sincronización se revisan escuchando el resultado. El video incorpora dos capturas del dashboard; sus imágenes originales están en `reel/recursos/dashboard_general.png` y `reel/recursos/dashboard_exploracion.png`.
+El montaje exige 45–75 segundos y tiempos consecutivos para escenas y subtítulos. La voz recibe ecualización, compresión y control de picos para mejorar su presencia, y la música se atenúa durante el habla. La pronunciación y la sincronización se revisan escuchando el resultado. El video incorpora dos capturas del dashboard; sus imágenes originales están en `reel/recursos/dashboard_general.png` y `reel/recursos/dashboard_exploracion.png`.
 
 ## Uso de inteligencia artificial
 
