@@ -9,7 +9,7 @@ import argparse,json,re,wave
 from functools import lru_cache
 import av
 import numpy as np
-from PIL import Image,ImageDraw,ImageFont
+from PIL import Image,ImageDraw,ImageFont,ImageOps
 
 RAIZ=Path(__file__).resolve().parents[1]
 REEL=RAIZ/'reel'
@@ -59,60 +59,43 @@ def mapa(im,d,fraccion=1,solo_mayor90=True):
                 vertices=[(130+(v[0]-xmin)*escala,570+(ymax-v[1])*escala) for v in ring]
                 d.polygon(vertices,fill=c,outline=PAPEL,width=2)
 
+@lru_cache(maxsize=1)
+def fondo_obra():
+    """Fotografía de archivo, utilizada como fondo referencial con transparencia."""
+    foto=Image.open(REEL/'recursos/obra_referencial.jpg').convert('RGB')
+    foto=ImageOps.fit(foto,(W,1070),method=Image.Resampling.LANCZOS,centering=(.5,.52)).convert('RGBA')
+    intensidad=.36*np.sin(np.linspace(0,np.pi,1070))**.7
+    alfa=np.repeat((intensidad*255).astype(np.uint8)[:,None],W,axis=1)
+    foto.putalpha(Image.fromarray(alfa));return foto
+
+@lru_cache(maxsize=1)
+def billete():
+    im=Image.new('RGBA',(190,120),(0,0,0,0));d=ImageDraw.Draw(im)
+    d.rounded_rectangle((8,20,182,100),radius=4,fill='#d9e4d3',outline=VERDE,width=5)
+    d.rectangle((18,30,172,90),outline=VERDE,width=2)
+    d.ellipse((69,31,122,89),fill=PAPEL,outline=VERDE,width=3)
+    d.text((78,43),'S/',font=fuente(31),fill=VERDE)
+    for x in [34,147]:
+        d.ellipse((x-9,39,x+9,57),outline=VERDE,width=2)
+        d.ellipse((x-9,64,x+9,82),outline=VERDE,width=2)
+    return im
+
 def continuidad_grafica(im,t):
-    """Ilustración conceptual del financiamiento y la espera por un servicio."""
-    capa=Image.new('RGBA',im.size,(0,0,0,0));fondo=ImageDraw.Draw(capa)
-    tenue=(25,107,84,23)
-    # Obra en construcción como marca de agua, sin representar un caso del inventario.
-    fondo.line([(355,1120),(355,700),(910,700)],fill=tenue,width=9)
-    fondo.line([(355,700),(600,625),(910,700)],fill=tenue,width=7)
-    fondo.line([(850,700),(850,800)],fill=tenue,width=6)
-    fondo.rectangle((500,805,960,1130),outline=tenue,width=8)
-    for y in [885,965,1045]:fondo.line((500,y,960,y),fill=tenue,width=6)
-    for x in [590,680,770,860]:fondo.line((x,805,x,1130),fill=tenue,width=5)
-    fondo.line((120,1135,970,1135),fill=tenue,width=5)
-    im.paste(capa,(0,0),capa);d=ImageDraw.Draw(im)
-    # Tres etapas del mecanismo general descrito por la literatura.
-    for cx in [225,540,855]:
-        d.ellipse((cx-117,765,cx+117,999),fill='#edf0e5')
-    # Financiamiento: billetera y moneda.
-    d.rounded_rectangle((145,827,305,950),radius=13,fill=PAPEL,outline=VERDE,width=6)
-    d.line((155,827,155,807,282,807,282,827),fill=VERDE,width=5)
-    d.rounded_rectangle((260,860,317,912),radius=8,fill='#d9e4d3',outline=VERDE,width=5)
-    d.ellipse((278,879,287,888),fill=VERDE)
-    d.ellipse((183,845,245,907),fill=PAPEL,outline=NARANJA,width=4)
-    d.text((195,856),'S/',font=fuente(26),fill=NARANJA)
-    # Estructura incompleta y grúa.
-    d.line((475,972,475,756,637,756),fill=VERDE,width=6)
-    d.line((475,756,553,719,637,756),fill=VERDE,width=4)
-    d.line((617,756,617,818),fill=VERDE,width=4)
-    d.rectangle((605,817,629,838),fill=NARANJA)
-    d.rectangle((502,853,598,972),fill=PAPEL,outline=VERDE,width=6)
-    d.line((502,911,598,911),fill=VERDE,width=5)
-    d.line((550,853,550,972),fill=VERDE,width=5)
-    d.line((510,853,510,828,541,828),fill=NARANJA,width=5)
-    # Servicio previsto y reloj de espera.
-    d.polygon([(778,834),(855,783),(932,834)],fill=PAPEL,outline=GRIS,width=5)
-    d.rectangle((790,835,920,971),fill=PAPEL,outline=GRIS,width=5)
-    for x in [810,868]:
-        for y in [852,892]:d.rectangle((x,y,x+24,y+24),outline=GRIS,width=4)
-    d.rectangle((840,933,869,970),outline=GRIS,width=4)
-    d.ellipse((889,928,960,999),fill=PAPEL,outline=NARANJA,width=5)
-    angulo=-np.pi/2+t*.45
-    d.line((924,963,924+22*np.cos(angulo),963+22*np.sin(angulo)),fill=NARANJA,width=4)
-    d.line((924,963,910,957),fill=NARANJA,width=4)
-    # El flujo llega a una pausa: se muestra una interrupción, no un monto o una predicción.
-    d.line((351,881,372,881),fill=VERDE,width=5)
-    d.line((410,881,425,881),fill='#bac5b6',width=4)
-    d.polygon([(425,881),(414,873),(414,889)],fill='#bac5b6')
-    for x in [382,394]:d.rounded_rectangle((x,867,x+6,895),radius=2,fill=NARANJA)
-    avance=min((t%2)/.9,1)
-    d.ellipse((348+24*avance,876,358+24*avance,886),fill=NARANJA)
-    for x in range(658,731,16):d.line((x,881,x+8,881),fill='#bac5b6',width=4)
-    d.polygon([(741,881),(730,873),(730,889)],fill='#bac5b6')
-    for cx,etiqueta in [(225,'Financiamiento'),(540,'Obra'),(855,'Servicio')]:
-        ancho=d.textlength(etiqueta,font=fuente(32))
-        d.text((cx-ancho/2,1030),etiqueta,font=fuente(32),fill=TINTA)
+    """Foto real de fondo, billete que se aleja y reloj de espera animado."""
+    foto=fondo_obra();im.paste(foto,(0,440),foto)
+    avance=np.clip((t-.2)/9,0,1)**1.15
+    nota=billete().rotate(8*np.sin(t*1.8)-4,resample=Image.Resampling.BICUBIC,expand=True)
+    cx=885+350*avance;cy=590-55*avance+6*np.sin(t*1.5)
+    im.paste(nota,(round(cx-nota.width/2),round(cy-nota.height/2)),nota)
+    d=ImageDraw.Draw(im)
+    cx,cy,r=960,1205,44
+    d.ellipse((cx-r,cy-r,cx+r,cy+r),fill=PAPEL,outline=NARANJA,width=5)
+    for angulo in [-np.pi/2,0,np.pi/2,np.pi]:
+        d.line((cx+34*np.cos(angulo),cy+34*np.sin(angulo),cx+38*np.cos(angulo),cy+38*np.sin(angulo)),fill=NARANJA,width=3)
+    for angulo,largo,grosor in [(-np.pi/2+.10*t,28,4),(-2.5+.025*t,19,5)]:
+        d.line((cx,cy,cx+largo*np.cos(angulo),cy+largo*np.sin(angulo)),fill=NARANJA,width=grosor)
+    d.ellipse((cx-4,cy-4,cx+4,cy+4),fill=NARANJA)
+    d.text((72,1505),'Foto referencial · EE. UU. · Strange Happenings / Pexels',font=fuente(22),fill=GRIS)
 
 def escena(numero,t,duracion,guion,narrada,subtitulo=None):
     im=Image.new('RGB',(W,H),PAPEL);d=ImageDraw.Draw(im)
