@@ -1,0 +1,6 @@
+{
+  "url": "https://ws.mineco.gob.pe/server/rest/services/cartografia_base_limites/MapServer/1/query?where=1%3D1&outFields=*&outSR=4326&geometryPrecision=3&maxAllowableOffset=0.02&f=geojson",
+  "proveedor": "MEF, capa Límite Departamental",
+  "fuente_atribucion": "INEI, según atributos de la capa",
+  "uso": "Límites referenciales para visualización, sin medición de áreas."
+}
