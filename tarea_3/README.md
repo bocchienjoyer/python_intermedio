@@ -8,9 +8,13 @@ Se analiza el inventario de Contraloría con corte al **30 de junio de 2026**: 2
 
 ## Resultados
 
-- **281 obras (12,4 %) superan el 90 % de avance físico y figuran paralizadas.** El umbral es estrictamente mayor que 90 % y hasta 100 %, conforme al rango utilizado en el anexo. Tres obras con exactamente 90 % pertenecen al rango anterior.
-- **155 obras de mayor avance con código de inversión no registran presupuesto asignado para 2026.** Son el 58,1 % de las 267 con CUI; otras 112 registran asignación y 14 carecen de CUI. La ausencia de código impide distinguir presupuesto cero de falta de identificación presupuestaria.
-- **136 de las 281 obras de mayor avance (48,4 %) corresponden a vivienda, construcción y saneamiento o a transportes y comunicaciones.** Son 79 y 57 obras, respectivamente. Las categorías incluyen distintos tipos de infraestructura; no representan exclusivamente sistemas de agua ni carreteras.
+**281 obras (12,4 %) superan el 90 % de avance físico y figuran paralizadas.** De ellas, 155 con código de inversión no registran presupuesto asignado para 2026. El umbral de avance es estrictamente mayor que 90 % y hasta 100 %, conforme al rango del anexo; tres obras con exactamente 90 % pertenecen al intervalo anterior.
+
+- **23 obras reportan 100 % de avance y siguen clasificadas como paralizadas.** Es una discrepancia que requiere seguimiento; el registro no permite determinar si están operativas ni qué falta para culminar cada caso.
+- **58 de las obras de mayor avance se iniciaron en 2015 o antes.** La antigüedad se refiere al inicio reportado, no a años de paralización continua.
+- **El incumplimiento de contrato es la causa más reportada entre las obras de mayor avance: 76 casos, frente a 55 que señalan falta de recursos financieros y liquidez.** Son declaraciones de las entidades, no una identificación causal independiente. La situación presupuestaria de 2026 y el motivo de paralización son variables distintas.
+
+Entre las 281 obras, 267 tienen CUI: 155 sin asignación registrada (58,1 %) y 112 con asignación. Otras 14 carecen de CUI; la ausencia de código impide distinguir presupuesto cero de falta de identificación presupuestaria. La distribución por infraestructura también puede explorarse: 79 corresponden a vivienda/construcción/saneamiento y 57 a transportes/comunicaciones (136 de 281, 48,4 %).
 
 De las 281 obras, 23 reportan 100 % de avance. Se conservan porque forman parte del inventario oficial. Al excluirlas, quedan 258 obras: 248 con CUI y 10 sin CUI. Entre las 248 identificadas, 144 (58,1 %) no registran asignación. El resultado es similar al del grupo completo. En todo el inventario, la proporción sin asignación entre obras con CUI es 64,8 %; el grupo de mayor avance no presenta una proporción superior.
 

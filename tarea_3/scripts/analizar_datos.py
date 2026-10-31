@@ -41,6 +41,12 @@ def main():
         tabla['porcentaje_obras']=100*tabla.obras/len(d)
         tabla.sort_values('obras',ascending=False).to_csv(salida/f'por_{col}.csv',index=False)
     alto.groupby('tipo_obra').size().sort_values(ascending=False).to_csv(salida/'avance_alto_por_tipo.csv',header=['obras'])
+    hallazgos={'corte':'2026-06-30','universo_avance_alto':len(alto),
+               'reportan_cien':int(alto.avance.eq(100).sum()),
+               'inicio_hasta_2015':int(alto.anio_inicio.le(2015).sum()),
+               'inicio_no_declarado':int(alto.anio_inicio.isna().sum()),
+               'causas_reportadas':{k:int(v) for k,v in alto.causa.value_counts().items()}}
+    (salida/'hallazgos.json').write_text(json.dumps(hallazgos,ensure_ascii=False,indent=2),encoding='utf-8')
     (salida/'resumen.json').write_text(json.dumps(resumen,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(resumen,ensure_ascii=False,indent=2))
     print('AVANCE ALTO: TIPO',alto.tipo_obra.value_counts().to_dict())
