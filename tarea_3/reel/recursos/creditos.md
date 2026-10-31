@@ -1,6 +1,7 @@
 # Créditos audiovisuales
 
 - Datos: Contraloría General de la República, informe y Anexo 1 de obras paralizadas al 30 de junio de 2026.
+- Interpretación de continuidad presupuestaria: OCDE, *OECD Economic Surveys: Peru 2025*, capítulo 1; Banco Mundial, *Peru: Seizing Opportunities for Growth and Prosperity* (2025), capítulo 4, párrafos 185 y 189–192. Enlaces completos en `reel/guion.json`. El mecanismo general no se atribuye como causa a cada obra.
 - Cartografía referencial: servicio del MEF, atribución INEI en los metadatos de la capa departamental.
 - Gráficos y composición: elaboración a partir de los datos oficiales mediante `scripts/generar_reel.py`.
 - Capturas: dashboard Obras que esperan, de Jose Pablo Navarro Nateros.

@@ -6,11 +6,75 @@
   "fuente": "Contraloría General de la República, informe y Anexo 1 a junio de 2026",
   "fuente_url": "https://www.gob.pe/institucion/contraloria/informes-publicaciones/8489152-informe-de-obras-paralizadas-en-el-territorio-nacional-a-junio-de-2026",
   "escenas": [
-    {"inicio": 0, "fin": 10, "titulo": "Obras que esperan", "visual": "Mapa de las obras que superan el 90 %; aparición progresiva del total", "narracion": "Una obra puede avanzar mucho y seguir paralizada. ¿Qué queda esperando cuando la construcción se detiene?", "subtitulos": ["Una obra puede avanzar mucho y seguir paralizada.", "¿Qué queda esperando cuando la construcción se detiene?"]},
-    {"inicio": 10, "fin": 20, "titulo": "281 obras", "visual": "Mapa departamental y contador de obras de mayor avance", "narracion": "En junio de dos mil veintiséis, la Contraloría registró dos mil doscientas sesenta y dos obras paralizadas. Doscientas ochenta y una superaban el noventa por ciento de avance físico.", "subtitulos": ["2.262 obras paralizadas al 30 de junio de 2026.", "281 superan el 90 % de avance físico reportado."]},
-    {"inicio": 20, "fin": 30, "titulo": "169 sin PIM positivo", "visual": "Barra de 281 obras: 169 sin asignación PIM positiva y 112 con asignación", "narracion": "Entre esas obras, ciento sesenta y nueve no registraban presupuesto PIM positivo para ese año. Son seis de cada diez. Es una fotografía presupuestaria, no una explicación de todas las causas.", "subtitulos": ["169 de 281 no registran PIM positivo para 2026: 60,1 %.", "PIM es presupuesto asignado; no mide gasto ni explica por sí solo la paralización."]},
-    {"inicio": 30, "fin": 40, "titulo": "Infraestructura que importa", "visual": "Barras por tipo de obra de mayor avance y captura del dashboard", "narracion": "Vivienda, construcción y saneamiento, junto con transportes y comunicaciones, reúnen casi la mitad de las obras de mayor avance. Cada registro merece seguimiento y una verificación del servicio previsto.", "subtitulos": ["79 en vivienda, construcción y saneamiento; 57 en transportes y comunicaciones.", "136 de 281 obras de mayor avance: 48,4 %."]},
-    {"inicio": 40, "fin": 50, "titulo": "Avance no confirma servicio", "visual": "Distinción gráfica entre avance reportado y puesta en servicio; captura de metodología", "narracion": "El avance físico no confirma que una obra funcione. Incluso hay veintitrés que reportan cien por ciento y siguen en el inventario. Los datos describen registros, no miden todos sus impactos sociales.", "subtitulos": ["23 obras reportan 100 % y siguen en el inventario oficial.", "Avance físico y funcionamiento son hitos diferentes."]},
-    {"inicio": 50, "fin": 60, "titulo": "Una pregunta abierta", "visual": "Dashboard y cierre con pregunta, fuente, créditos y aviso IA en versión narrada", "narracion": "Explora los datos en el dashboard. ¿Qué deberíamos exigir para que una obra deje de esperar y cumpla su propósito para la población?", "subtitulos": ["Explora el inventario y sus fuentes en el dashboard.", "¿Qué deberíamos exigir para que una obra deje de esperar?"]}
+    {
+      "inicio": 0,
+      "fin": 10,
+      "titulo": "Mucho avance. ¿Y después?",
+      "visual": "Mapa y aparición de las 281 obras; pregunta inicial",
+      "narracion": "Una obra puede avanzar mucho y seguir paralizada. Lo construido todavía necesita continuidad para llegar a cumplir su propósito.",
+      "subtitulos": [
+        "Una obra puede avanzar mucho y seguir paralizada.",
+        "Mucho avance no garantiza continuidad ni funcionamiento."
+      ]
+    },
+    {
+      "inicio": 10,
+      "fin": 20,
+      "titulo": "281 obras",
+      "visual": "Mapa departamental y contador de obras de mayor avance",
+      "narracion": "En junio de dos mil veintiséis, doscientas ochenta y una obras del inventario de paralizadas de la Contraloría superaban el noventa por ciento de avance físico.",
+      "subtitulos": [
+        "2.262 obras en el inventario al 30 de junio de 2026.",
+        "281 reportan más del 90 % de avance y figuran paralizadas."
+      ]
+    },
+    {
+      "inicio": 20,
+      "fin": 30,
+      "titulo": "155 sin asignación registrada",
+      "visual": "281 obras: 155 sin asignación con CUI, 112 con asignación y 14 sin CUI",
+      "narracion": "Entre ellas, ciento cincuenta y cinco tenían código de inversión y no registraban presupuesto asignado para dos mil veintiséis. Las que no tienen código se analizan aparte.",
+      "subtitulos": [
+        "155 con código de inversión no registran asignación para 2026.",
+        "112 con asignación; 14 sin código, analizadas aparte."
+      ]
+    },
+    {
+      "inicio": 30,
+      "fin": 40,
+      "titulo": "¿Qué implica?",
+      "visual": "Secuencia condicional: financiar trabajos pendientes, continuarlos y habilitar el servicio",
+      "narracion": "Si faltan trabajos indispensables, conseguir recursos permite financiarlos. Mientras no puedan completarse, el servicio que justificó la inversión puede seguir esperando.",
+      "subtitulos": [
+        "Si faltan trabajos indispensables, hace falta financiar su continuación.",
+        "La demora puede postergar el servicio previsto."
+      ]
+    },
+    {
+      "inicio": 40,
+      "fin": 50,
+      "titulo": "El problema de la continuidad",
+      "visual": "OCDE 2025: financiamiento entre años, demoras e ineficiencias",
+      "narracion": "La OCDE advierte que, en Perú, no asegurar financiamiento entre años genera demoras. Es un problema de continuidad; nuestros datos no explican la causa de cada paralización.",
+      "subtitulos": [
+        "OCDE (2025): la falta de continuidad financiera genera demoras en Perú.",
+        "El inventario no demuestra la causa de cada paralización."
+      ]
+    },
+    {
+      "inicio": 50,
+      "fin": 60,
+      "titulo": "De lo construido al servicio",
+      "visual": "Dashboard, pregunta abierta, fuentes y créditos",
+      "narracion": "¿Cómo asegurar que lo construido llegue a cumplir su propósito? Explora el dashboard y sus fuentes para seguir la discusión.",
+      "subtitulos": [
+        "¿Cómo asegurar que lo construido llegue a cumplir su propósito?",
+        "Explora los datos y sus fuentes en el dashboard."
+      ]
+    }
+  ],
+  "referencias_interpretacion": [
+    "https://www.oecd.org/en/publications/2025/09/oecd-economic-surveys-peru-2025_d9bfa904/full-report/achieving-strong-growth-and-safeguarding-fiscal-sustainability_000545c6.html",
+    "https://documents1.worldbank.org/curated/en/099030325150510528/pdf/P177645-b964994f-03e4-4ce8-aa59-7642a26b538e.pdf"
   ]
 }

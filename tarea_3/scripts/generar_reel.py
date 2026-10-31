@@ -71,37 +71,36 @@ def escena(numero,t,duracion,guion,narrada):
         texto(d,'obras con más de 90 % de avance reportado',(700,680),34,ancho=300)
         texto(d,'2.262 obras en el inventario nacional',(72,1430),36)
     elif numero==2:
-        d.text((72,480),str(round(169*anim)),font=fuente(190,True),fill=NARANJA)
+        d.text((72,480),str(round(155*anim)),font=fuente(190,True),fill=NARANJA)
         texto(d,'de 281 obras de mayor avance',(72,710),47)
         d.rounded_rectangle((72,880,1008,1030),radius=10,fill='#d9e4d3')
-        d.rounded_rectangle((72,880,72+936*(169/281)*anim,1030),radius=10,fill=VERDE)
-        texto(d,'Sin PIM positivo: 169 (60,1 %)',(72,1080),39)
-        texto(d,'Con PIM positivo: 112 (39,9 %)',(72,1140),39)
-        texto(d,'Presupuesto registrado para 2026, no gasto ejecutado.',(72,1320),34,color=GRIS)
+        d.rounded_rectangle((72,880,72+936*(155/281)*anim,1030),radius=10,fill=VERDE)
+        texto(d,'155 sin asignación registrada (con CUI)',(72,1080),39)
+        texto(d,'112 con asignación · 14 sin CUI aparte',(72,1150),39)
+        texto(d,'CUI: código de inversión. Sin código, no se verifica el presupuesto.',(72,1290),34,color=GRIS)
+        texto(d,'Presupuesto de 2026: asignación anual, no gasto.',(72,1430),34,color=GRIS)
     elif numero==3:
-        datos=[('Vivienda, construcción y saneamiento',79),('Transportes y comunicaciones',57),('Educación y cultura',49),('Agricultura',41),('Otros tipos de obra',55)]
-        for k,(nombre,n) in enumerate(datos):
-            y=520+k*175;texto(d,nombre,(72,y),34,ancho=790);d.text((930,y),str(n),font=fuente(38),fill=TINTA)
-            d.rounded_rectangle((72,y+70,72+900*n/79*anim,y+108),radius=4,fill=VERDE if k<2 else '#9eb7a1')
-        texto(d,'136 de 281 · 48,4 % en los dos primeros tipos',(72,1480),40,color=NARANJA)
+        texto(d,'SI FALTAN TRABAJOS INDISPENSABLES…',(72,500),34,color=VERDE)
+        texto(d,'1. Resolver su financiamiento',(72,650),56,serif=True)
+        texto(d,'2. Completar los trabajos',(72,890),56,serif=True)
+        texto(d,'3. Habilitar el servicio previsto',(72,1130),56,serif=True)
+        texto(d,'Una demora puede postergar el beneficio esperado.',(72,1430),39,color=NARANJA)
     elif numero==4:
-        d.text((72,475),'23',font=fuente(190,True),fill=NARANJA)
-        texto(d,'reportan 100 % y siguen en el inventario',(72,710),54,serif=True)
-        d.line((72,970,1008,970),fill='#b7c8af',width=3)
-        texto(d,'AVANCE FÍSICO',(72,1040),32,color=VERDE)
-        texto(d,'Describe el progreso reportado de la construcción.',(72,1110),42)
-        texto(d,'PUESTA EN SERVICIO',(72,1290),32,color=VERDE)
-        texto(d,'Requiere verificación adicional de funcionamiento.',(72,1360),42)
+        texto(d,'OCDE · PERÚ · 2025',(72,500),36,color=VERDE)
+        texto(d,'Financiamiento sin continuidad entre años',(72,660),62,serif=True)
+        texto(d,'Demoras e ineficiencias',(72,970),58,color=NARANJA,serif=True)
+        texto(d,'Este mecanismo general no demuestra qué pasó en cada obra.',(72,1320),44,color=GRIS)
     else:
         captura=REEL/'recursos/dashboard_general.png'
         if captura.exists():
             shot=Image.open(captura).convert('RGB');shot.thumbnail((936,650));im.paste(shot,(72,450))
-        texto(d,'¿Qué deberíamos exigir para que una obra deje de esperar?',(72,1150),66,serif=True)
+        texto(d,'¿Cómo asegurar que lo construido llegue a cumplir su propósito?',(72,1150),66,serif=True)
         texto(d,'Explora los datos y sus fuentes en el dashboard.',(72,1470),35,color=VERDE)
     # Subtítulos de la maqueta, ajustados por escena. Se recalculan al incorporar narración.
     frase=guion['escenas'][numero]['subtitulos'][min(1,int(t/(duracion/2)))]
     d.rectangle((0,1600,W,1790),fill=TINTA);texto(d,frase,(72,1630),38,color=PAPEL)
-    d.text((72,1820),'Fuente: Contraloría · corte 30/06/2026',font=fuente(25),fill=GRIS)
+    referencia='OCDE (2025) · Banco Mundial (2025, cap. 4)' if numero in [3,4] else 'Fuente: Contraloría · corte 30/06/2026'
+    d.text((72,1820),referencia,font=fuente(25),fill=GRIS)
     aviso='Voz generada con IA a partir de voz propia' if narrada else 'VISTA PREVIA · SIN NARRACIÓN'
     d.text((72,1855),'Gráficos y música: elaboración propia',font=fuente(21),fill=GRIS)
     d.text((72,1883),aviso,font=fuente(20),fill=NARANJA)
