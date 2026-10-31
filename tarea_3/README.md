@@ -57,7 +57,7 @@ python -m http.server 8000 --directory tarea_3/web
 
 Abrir `http://localhost:8000`. Si ya se dispone de los originales, procesamiento y análisis reproducen las tablas sin conexión. La preparación web descarga la cartografía del MEF únicamente si no está presente. `datos/procesados/calidad.json` registra controles de calidad y `resumen.json` los resultados principales.
 
-El dashboard presenta portada, pregunta, exploración, tres hallazgos, cierre y consulta de casos. Incluye cuatro indicadores, mapa departamental y gráficos por tipo, avance y causa. El avance se segmenta sin solapamientos y separa el 100 % reportado. La búsqueda del final funciona por nombre, entidad o código INFOBRAS, muestra ocho resultados por página y empieza sin una lista de obras. Se puede descargar el CSV de la selección. La cartografía procede del servicio del MEF, atribuido al INEI en sus metadatos, y se utiliza con fines referenciales. Las geometrías y su fuente se conservan en `web/data/`.
+El dashboard incluye cuatro indicadores, mapa departamental y gráficos por tipo, avance y causa. Cinco filtros permiten explorar departamento, tipo, avance, presupuesto y año de inicio. La consulta final busca por nombre, entidad o código INFOBRAS y permite descargar la selección en CSV. La cartografía procede del servicio del MEF, atribuido al INEI en sus metadatos, y se utiliza con fines referenciales; se conserva con su fuente en `web/data/`.
 
 El material audiovisual utiliza Python 3.12 en un entorno separado:
 
@@ -67,6 +67,21 @@ python tarea_3/scripts/generar_reel.py
 ```
 
 Sin narración, este comando reproduce `reel/vista_previa.mp4`, de 60 segundos, con música original y aviso visible de ausencia de voz. La síntesis utiliza otro entorno con `reel/requirements_voz.txt` y una referencia de voz propia mantenida fuera de la carpeta pública. Los créditos están en `reel/recursos/creditos.md`.
+
+Para sintetizar la narración, la referencia de 15–25 segundos y su transcripción exacta se ubican en una carpeta privada. Desde el entorno de voz:
+
+```console
+python -m pip install -r tarea_3/reel/requirements_voz.txt
+python tarea_3/scripts/generar_narracion.py --referencia .cache/tarea3-voz/referencia.wav --transcripcion .cache/tarea3-voz/referencia.txt --salida .cache/tarea3-voz/salida
+```
+
+El modelo Base Qwen3-TTS 0.6B se descarga en la caché privada. Se sintetiza por oraciones para obtener audio, tiempos por escena y subtítulos con el texto pronunciado. Desde el entorno de montaje:
+
+```console
+python tarea_3/scripts/generar_reel.py --narracion .cache/tarea3-voz/salida/narracion.wav --tiempos .cache/tarea3-voz/salida/tiempos_escenas.json --subtitulos .cache/tarea3-voz/salida/subtitulos.srt
+```
+
+El montaje exige 45–75 segundos y tiempos consecutivos para escenas y subtítulos. La pronunciación y la sincronización se revisan escuchando el resultado. El video incorpora dos capturas del dashboard; sus imágenes originales están en `reel/recursos/dashboard_general.png` y `reel/recursos/dashboard_exploracion.png`.
 
 ## Uso de inteligencia artificial
 
