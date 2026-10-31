@@ -32,13 +32,13 @@ def texto(draw,contenido,xy,tamano=44,color=TINTA,ancho=930,serif=False):
     if linea:draw.text((x,y),linea,font=font,fill=color);y+=tamano*1.24
     return y
 
-@lru_cache(maxsize=1)
-def datos_mapa():
+@lru_cache(maxsize=2)
+def datos_mapa(solo_mayor90=True):
     geo=json.loads((RAIZ/'web/data/departamentos.geojson').read_text(encoding='utf-8'))
     datos=json.loads((RAIZ/'web/data/obras.json').read_text(encoding='utf-8'))
     cuentas={}
     for o in datos:
-        if o['avance'] is not None and o['avance']>90:
+        if not solo_mayor90 or (o['avance'] is not None and o['avance']>90):
             dep=o['departamento'].replace('P. C. DEL CALLAO','CALLAO');cuentas[dep]=cuentas.get(dep,0)+1
     # Geometrías referenciales del MEF. Conversión equirectangular para el gráfico.
     polys=[]
@@ -49,27 +49,31 @@ def datos_mapa():
     xmin=min(v[0] for v in puntos);ymax=max(v[1] for v in puntos)
     return polys,cuentas,xmin,ymax
 
-def mapa(im,d,fraccion=1):
-    polys,cuentas,xmin,ymax=datos_mapa()
-    escala=48;mx=max(cuentas.values())
+def mapa(im,d,fraccion=1,solo_mayor90=True):
+    polys,cuentas,xmin,ymax=datos_mapa(solo_mayor90)
+    escala=42;mx=max(cuentas.values())
     for nombre,poligonos in polys:
         n=cuentas.get(nombre,0);a=(n/mx)*fraccion;c=tuple(int(v) for v in np.array([220,233,214])*(1-a)+np.array([25,107,84])*a)
         for pol in poligonos:
             for ring in pol[:1]:
-                vertices=[(180+(v[0]-xmin)*escala,570+(ymax-v[1])*escala) for v in ring]
+                vertices=[(130+(v[0]-xmin)*escala,570+(ymax-v[1])*escala) for v in ring]
                 d.polygon(vertices,fill=c,outline=PAPEL,width=2)
 
 def escena(numero,t,duracion,guion,narrada,subtitulo=None):
     im=Image.new('RGB',(W,H),PAPEL);d=ImageDraw.Draw(im)
     d.text((72,80),'OBRAS QUE ESPERAN / PERÚ',font=fuente(26),fill=VERDE)
     d.line((72,135,1008,135),fill='#c5d3be',width=2)
+    aviso='Voz generada con IA a partir de voz propia' if narrada else 'VISTA PREVIA · SIN NARRACIÓN'
+    d.text((72,155),aviso,font=fuente(30),fill=NARANJA)
     titulo=guion['escenas'][numero]['titulo'];texto(d,titulo,(72,205),62 if numero==0 else 78,serif=True)
     anim=min(1,max(0,t/2))
     if numero in [0,1]:
-        mapa(im,d,anim)
-        d.text((700,525),str(round(281*anim)),font=fuente(118,True),fill=NARANJA)
-        texto(d,'obras con más de 90 % de avance reportado',(700,680),34,ancho=300)
-        texto(d,'2.262 obras en el inventario nacional',(72,1430),36)
+        mapa(im,d,anim,solo_mayor90=numero==1)
+        total=2262 if numero==0 else 281
+        d.text((700,525),str(round(total*anim)),font=fuente(104 if numero==0 else 118,True),fill=NARANJA)
+        descripcion='obras paralizadas en el inventario nacional' if numero==0 else 'obras con más de 90 % de avance físico'
+        texto(d,descripcion,(700,680),34,ancho=300)
+        texto(d,'Perú · corte al 30 de junio de 2026',(72,1430),36)
     elif numero==2:
         d.text((72,480),str(round(155*anim)),font=fuente(190,True),fill=NARANJA)
         texto(d,'de 281 obras de mayor avance',(72,710),47)
@@ -95,12 +99,10 @@ def escena(numero,t,duracion,guion,narrada,subtitulo=None):
         texto(d,'Explora los datos y sus fuentes en el dashboard.',(72,1470),35,color=VERDE)
     # El montaje narrado conserva los intervalos del audio; la maqueta usa referencias.
     frase=subtitulo if narrada else guion['escenas'][numero]['subtitulos'][min(1,int(t/(duracion/2)))]
-    d.rectangle((0,1600,W,1790),fill=TINTA);texto(d,frase,(72,1630),32,color=PAPEL)
+    d.rectangle((0,1600,W,1790),fill=TINTA);texto(d,frase,(72,1630),38,color=PAPEL)
     referencia='OCDE (2025) · Estudio económico de Perú' if numero==3 else 'Fuente: Contraloría · corte 30/06/2026'
     d.text((72,1820),referencia,font=fuente(25),fill=GRIS)
-    aviso='Voz generada con IA a partir de voz propia' if narrada else 'VISTA PREVIA · SIN NARRACIÓN'
     d.text((72,1855),'Gráficos y música: elaboración propia',font=fuente(21),fill=GRIS)
-    d.text((72,1883),aviso,font=fuente(20),fill=NARANJA)
     d.rectangle((0,1908,int(W*(numero+t/duracion)/6),1920),fill=NARANJA)
     return im
 
@@ -166,12 +168,12 @@ def main():
         audio*=min(1,.1*rms_voz/max(rms_musica,1e-8))
         audio+=voz
     pico=float(np.max(np.abs(audio)))
-    if pico>.98:audio*=.98/pico
+    if pico>0:audio*=.95/pico
     salida=REEL/('reel.mp4' if voz is not None else 'vista_previa.mp4')
     recursos=REEL/'recursos';recursos.mkdir(exist_ok=True)
     with wave.open(str(recursos/'musica_original.wav'),'wb') as w:
         w.setnchannels(1);w.setsampwidth(2);w.setframerate(RATE);w.writeframes((musica(segundos)*32767).astype('<i2').tobytes())
-    with av.open(str(salida),'w') as cont:
+    with av.open(str(salida),'w',options={'movflags':'+faststart'}) as cont:
         video=cont.add_stream('libx264',rate=args.fps);video.width=W;video.height=H;video.pix_fmt='yuv420p';video.options={'crf':'24','preset':'veryfast'}
         sonido=cont.add_stream('aac',rate=RATE);sonido.layout='mono';sonido.bit_rate=96000
         for i in range(round(segundos*args.fps)):
@@ -181,7 +183,6 @@ def main():
             im=escena(num,ti-tiempos[num]['inicio'],duracion,guion,voz is not None,frase)
             if i%args.fps==0:
                 if int(ti)%10==0:print('Segundo',round(ti),flush=True)
-                if abs(ti-tiempos[num]['inicio'])<1:im.save(recursos/f'escena_{num+1:02}.png')
             frame=av.VideoFrame.from_ndarray(np.asarray(im),format='rgb24')
             for packet in video.encode(frame):cont.mux(packet)
         for packet in video.encode():cont.mux(packet)
