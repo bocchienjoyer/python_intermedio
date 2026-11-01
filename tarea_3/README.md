@@ -8,6 +8,8 @@ Una obra paralizada retrasa el acceso de la población a nuevos o mejores servic
 
 **[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site) · [Reel de divulgación — 56,9 segundos](reel/reel.mp4)**
 
+**[Publicación en LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7522452521198612480/)**
+
 <details>
 <summary>Dos vistas del dashboard</summary>
 
