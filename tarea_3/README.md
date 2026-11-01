@@ -4,21 +4,28 @@
 
 **Pregunta:** ¿Qué caracteriza a las obras públicas paralizadas en el Perú y qué patrones presentan aquellas con mayor avance físico?
 
-Se analiza el inventario de Contraloría con corte al **30 de junio de 2026**: 2.262 obras. El análisis describe su ubicación, tipo, avance y causas reportadas, con atención a las obras que superan el 90 % de avance físico. La paralización posterga la entrega o mejora de infraestructura. El registro no permite medir por sí solo la disponibilidad efectiva de servicios ni los daños sufridos por la población.
+Una obra paralizada retrasa el acceso de la población a nuevos o mejores servicios públicos. Este proyecto explora ubicación, avance físico, presupuesto y causas reportadas de las **2.262 obras** del inventario de Contraloría al **30 de junio de 2026**, con atención a las de mayor avance.
 
-**[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site)**
+**[Explorar el dashboard público](https://obras-que-esperan-peru.fancyperch2.chatgpt.site) · [Reel de divulgación — 56,9 segundos](reel/reel.mp4)**
+
+**[Publicación en LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7522452521198612480/)**
+
+<details>
+<summary>Dos vistas del dashboard</summary>
+
+![Portada del dashboard Obras que esperan](reel/recursos/dashboard_general.png)
+
+![Mapa de obras paralizadas y distribución por tipo de infraestructura](reel/recursos/dashboard_exploracion.png)
+
+</details>
 
 ## Resultados
 
-**281 obras (12,4 %) superan el 90 % de avance físico y figuran paralizadas.** De ellas, 155 con código de inversión no registran presupuesto asignado para 2026. El umbral de avance es estrictamente mayor que 90 % y hasta 100 %, conforme al rango del anexo; tres obras con exactamente 90 % pertenecen al intervalo anterior.
+**281 obras (12,4 %) superan el 90 % de avance físico y figuran paralizadas. De ellas, 155 no registran presupuesto asignado para 2026.** Tres hallazgos amplían ese panorama:
 
 - **23 obras reportan 100 % de avance y siguen clasificadas como paralizadas.** Es una discrepancia que requiere seguimiento; el registro no permite determinar si están operativas ni qué falta para culminar cada caso.
 - **58 de las obras de mayor avance se iniciaron en 2015 o antes.** La antigüedad se refiere al inicio reportado, no a años de paralización continua.
-- **El incumplimiento de contrato es la causa más reportada entre las obras de mayor avance: 76 casos, frente a 55 que señalan falta de recursos financieros y liquidez.** Son declaraciones de las entidades, no una identificación causal independiente. La situación presupuestaria de 2026 y el motivo de paralización son variables distintas.
-
-Entre las 281 obras, 267 tienen CUI: 155 sin asignación registrada (58,1 %) y 112 con asignación. Otras 14 carecen de CUI; la ausencia de código impide distinguir presupuesto cero de falta de identificación presupuestaria. La distribución por infraestructura también puede explorarse: 79 corresponden a vivienda/construcción/saneamiento y 57 a transportes/comunicaciones (136 de 281, 48,4 %).
-
-De las 281 obras, 23 reportan 100 % de avance. Se conservan porque forman parte del inventario oficial. Al excluirlas, quedan 258 obras: 248 con CUI y 10 sin CUI. Entre las 248 identificadas, 144 (58,1 %) no registran asignación. El resultado es similar al del grupo completo. En todo el inventario, la proporción sin asignación entre obras con CUI es 64,8 %; el grupo de mayor avance no presenta una proporción superior.
+- **76 señalan incumplimiento de contrato**, el motivo de paralización más reportado entre las obras de mayor avance. Son declaraciones de las entidades, no una identificación causal independiente.
 
 ## Fuentes y metodología
 
@@ -26,9 +33,22 @@ La fuente principal es el [informe de Contraloría y sus anexos](https://www.gob
 
 La unidad de análisis es **una obra identificada por código INFOBRAS**. Se normalizan espacios y se convierten valores numéricos sin inventar datos. «No declarado» y CUI igual a cero se tratan como ausencias. Los ceros monetarios se conservan como valores reportados. Se validan identificadores únicos, límites del avance, correspondencia del rango superior y coherencia entre PIM y su indicador de disponibilidad.
 
-Las frecuencias y porcentajes utilizan denominadores explícitos. El **PIM (Presupuesto Institucional Modificado)** es el presupuesto autorizado para el año, actualizado hasta la fecha consultada; no es dinero gastado ni el costo total de culminación. La tabla 12 de Contraloría incluye obras sin CUI en su grupo sin PIM. Se conserva el cero original y se añade `estado_presupuesto` con tres categorías: con asignación, sin asignación registrada y sin CUI. Las 134 obras sin CUI permanecen en el inventario y se separan de los indicadores presupuestarios. Los costos de obra de INFOBRAS y los costos de inversión de Invierte.pe miden conceptos diferentes: su cociente **no es un sobrecosto**. Una inversión CUI puede agrupar varias obras, por lo que no se suman costos de inversión ni PIM repetidos para producir indicadores monetarios.
+El **PIM (Presupuesto Institucional Modificado)** es el presupuesto autorizado para el año y actualizado al corte. No mide gasto ejecutado ni el costo de terminar una obra. La situación presupuestaria y el motivo de paralización son variables distintas.
 
-La interpretación se apoya en **continuidad de la inversión pública**: sostener recursos y gestión durante varios años para que lo construido pueda cumplir su propósito. La [OCDE (2025)](https://www.oecd.org/en/publications/2025/09/oecd-economic-surveys-peru-2025_d9bfa904/full-report/achieving-strong-growth-and-safeguarding-fiscal-sustainability_000545c6.html) señala que la falta de financiamiento asegurado entre años genera demoras e ineficiencias en Perú. El [Banco Mundial (2025, capítulo 4, párrafos 185 y 189–192)](https://documents1.worldbank.org/curated/en/099030325150510528/pdf/P177645-b964994f-03e4-4ce8-aa59-7642a26b538e.pdf) identifica problemas para proteger recursos de proyectos en marcha frente a proyectos nuevos. Si una obra necesita financiar trabajos pendientes, resolver su financiamiento es una condición para continuarlos; si esos trabajos son indispensables para prestar el servicio, su demora puede postergar el beneficio esperado. La literatura sustenta este mecanismo general, pero el inventario no prueba que explique cada caso.
+<details>
+<summary>Identificación presupuestaria, umbral de avance y comprobaciones</summary>
+
+Se incluyen avances estrictamente mayores que 90 % y hasta 100 %, conforme al rango del anexo. Tres obras con exactamente 90 % pertenecen al intervalo anterior.
+
+De las 281 obras, 267 tienen código de inversión (CUI): 155 sin asignación registrada (58,1 %) y 112 con asignación. Otras 14 no tienen CUI; no se confunde falta de identificación con presupuesto cero confirmado. La tabla 12 de la fuente agrupa ambos casos bajo NO PIM. Se conserva el cero original y se añade `estado_presupuesto` para distinguirlos. Las 134 obras sin CUI del inventario completo permanecen en la base.
+
+Al excluir las 23 con avance completo, 144 de 248 identificables no registran asignación (58,1 %). El resultado es similar al del grupo completo. En todo el inventario identificable la proporción es 64,8 %: no se presenta el grupo de mayor avance como relativamente peor financiado.
+
+Los costos de obra de INFOBRAS y los costos de inversión de Invierte.pe no son comparables para calcular sobrecostos. Una inversión puede agrupar varias obras; no se suman costos de inversión ni PIM repetidos.
+
+</details>
+
+La interpretación se apoya en la **continuidad de la inversión pública**. La [OCDE (2025)](https://www.oecd.org/en/publications/2025/09/oecd-economic-surveys-peru-2025_d9bfa904/full-report/achieving-strong-growth-and-safeguarding-fiscal-sustainability_000545c6.html) señala que no asegurar financiamiento entre años genera demoras e ineficiencias en el Perú. El [Banco Mundial (2025, capítulo 4, párrafos 185 y 189–192)](https://documents1.worldbank.org/curated/en/099030325150510528/pdf/P177645-b964994f-03e4-4ce8-aa59-7642a26b538e.pdf) identifica dificultades para proteger recursos de proyectos en marcha frente a proyectos nuevos. Si faltan recursos para terminar trabajos indispensables, la población puede seguir esperando el servicio. Este mecanismo general no demuestra la causa de cada paralización.
 
 ## Limitaciones
 
@@ -53,8 +73,32 @@ python -m http.server 8000 --directory tarea_3/web
 
 Abrir `http://localhost:8000`. Si ya se dispone de los originales, procesamiento y análisis reproducen las tablas sin conexión. La preparación web descarga la cartografía del MEF únicamente si no está presente. `datos/procesados/calidad.json` registra controles de calidad y `resumen.json` los resultados principales.
 
-El dashboard incluye cuatro indicadores, mapa departamental, gráficos por tipo, avance y causa, cuatro filtros, búsqueda y descarga CSV de la selección. La cartografía procede del servicio del MEF, atribuido al INEI en sus metadatos, y se utiliza con fines referenciales. Las geometrías y su fuente se conservan en `web/data/`.
+El dashboard incluye cuatro indicadores, mapa departamental y gráficos por tipo, avance y causa. Cinco filtros permiten explorar departamento, tipo, avance, presupuesto y año de inicio. La consulta final busca por nombre, entidad o código INFOBRAS y permite descargar la selección en CSV. La cartografía procede del servicio del MEF, atribuido al INEI en sus metadatos, y se utiliza con fines referenciales; se conserva con su fuente en `web/data/`.
+
+El material audiovisual utiliza Python 3.12 en un entorno separado:
+
+```console
+python -m pip install -r tarea_3/reel/requirements.txt
+python tarea_3/scripts/generar_reel.py
+```
+
+Sin narración, este comando reproduce `reel/vista_previa.mp4`, de 60 segundos, con la pista «Divider», de Chris Zabriskie, bajo licencia CC BY 4.0, y aviso visible de ausencia de voz. La síntesis utiliza otro entorno con `reel/requirements_voz.txt` y una referencia de voz propia mantenida fuera de la carpeta pública. Los créditos y enlaces de licencia están en `reel/recursos/creditos.md`.
+
+Para sintetizar la narración, la referencia de 15–25 segundos y su transcripción exacta se ubican en una carpeta privada. Desde el entorno de voz:
+
+```console
+python -m pip install -r tarea_3/reel/requirements_voz.txt
+python tarea_3/scripts/generar_narracion.py --referencia .cache/tarea3-voz/referencia.wav --transcripcion .cache/tarea3-voz/referencia.txt --salida .cache/tarea3-voz/salida
+```
+
+El modelo Base Qwen3-TTS 0.6B se descarga en la caché privada. Se sintetiza por oraciones y se reutilizan los fragmentos que coinciden en texto, referencia y parámetros. Se obtienen audio, tiempos por escena y subtítulos con el texto pronunciado. Desde el entorno de montaje:
+
+```console
+python tarea_3/scripts/generar_reel.py --narracion .cache/tarea3-voz/salida/narracion.wav --tiempos .cache/tarea3-voz/salida/tiempos_escenas.json --subtitulos .cache/tarea3-voz/salida/subtitulos.srt
+```
+
+El montaje exige 45–75 segundos y tiempos consecutivos para escenas y subtítulos. La voz recibe ecualización, compresión y control de picos para mejorar su presencia, y la música se atenúa durante el habla. La pronunciación y la sincronización se revisan escuchando el resultado. El video incorpora dos capturas del dashboard; sus imágenes originales están en `reel/recursos/dashboard_general.png` y `reel/recursos/dashboard_exploracion.png`.
 
 ## Uso de inteligencia artificial
 
-Se utilizó IA para explorar bibliografía, desarrollar el código y apoyar la redacción. Los resultados publicados se calculan a partir de archivos oficiales y se contrastan con el informe y los controles de calidad. Las interpretaciones se limitan a lo que permiten los datos.
+Se utilizó IA para explorar bibliografía, desarrollar el código y apoyar la redacción. La narración se generó con Qwen3-TTS Base 0.6B a partir de una grabación de voz propia de 19,84 segundos, conservada en privado. Las cifras pronunciadas se contrastaron mediante transcripción automática. Los resultados del análisis se calculan a partir de archivos oficiales y se contrastan con el informe y los controles de calidad. Las interpretaciones se limitan a lo que permiten los datos.
