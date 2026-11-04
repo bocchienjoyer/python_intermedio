@@ -1,0 +1,1661 @@
+{
+  "metodo": "Operaciones sobre posiciones del texto crudo, derivadas de las versiones revisadas; hashes previos a cualquier exportación.",
+  "alcance": "Reproduce la seudonimización y limpieza revisadas, sin corregir los errores OCR o ASR. Solo contienen texto publicable los reemplazos; no se guardan valores personales originales.",
+  "textos": [
+    {
+      "id": "doc_001",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_001/texto.txt",
+      "sha256_texto_original": "84a1c5885aaf377708a1e81458fab8e1275dfbc92f433d1e8b9429cbb0a5566c",
+      "sha256_archivo": "d480d2595bda4ec3fdff07c4468a053cc6f0b6bafdf9aa21bbe57697ebc5ebb7",
+      "sha256_texto_publicado": "b9bc2180d8ab920132ccecab67c3ae16aef1c51d02a777f6af76ba4de955807e",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:10:40-05:00",
+      "fragmentos_protegidos": 6,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 174,
+          "fin": 179,
+          "reemplazo": "[P"
+        },
+        {
+          "inicio": 181,
+          "fin": 182,
+          "reemplazo": "S"
+        },
+        {
+          "inicio": 183,
+          "fin": 186,
+          "reemplazo": "N"
+        },
+        {
+          "inicio": 187,
+          "fin": 198,
+          "reemplazo": "_1]"
+        },
+        {
+          "inicio": 517,
+          "fin": 518,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 519,
+          "fin": 544,
+          "reemplazo": "_2]"
+        },
+        {
+          "inicio": 862,
+          "fin": 863,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 864,
+          "fin": 865,
+          "reemplazo": "SON"
+        },
+        {
+          "inicio": 866,
+          "fin": 886,
+          "reemplazo": "_3]"
+        },
+        {
+          "inicio": 1213,
+          "fin": 1213,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 1214,
+          "fin": 1214,
+          "reemplazo": "SON"
+        },
+        {
+          "inicio": 1215,
+          "fin": 1233,
+          "reemplazo": "_4]"
+        },
+        {
+          "inicio": 1351,
+          "fin": 1351,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 1352,
+          "fin": 1352,
+          "reemplazo": "SON"
+        },
+        {
+          "inicio": 1353,
+          "fin": 1371,
+          "reemplazo": "_4]"
+        },
+        {
+          "inicio": 1635,
+          "fin": 1639,
+          "reemplazo": "[P"
+        },
+        {
+          "inicio": 1641,
+          "fin": 1643,
+          "reemplazo": "SON"
+        },
+        {
+          "inicio": 1644,
+          "fin": 1665,
+          "reemplazo": "_5]"
+        },
+        {
+          "inicio": 1731,
+          "fin": 1732,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_016_p01",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_016_p01/texto.txt",
+      "sha256_texto_original": "7c24219f45a66bc73bc4accf4bc0d0e1e83156229b1f90e022502fb100c337a1",
+      "sha256_archivo": "7e07aeec17102fd8222844a7f04f74c59949c7b89f65d6879dd36eaa4541a81e",
+      "sha256_texto_publicado": "20b3fb3880dc492d027503672f227667b917be86d41ecc04e7be4a53bdd59c26",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:10:40-05:00",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 3,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 44,
+          "fin": 44,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 45,
+          "fin": 57,
+          "reemplazo": "SONA_1]"
+        },
+        {
+          "inicio": 1075,
+          "fin": 1075,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 1076,
+          "fin": 1082,
+          "reemplazo": "SONA_1]"
+        },
+        {
+          "inicio": 1441,
+          "fin": 1442,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_018_p01",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_018_p01/texto.txt",
+      "sha256_texto_original": "0f9f5701b52094e6f72461b3c2cfd12d0ea7b55d3d22ba78577c9b5cefbd77de",
+      "sha256_archivo": "292f859aab03f3d12e094a77f36ad4cdeaafffbb282431c8f8eecd67d6aced89",
+      "sha256_texto_publicado": "d1094e5f57d90931dbffa64c66c7858df13f1dd95278fbb356e8b8dc1f0f1cf1",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:14:25-05:00",
+      "fragmentos_protegidos": 4,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 0,
+          "reemplazo": "[DIRECCION_"
+        },
+        {
+          "inicio": 1,
+          "fin": 20,
+          "reemplazo": "]"
+        },
+        {
+          "inicio": 43,
+          "fin": 43,
+          "reemplazo": "["
+        },
+        {
+          "inicio": 44,
+          "fin": 63,
+          "reemplazo": "ELEFONO_1]"
+        },
+        {
+          "inicio": 99,
+          "fin": 99,
+          "reemplazo": "[CONT"
+        },
+        {
+          "inicio": 100,
+          "fin": 105,
+          "reemplazo": "C"
+        },
+        {
+          "inicio": 106,
+          "fin": 113,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 114,
+          "fin": 114,
+          "reemplazo": "_1]"
+        },
+        {
+          "inicio": 1280,
+          "fin": 1295,
+          "reemplazo": "[PERSONA_1]"
+        }
+      ]
+    },
+    {
+      "id": "doc_019_p09",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_019_p09/texto.txt",
+      "sha256_texto_original": "2491f967d94e933fbd3e364db67ddd60d2ae9ddb63f2c98977a2ac61dc450d6e",
+      "sha256_archivo": "0af5e3a4beeb61e87c38cdfd5183941a2e45a1b56ae9076482b5346cff81bcfa",
+      "sha256_texto_publicado": "8a39cbb9875ca7f246dd2dcbfccd3e7b75bc78a02ce350fe43427efb54f9adb8",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:22:05-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 2,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 1303,
+          "fin": 1304,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_019_p10",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_piloto/doc_019_p10/texto.txt",
+      "sha256_texto_original": "cd718596f014d02e3cf49b52a50bdaafdb9a07ccb4343fee80ab689014c86197",
+      "sha256_archivo": "324bc3f19e23f141affae714edb72663d3187dd0545222c4e038e8d8c65730d5",
+      "sha256_texto_publicado": "a36d0dc3a3c8c2c3601ed9952daaf9b507967c20b70f45939af8dda4388e6a5d",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": null,
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1439,
+          "fin": 1440,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_019_p11",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_019_p11/texto.txt",
+      "sha256_texto_original": "d0f6f292142d3a7b7cbd1a891411f435fc837314e2cb878e83f25831fe12ab2d",
+      "sha256_archivo": "55fb5822e4ada6e8a71601dbd12a9f42c23b54d5c16ed0d64b17b8366290d5d2",
+      "sha256_texto_publicado": "72202d85fb4441d8624debf1f0f9e99ca4f1a3362117724c3892187b97d5708e",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:22:05-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 2,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 1542,
+          "fin": 1543,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_027_p04",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_027_p04/texto.txt",
+      "sha256_texto_original": "bee690c038da1a1b3b6a9c0c8fba11fb46891f4ac343a8a0132f670bfb1121d4",
+      "sha256_archivo": "9541748526ef1fd4ab73bbfda009d7e4d36cb01b98a387ec67854acbdbf4ac89",
+      "sha256_texto_publicado": "bc43d75ed04cfe331e2cdcc39fe6ec553015b06bedfe9266a1351ad5ffa92b0a",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:52:21-05:00",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 3670,
+          "fin": 3670,
+          "reemplazo": "["
+        },
+        {
+          "inicio": 3671,
+          "fin": 3674,
+          "reemplazo": "IRMA_1]"
+        },
+        {
+          "inicio": 3724,
+          "fin": 3738,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 3740,
+          "fin": 3769,
+          "reemplazo": "[DIRECCION_1]"
+        },
+        {
+          "inicio": 4009,
+          "fin": 4010,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_027_p02",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_027_p02/texto.txt",
+      "sha256_texto_original": "496c6c7330cfa8bcacee45c995477372009eff5ea1e996cc4e38a5a6807d2dca",
+      "sha256_archivo": "db442b0b85468744431d457b41290da6a331d0516b6dc4ecb5942011d81ece17",
+      "sha256_texto_publicado": "a7a54744f189231e2ddacf23410302fde44806f6a93b33c4349c0b4bfa96e613",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:55:20-05:00",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 2,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 929,
+          "fin": 947,
+          "reemplazo": "[CARGO_1]"
+        },
+        {
+          "inicio": 1811,
+          "fin": 1816,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 3477,
+          "fin": 3478,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_004",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_004/texto.txt",
+      "sha256_texto_original": "f30d2121445fbac7887b22167ee4b965ec6868a1f2ddb5a9f06024e38cc4a304",
+      "sha256_archivo": "17d8d2f8e2c81a38fe40575222fa4aca2352b7b071432ddf3449ee75b19bb9ee",
+      "sha256_texto_publicado": "16bb4a395deef6307976c01683dcb61f02e7db1b04033092790583ee46b44c02",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T14:32:17-05:00",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 50,
+          "fin": 50,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 51,
+          "fin": 51,
+          "reemplazo": "_1]\n[DI"
+        },
+        {
+          "inicio": 52,
+          "fin": 54,
+          "reemplazo": "ECCIO"
+        },
+        {
+          "inicio": 55,
+          "fin": 121,
+          "reemplazo": "_1]"
+        },
+        {
+          "inicio": 807,
+          "fin": 810,
+          "reemplazo": "[FIRMA_1]"
+        },
+        {
+          "inicio": 811,
+          "fin": 812,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 813,
+          "fin": 813,
+          "reemplazo": "SON"
+        },
+        {
+          "inicio": 814,
+          "fin": 832,
+          "reemplazo": "_2]\n["
+        },
+        {
+          "inicio": 833,
+          "fin": 838,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 840,
+          "fin": 842,
+          "reemplazo": "G"
+        },
+        {
+          "inicio": 843,
+          "fin": 871,
+          "reemplazo": "_1]"
+        }
+      ]
+    },
+    {
+      "id": "doc_006",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_006/texto.txt",
+      "sha256_texto_original": "1cf6b643f9916962c5e7b0e255cbf75a3e9ea771c45f33c0a8a4e646a6ce7485",
+      "sha256_archivo": "52e177debc26fe637700744edde0fb2b5497d7b778920b2081438dbaa79894a6",
+      "sha256_texto_publicado": "84eb26ee6e74133c77906949222254faf52bc33cbe0902039c8eb4085b453f60",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:52:21-05:00",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 14,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 58,
+          "fin": 58,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 59,
+          "fin": 66,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 67,
+          "fin": 95,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 98,
+          "fin": 113,
+          "reemplazo": "_1],\n["
+        },
+        {
+          "inicio": 115,
+          "fin": 116,
+          "reemplazo": "RGO_1]"
+        },
+        {
+          "inicio": 388,
+          "fin": 389,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_010",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_010/texto.txt",
+      "sha256_texto_original": "60294a0fde272e27bddc4f8171271cbe69e43de732fa4f3b7b07ee8030d2ab48",
+      "sha256_archivo": "81f7bf1fe4f75fff7c4cbe67f82928d41eb3a66a139d0d04981026d433677576",
+      "sha256_texto_publicado": "5ea698956fb992b887c0c28b1df2a433c91101b599f18a72981af22d4e789d46",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 4,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 154,
+          "fin": 187,
+          "reemplazo": "[FRAGMENTO_PERSONAL_1]"
+        },
+        {
+          "inicio": 328,
+          "fin": 339,
+          "reemplazo": "[FRA"
+        },
+        {
+          "inicio": 340,
+          "fin": 351,
+          "reemplazo": "MENTO_PERSONAL_2]"
+        },
+        {
+          "inicio": 484,
+          "fin": 512,
+          "reemplazo": "[FRAGMEN"
+        },
+        {
+          "inicio": 513,
+          "fin": 524,
+          "reemplazo": "O_PER"
+        },
+        {
+          "inicio": 525,
+          "fin": 537,
+          "reemplazo": "ONA"
+        },
+        {
+          "inicio": 538,
+          "fin": 568,
+          "reemplazo": "_3]"
+        },
+        {
+          "inicio": 665,
+          "fin": 670,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 681,
+          "fin": 682,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_011",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_011/texto.txt",
+      "sha256_texto_original": "10a6dc565682e3c1f98c0216d576867022ed5322d6df5a0c18a47f6ea06fa9a0",
+      "sha256_archivo": "57c383d5005a7e0d52bbbbee38747a8d540361bf3e88314f7820e587310176da",
+      "sha256_texto_publicado": "2bf7d52679e7ebab376fb986f0907e7e22f75aca7ede4ae9a849a80493703459",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 11,
+          "fin": 15,
+          "reemplazo": "[ESTA"
+        },
+        {
+          "inicio": 16,
+          "fin": 19,
+          "reemplazo": "LECIMIENTO_1]"
+        },
+        {
+          "inicio": 431,
+          "fin": 432,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_003",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_003/texto.txt",
+      "sha256_texto_original": "c34393749bcf6acf899142d312c3b04de035cbcafe26f48e771e0c74c5e6333b",
+      "sha256_archivo": "215b9a434dddbc025efca04e17ba08a00d282aaa9346ef3186744008db3caa50",
+      "sha256_texto_publicado": "a5bb2e9d5c7c89f076ea44c3571a9e6a73d749d0891a7039548f56703b03da5d",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 66,
+          "fin": 79,
+          "reemplazo": "[P"
+        },
+        {
+          "inicio": 80,
+          "fin": 90,
+          "reemplazo": "RSONA_1]"
+        },
+        {
+          "inicio": 233,
+          "fin": 234,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_017_p01",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_017_p01/texto.txt",
+      "sha256_texto_original": "8d130f312a5d3a01cbe0ef4d02486b3393fc053b1d4f9f6fac6562909262ca55",
+      "sha256_archivo": "a0ebba2716b331f7596064b71cf9f23aa9f018dfc53123d863b4687edbedf60a",
+      "sha256_texto_publicado": "569a37d83ee03f2bb93cd1bbd4ce1fbd3211cec3ec722fea2ea4521b8abd94fc",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 12,
+          "reemplazo": "[P"
+        },
+        {
+          "inicio": 13,
+          "fin": 16,
+          "reemplazo": "RSONA_1]"
+        },
+        {
+          "inicio": 237,
+          "fin": 237,
+          "reemplazo": "[P"
+        },
+        {
+          "inicio": 238,
+          "fin": 246,
+          "reemplazo": "RSONA_1]"
+        },
+        {
+          "inicio": 691,
+          "fin": 701,
+          "reemplazo": "[FIRMA_1]"
+        },
+        {
+          "inicio": 708,
+          "fin": 721,
+          "reemplazo": "[PERSONA_2]"
+        },
+        {
+          "inicio": 724,
+          "fin": 742,
+          "reemplazo": "[PERSONA_1]"
+        }
+      ]
+    },
+    {
+      "id": "doc_024",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_024/texto.txt",
+      "sha256_texto_original": "c7c698a37a3f48da4a986f6e4822873d55643ac35c1eeb0490427d7e50f784b9",
+      "sha256_archivo": "c62e486675c93371135f2790c481481d3a806e7db0a5642c42e0df1fb7641d3a",
+      "sha256_texto_publicado": "74068de4d52f6ed92efd536e4f5e873e69a805a06ba190e9ad2499c25e80e739",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 20,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 75,
+          "fin": 85,
+          "reemplazo": "[FRAGMENTO_PERSONAL_1]"
+        },
+        {
+          "inicio": 226,
+          "fin": 235,
+          "reemplazo": "[CARGO_1]"
+        },
+        {
+          "inicio": 461,
+          "fin": 468,
+          "reemplazo": "[PERSONA_2]"
+        },
+        {
+          "inicio": 471,
+          "fin": 471,
+          "reemplazo": "[P"
+        },
+        {
+          "inicio": 472,
+          "fin": 481,
+          "reemplazo": "RSONA_3]"
+        }
+      ]
+    },
+    {
+      "id": "doc_025",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_025/texto.txt",
+      "sha256_texto_original": "5e7b5cff45f4285ed411bdaea05e4feba7119849ad6625971aeac500a54488d0",
+      "sha256_archivo": "d2a5b5fe7cd7a346833c8b2ca006eed4a97dafab110458cec76a5513b7506893",
+      "sha256_texto_publicado": "58cf9eded3bac6b67988d6093f61a3329624b556e919a74a3c7f75c2f8bae7b3",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 53,
+          "fin": 95,
+          "reemplazo": "[DATO_PERSONAL_1]"
+        },
+        {
+          "inicio": 237,
+          "fin": 244,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 405,
+          "fin": 406,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_026",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_026/texto.txt",
+      "sha256_texto_original": "18b7a98a2f19fd274d82faf05346123a47e2ab642003215608d7e5b16a6e4207",
+      "sha256_archivo": "779a0c2813f24f3cfc0dd801dfbd306deba0e93d244424735f8dc2a4001c27a3",
+      "sha256_texto_publicado": "f3a55313fea198f3db430e1482afdebc133b5221addc0e903836c0aef9332adb",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 1,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 5,
+          "reemplazo": "[PER"
+        },
+        {
+          "inicio": 6,
+          "fin": 25,
+          "reemplazo": "ONA_1]"
+        },
+        {
+          "inicio": 52,
+          "fin": 60,
+          "reemplazo": "[CARGO_1]"
+        },
+        {
+          "inicio": 68,
+          "fin": 68,
+          "reemplazo": "["
+        },
+        {
+          "inicio": 69,
+          "fin": 74,
+          "reemplazo": "ERSON"
+        },
+        {
+          "inicio": 75,
+          "fin": 89,
+          "reemplazo": "_2]"
+        },
+        {
+          "inicio": 130,
+          "fin": 139,
+          "reemplazo": "[LUGAR_RESIDENCIA_1]"
+        },
+        {
+          "inicio": 328,
+          "fin": 336,
+          "reemplazo": "[FIRMA_1]"
+        }
+      ]
+    },
+    {
+      "id": "doc_028",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_028/texto.txt",
+      "sha256_texto_original": "1bc81856e34dcae17311cf952020e66ca2317feedd47a988cfc804827d4afea2",
+      "sha256_archivo": "855ead026f0110e28f377cc8ce3d264344945a2696c338772c041fcf76b316b2",
+      "sha256_texto_publicado": "01398f4c13221bdc7f3cb526be98de132f4cb8fb3a550243b3995179f09ad3a4",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-24T15:40:21-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 2125,
+          "fin": 2126,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_029",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_029/texto.txt",
+      "sha256_texto_original": "d440b50215aa1413a614b5657d9bc767f76f7e132400ecf6714a6f4ce994c352",
+      "sha256_archivo": "bfd8567eb7ee8358f9109a4b2d62161f100c9040257c7b9d24ceaf9fcde60fdd",
+      "sha256_texto_publicado": "382e0bd1768461399fe81a8f55865aaaa32dbe75b3d3b1c85d6e9cac8f46664b",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 98,
+          "fin": 99,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_030",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_030/texto.txt",
+      "sha256_texto_original": "8ac08e15820438b28477dc9cfc74aa853b09d7aaa77e0718a91b8aa313c8ff4e",
+      "sha256_archivo": "bf9d8e489237faeb5790ac2421e982229f103211fa6c2b5fc7ea33238260843c",
+      "sha256_texto_publicado": "0523c8be35a7b3ac843fa9d22c1428c892c91f323d4a1ada745a437c230cf95e",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:22:48-05:00",
+      "fragmentos_protegidos": 5,
+      "limpiezas": 1,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 6,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 352,
+          "fin": 363,
+          "reemplazo": "["
+        },
+        {
+          "inicio": 364,
+          "fin": 369,
+          "reemplazo": "ERSONA_1]"
+        },
+        {
+          "inicio": 376,
+          "fin": 390,
+          "reemplazo": "[PERSONA_2]"
+        },
+        {
+          "inicio": 482,
+          "fin": 489,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 490,
+          "fin": 497,
+          "reemplazo": "_3]"
+        },
+        {
+          "inicio": 504,
+          "fin": 518,
+          "reemplazo": "[PERSONA_4]"
+        },
+        {
+          "inicio": 1644,
+          "fin": 1648,
+          "reemplazo": "[FIRMA_1]"
+        }
+      ]
+    },
+    {
+      "id": "doc_040",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_040/texto.txt",
+      "sha256_texto_original": "8c22f705038251802905d43a6ab3d5e78570158035825241b5018fd26e87db9d",
+      "sha256_archivo": "ecdef72ac7841eed3b9a19e119ba7a6e3d7c9e0e669fecd962d009347ffa3642",
+      "sha256_texto_publicado": "29c682fcb2a2eaff8fd20b2989165387587c258ab3974d195d8b4bec25a7bd4e",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 13,
+      "limpiezas": 1,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 5,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 327,
+          "fin": 327,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 328,
+          "fin": 353,
+          "reemplazo": "_1]"
+        },
+        {
+          "inicio": 825,
+          "fin": 833,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 2079,
+          "fin": 2092,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 2093,
+          "fin": 2098,
+          "reemplazo": "SONA_2]"
+        },
+        {
+          "inicio": 2151,
+          "fin": 2156,
+          "reemplazo": "[PERSONA_2]"
+        },
+        {
+          "inicio": 2170,
+          "fin": 2174,
+          "reemplazo": "[PERSONA_3]"
+        },
+        {
+          "inicio": 2225,
+          "fin": 2231,
+          "reemplazo": "[PER"
+        },
+        {
+          "inicio": 2232,
+          "fin": 2236,
+          "reemplazo": "ONA_3]"
+        },
+        {
+          "inicio": 2307,
+          "fin": 2314,
+          "reemplazo": "[PERSONA_4]"
+        },
+        {
+          "inicio": 2368,
+          "fin": 2375,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 2376,
+          "fin": 2379,
+          "reemplazo": "_4]"
+        },
+        {
+          "inicio": 2442,
+          "fin": 2442,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 2443,
+          "fin": 2456,
+          "reemplazo": "_1]"
+        },
+        {
+          "inicio": 3033,
+          "fin": 3039,
+          "reemplazo": "[PERSONA_2]"
+        },
+        {
+          "inicio": 3182,
+          "fin": 3188,
+          "reemplazo": "[PERS"
+        },
+        {
+          "inicio": 3189,
+          "fin": 3193,
+          "reemplazo": "NA_5]"
+        },
+        {
+          "inicio": 3471,
+          "fin": 3471,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 3472,
+          "fin": 3486,
+          "reemplazo": "_6]"
+        },
+        {
+          "inicio": 3666,
+          "fin": 3673,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 3674,
+          "fin": 3686,
+          "reemplazo": "SONA_2]"
+        },
+        {
+          "inicio": 4776,
+          "fin": 4777,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_033",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_033/texto.txt",
+      "sha256_texto_original": "c19704c932ebb67344908fbbf33419b45381e4695708c0b59c1ceb96636a7af8",
+      "sha256_archivo": "5d308eda2b52b8f5c8f6687bd09a3797cd5a54478915138a81ecf3a03bf53441",
+      "sha256_texto_publicado": "9f90f825fa86309e37645fae2928cc41de6fac7e2851143b4480ecc73d909eb4",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 20,
+          "fin": 40,
+          "reemplazo": "[CARGO_1]"
+        },
+        {
+          "inicio": 151,
+          "fin": 171,
+          "reemplazo": "[FIRMA_1]"
+        }
+      ]
+    },
+    {
+      "id": "doc_034",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_034/texto.txt",
+      "sha256_texto_original": "ed22cdb471f0c5c2deac694233eed37a15914ae4aad3c888edccb7ca6723a6d1",
+      "sha256_archivo": "6d13e60341c5270ca79dee9b07241dceb13472a3782db7843d497af171d7b5c9",
+      "sha256_texto_publicado": "f28b874338a2073aa4b187293d79328d97e6efb02ad598ed512e3413b9d82252",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 1,
+      "operaciones": [
+        {
+          "inicio": 0,
+          "fin": 13,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 14,
+          "fin": 27,
+          "reemplazo": "_1]"
+        },
+        {
+          "inicio": 79,
+          "fin": 80,
+          "reemplazo": "[PE"
+        },
+        {
+          "inicio": 81,
+          "fin": 84,
+          "reemplazo": "SONA_2]"
+        },
+        {
+          "inicio": 164,
+          "fin": 170,
+          "reemplazo": "[FIRMA_1]"
+        }
+      ]
+    },
+    {
+      "id": "doc_036",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_036/texto.txt",
+      "sha256_texto_original": "673c3da283e9fbd42c848741ecf15bb45423d804c5a7d99c268debab7e03bae1",
+      "sha256_archivo": "f90593f6f107d6bc2fa3fc8d26745faf9fae85e87a956c0c26286f1fe1b20248",
+      "sha256_texto_publicado": "abb8051fd7c3e22be8d565ff5de87fbb8dfb4e3038f91cb60b5727b6b084bdde",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:17:50-05:00",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 1,
+      "operaciones": [
+        {
+          "inicio": 30,
+          "fin": 39,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 72,
+          "fin": 72,
+          "reemplazo": "["
+        },
+        {
+          "inicio": 73,
+          "fin": 88,
+          "reemplazo": "IRMA_1]"
+        },
+        {
+          "inicio": 99,
+          "fin": 100,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "doc_037",
+      "modalidad": "documento",
+      "archivo_texto_original": "datos/raw/documentos/ocr_base/doc_037/texto.txt",
+      "sha256_texto_original": "b1d8920eafa94d968887faf9c6d5e1c31b8d188ce19b4f8b94350d9b16cb36ad",
+      "sha256_archivo": "230d29897909a63c3c0e471510ea7a6fe9877b5239e9ff0821fd43bf2cf50bfb",
+      "sha256_texto_publicado": "9d3c0e42a1e9296bb465110b9e6fae8ae80c0ab966c4cee81136656ea710dd70",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T12:22:48-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 236,
+          "fin": 237,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_001",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_001/texto.txt",
+      "sha256_texto_original": "f88640aa8ad35a3529dde735a0619f4179cca0e38de9db773999103489c31d51",
+      "sha256_archivo": "7e3612cedd87aef56ea58f60bea639dd595c3d1284f2c401817eec108aab42b8",
+      "sha256_texto_publicado": "fb267ffc1c1bb7cee81e547dbd19af4b33ec1feb2cb5b453c9ddff6cbbb485df",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 15,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 162,
+          "fin": 176,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 178,
+          "fin": 185,
+          "reemplazo": "[PER"
+        },
+        {
+          "inicio": 186,
+          "fin": 197,
+          "reemplazo": "ONA_2]"
+        },
+        {
+          "inicio": 386,
+          "fin": 400,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 610,
+          "fin": 617,
+          "reemplazo": "[PER"
+        },
+        {
+          "inicio": 618,
+          "fin": 629,
+          "reemplazo": "ONA_2]"
+        },
+        {
+          "inicio": 780,
+          "fin": 794,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 796,
+          "fin": 805,
+          "reemplazo": "[PERSONA_3]"
+        },
+        {
+          "inicio": 942,
+          "fin": 949,
+          "reemplazo": "[PER"
+        },
+        {
+          "inicio": 950,
+          "fin": 961,
+          "reemplazo": "ONA_2]"
+        },
+        {
+          "inicio": 977,
+          "fin": 986,
+          "reemplazo": "[PERSONA_3]"
+        },
+        {
+          "inicio": 991,
+          "fin": 996,
+          "reemplazo": "[PERSONA_4]"
+        },
+        {
+          "inicio": 1038,
+          "fin": 1047,
+          "reemplazo": "[PERSONA_3]"
+        },
+        {
+          "inicio": 1236,
+          "fin": 1245,
+          "reemplazo": "[PERSONA_3]"
+        },
+        {
+          "inicio": 1360,
+          "fin": 1374,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 1414,
+          "fin": 1421,
+          "reemplazo": "[PER"
+        },
+        {
+          "inicio": 1422,
+          "fin": 1433,
+          "reemplazo": "ONA_2]"
+        },
+        {
+          "inicio": 1611,
+          "fin": 1625,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 1830,
+          "fin": 1830,
+          "reemplazo": "[P"
+        },
+        {
+          "inicio": 1831,
+          "fin": 1837,
+          "reemplazo": ""
+        },
+        {
+          "inicio": 1838,
+          "fin": 1844,
+          "reemplazo": "SONA_2]"
+        },
+        {
+          "inicio": 2025,
+          "fin": 2026,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_002",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_002/texto.txt",
+      "sha256_texto_original": "c1ad17283d9e26b2a52ee4bf4cb985ce5c15cfd86882649df6a258da882e7b97",
+      "sha256_archivo": "2417dda6d0bb085d949e491602e9adabab1dc4991b11fa82f8b1b40a36556a66",
+      "sha256_texto_publicado": "48c82808a7b77e16098a23b580cb4e15a92a263c1be76c641a6d1b960bf3950b",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 146,
+          "fin": 146,
+          "reemplazo": "[P"
+        },
+        {
+          "inicio": 147,
+          "fin": 157,
+          "reemplazo": "RSONA_1]"
+        },
+        {
+          "inicio": 179,
+          "fin": 184,
+          "reemplazo": "[PERSONA_2]"
+        },
+        {
+          "inicio": 449,
+          "fin": 449,
+          "reemplazo": "["
+        },
+        {
+          "inicio": 450,
+          "fin": 455,
+          "reemplazo": "ERSONA_3]"
+        },
+        {
+          "inicio": 1413,
+          "fin": 1414,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_003",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_003/texto.txt",
+      "sha256_texto_original": "76f87ddda337745596589be95b4d95cc704a2be4fe0ab74fb96dd46106c4cb21",
+      "sha256_archivo": "0f14000792cd94353761f3234421260ff96c9637c3f44850ae925937a5bbb693",
+      "sha256_texto_publicado": "bbacbf240f46b80566ccf45411a76d0cb95d873cd92ea4ab592643b3b8acd43c",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 3,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 159,
+          "fin": 159,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 160,
+          "fin": 174,
+          "reemplazo": "_1]"
+        },
+        {
+          "inicio": 176,
+          "fin": 176,
+          "reemplazo": "[PERSON"
+        },
+        {
+          "inicio": 177,
+          "fin": 191,
+          "reemplazo": "_1]"
+        },
+        {
+          "inicio": 459,
+          "fin": 472,
+          "reemplazo": "[LUGAR_ORIGEN_1]"
+        },
+        {
+          "inicio": 1362,
+          "fin": 1363,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_004",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_004/texto.txt",
+      "sha256_texto_original": "736667d45adbb539a871b621d4c797eee010a35fa2ee73faa8bbf1103e4808a3",
+      "sha256_archivo": "bcc249225b1c3f5495fcaa6d457051767e8eb3190f38b3c85983f7341c517bed",
+      "sha256_texto_publicado": "cc8a85737bfd4bc0f1a7d778b80e0faab5c1d61e6ef1bfbfc28532502c308d0d",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1251,
+          "fin": 1259,
+          "reemplazo": "[DATO_PERSONAL_1]"
+        },
+        {
+          "inicio": 2387,
+          "fin": 2388,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_005",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/diarizacion_conteo_conocido/clip_005/texto.txt",
+      "sha256_texto_original": "a8291038809b978a4e59c2e586f54cae0314c63ac8a8827927389869d296ceb3",
+      "sha256_archivo": "43a790b2316a27bd0ea146d0789ebe61c2a4e34577c980b627e37990bff5cbfc",
+      "sha256_texto_publicado": "a2bb64c4970b1db517ee9d84f70763826b551b7fa3c0f2b566dd9bc046501544",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1143,
+          "fin": 1144,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_006",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_006/texto.txt",
+      "sha256_texto_original": "058eb269fe90c813edbf13b4817b8a57bb3320736f9a8e2d4bd91a8173c47af3",
+      "sha256_archivo": "bb593490bba0195cc503f0ded582dabb0a38c3627424f14fc0c93c7894cc3a01",
+      "sha256_texto_publicado": "bd1d1363851a9b2b523aa96d13e227be0fff4e6eb08fdc3ef6375fb859d0e5bb",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 925,
+          "fin": 926,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_007",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_007/texto.txt",
+      "sha256_texto_original": "aeab40615150d45bad4a13cc5345c8bf400c59d3893c7384946d92861343b7bc",
+      "sha256_archivo": "b38016eeb96bb94089ebedfb7a7eb287d171748ac0717362313b866e47670198",
+      "sha256_texto_publicado": "fe428397ab9d0321e0e84b4faa88e3d95ce008b6b740909480c9b7f1050a7f39",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1620,
+          "fin": 1621,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_008",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_008/texto.txt",
+      "sha256_texto_original": "0bf68c963aec30a35f77d204ba503bc771b74046d9f2af6e3c8c45fe2fc7dddd",
+      "sha256_archivo": "e655960456de08bc682c85c828c907676af597c0f87d8f10b54880b7ba51447a",
+      "sha256_texto_publicado": "96385336ea5399cf58db755e81caca304f87ea9fa12732ee1dccc31dcab135e2",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1108,
+          "fin": 1109,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_009",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_009/texto.txt",
+      "sha256_texto_original": "a0178ec3767ce20682b3652e461dc1f3063ece017f10e36351264905ed3c8db0",
+      "sha256_archivo": "b90f224455939b285d698421ae1b7fceb48186dd9561aeb59506dc44fdff0758",
+      "sha256_texto_publicado": "4f4c66bf70dad1522a039b2f66c4ad8d9f4badbf944a49e313995c4cd8661285",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 396,
+          "fin": 397,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_010",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_010/texto.txt",
+      "sha256_texto_original": "c7022a81b7238284cad22806794d39151c268f75dfb27a99d4ec31c8b5efe2a1",
+      "sha256_archivo": "e618a5204733a45f5ec8bb6fbf6e1cf68e1b0cb8ea06df6e7f98c4095fcc1dbc",
+      "sha256_texto_publicado": "7eba0ed1d9c4560b6003d7a5942c023340e802f56a86599ecd2513b74f5e8e47",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 794,
+          "fin": 795,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_011",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_011/texto.txt",
+      "sha256_texto_original": "ef62023694e9dae0a32654de1a84919e3941ff270527731e69e5ae825911e2a2",
+      "sha256_archivo": "725e09f8c864aa7aef1440126fd7c1ecf9a74fa3749703a7227ba1c5138b28d2",
+      "sha256_texto_publicado": "01cb93eaa2cc277eff0aeff52fa822dd063686104388d54be7f1452f947661cf",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1212,
+          "fin": 1213,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_012",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_012/texto.txt",
+      "sha256_texto_original": "79df38eca221341a8fc4cd76f273767c9a520b21b6f18073b879b03e3e5c813d",
+      "sha256_archivo": "e89b76e3922cb3f436d9bef7b3afd23aeed595d52ef644eb26e82de74be10374",
+      "sha256_texto_publicado": "775805c7f77e891bad7eeabf0e2b5fdaad32b5cd500bc825ea91a81cfaba8e6d",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 404,
+          "fin": 405,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_013",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_013/texto.txt",
+      "sha256_texto_original": "531f760c2a25f888961fa66dc29a9fc4246d5b17ebb24b5f642b02eb7b26c797",
+      "sha256_archivo": "056649c674cef10d7b0e239ab707db65266b10cde0c4fea7f814bef8caaf2c9c",
+      "sha256_texto_publicado": "fdfd88c25ffe4da4d64cbeac64f150976c3b1d5cfa66ade6a596ab690269d2b2",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1444,
+          "fin": 1445,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_014",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_014/texto.txt",
+      "sha256_texto_original": "4d71de32a4a37e2e5b6bc708151dccc9f7b921bd65b441795ab378e290836697",
+      "sha256_archivo": "9675a1f836bb34b1e94ef95053546811ba969c78dba0e71e498faf2dfb7ba7c9",
+      "sha256_texto_publicado": "452384b236914a203d90284b69afa32ca57f7fc5910b7cbc8e8545673ab8ff0b",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1455,
+          "fin": 1456,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_015",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_015/texto.txt",
+      "sha256_texto_original": "25e79d994a48d7a71e65f249c66cae339666bdf6ec699318a5c4b4bbd6c5668e",
+      "sha256_archivo": "8df950c1c425a02e255b9031688582f47fb072eda96cfe54a5873c2970fe5ced",
+      "sha256_texto_publicado": "0cc14b7a7d6a942b581e194ceadd866e374403a65347249173755619a5ac437a",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1017,
+          "fin": 1018,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_016",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_016/texto.txt",
+      "sha256_texto_original": "b5849e510879c640b99b7f8a3f94f476c0000fa7a83529ac8ea9796f1149e0f4",
+      "sha256_archivo": "41424c4693816198cdb6929d96071878443149d0cc05a7b265b7fed67cea76c4",
+      "sha256_texto_publicado": "b3dc9f702668683ec198042cd08903470e4e79a7f215c3c0064f48cfc0e44ee7",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1084,
+          "fin": 1085,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_017",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_017/texto.txt",
+      "sha256_texto_original": "080748351d1d48355cb95e2004fa0e1b287b273cbd13e41e6f8d5a0fc502476e",
+      "sha256_archivo": "0d55279e6d4d300b66dcb513aad3421c244692eaad87d8322bafe957ec690233",
+      "sha256_texto_publicado": "287ef673199d671bb44a93b511ca3ace333c0b19aefaf753842c554962a4c461",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 2,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 23,
+          "fin": 48,
+          "reemplazo": "[PERSONA_1]"
+        },
+        {
+          "inicio": 168,
+          "fin": 308,
+          "reemplazo": "[TRAYECTORIA_PER"
+        },
+        {
+          "inicio": 309,
+          "fin": 314,
+          "reemplazo": "ONAL_1]"
+        },
+        {
+          "inicio": 1311,
+          "fin": 1312,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_018",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_018/texto.txt",
+      "sha256_texto_original": "82b8c2bd4c90514378a5e5be3e0dcca90cd7582a6099338765a407659c4c41c8",
+      "sha256_archivo": "a6ca1245e8248ccd8e3f86e1bc9c69e8daed1d5e989b2fa1ce11623792311bc7",
+      "sha256_texto_publicado": "a27f40dbae3d81cc2154e14e1fa6c916d9d17da56421e461b56f9c2689192bd2",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1120,
+          "fin": 1121,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_019",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_019/texto.txt",
+      "sha256_texto_original": "e15b49724306e169022952ccc82a32a166470e11ccbeacbbf56aa5cf00f16582",
+      "sha256_archivo": "0baa11111bf11b01ae5f0370668dd4e88a3aa6d12e82e1c76eb88dd1bb2774f9",
+      "sha256_texto_publicado": "796234e93eb82753a90fbfd63ad3699dc6496aaa8d1d6006ea6c11d6f5b25370",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 0,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1387,
+          "fin": 1388,
+          "reemplazo": ""
+        }
+      ]
+    },
+    {
+      "id": "clip_020",
+      "modalidad": "audio",
+      "archivo_texto_original": "datos/raw/audio/asr_base/clip_020/texto.txt",
+      "sha256_texto_original": "9561fb55c6159f8eaa1b267b7ef814da22cd22ac13cb5db8085eb7cad636969b",
+      "sha256_archivo": "c5d42564a7f89d6d1f010e04779b47f3d95add769ba90547c27bbb657f38cd8d",
+      "sha256_texto_publicado": "f769c14a764108e7d3312839ce9ee0e9b3b17847537df7f96770b3112951b5e3",
+      "revision_humana_confirmada": true,
+      "fecha_confirmacion": "2026-10-25T13:18:26-05:00",
+      "fragmentos_protegidos": 1,
+      "limpiezas": 0,
+      "operaciones": [
+        {
+          "inicio": 1013,
+          "fin": 1036,
+          "reemplazo": "[PERSONA_1]"
+        }
+      ]
+    }
+  ]
+}

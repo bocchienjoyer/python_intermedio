@@ -1,0 +1,638 @@
+{
+  "version": 2,
+  "metodo": "anotacion_asistida_de_posiciones_con_imagen_y_ocr",
+  "revision_humana_no_inferida": true,
+  "documentos": [
+    {
+      "id": "doc_010",
+      "sha256_texto_original": "60294a0fde272e27bddc4f8171271cbe69e43de732fa4f3b7b07ee8030d2ab48",
+      "sha256_imagen": "81f7bf1fe4f75fff7c4cbe67f82928d41eb3a66a139d0d04981026d433677576",
+      "protecciones": [
+        {
+          "inicio": 154,
+          "fin": 187,
+          "categoria": "FRAGMENTO_PERSONAL",
+          "etiqueta": "[FRAGMENTO_PERSONAL_1]",
+          "motivo": "Mención deteriorada en zona nominal; se cubre el fragmento completo antes que reconstruir un nombre.",
+          "lineas_ocr": [
+            8,
+            8
+          ]
+        },
+        {
+          "inicio": 328,
+          "fin": 351,
+          "categoria": "FRAGMENTO_PERSONAL",
+          "etiqueta": "[FRAGMENTO_PERSONAL_2]",
+          "motivo": "Mención nominal deteriorada en el OCR; alcance conservador.",
+          "lineas_ocr": [
+            15,
+            15
+          ]
+        },
+        {
+          "inicio": 484,
+          "fin": 568,
+          "categoria": "FRAGMENTO_PERSONAL",
+          "etiqueta": "[FRAGMENTO_PERSONAL_3]",
+          "motivo": "Pasaje con referencias nominales de lectura deformada; no se atribuye una identidad.",
+          "lineas_ocr": [
+            20,
+            22
+          ]
+        },
+        {
+          "inicio": 665,
+          "fin": 670,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Apodo o referencia personal en la imagen, deformado por OCR.",
+          "lineas_ocr": [
+            26,
+            26
+          ]
+        }
+      ],
+      "limpieza": [],
+      "observaciones": [
+        "Las sustituciones de fragmentos amplios priorizan privacidad cuando el OCR deforma menciones. Pueden retirar palabras vecinas; se señala su alcance para la revisión agrupada."
+      ],
+      "atencion_especial": true
+    },
+    {
+      "id": "doc_011",
+      "sha256_texto_original": "10a6dc565682e3c1f98c0216d576867022ed5322d6df5a0c18a47f6ea06fa9a0",
+      "sha256_imagen": "57c383d5005a7e0d52bbbbee38747a8d540361bf3e88314f7820e587310176da",
+      "protecciones": [
+        {
+          "inicio": 11,
+          "fin": 19,
+          "categoria": "ESTABLECIMIENTO",
+          "etiqueta": "[ESTABLECIMIENTO_1]",
+          "motivo": "Nombre comercial que incluye un apelativo personal; se protege sin atribuirlo a una persona concreta.",
+          "lineas_ocr": [
+            2,
+            3
+          ]
+        }
+      ],
+      "limpieza": [],
+      "observaciones": [
+        "Precios, platos y nombres genéricos de raciones se conservan. El nombre comercial no se cuenta como persona detectada."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_003",
+      "sha256_texto_original": "c34393749bcf6acf899142d312c3b04de035cbcafe26f48e771e0c74c5e6333b",
+      "sha256_imagen": "215b9a434dddbc025efca04e17ba08a00d282aaa9346ef3186744008db3caa50",
+      "protecciones": [
+        {
+          "inicio": 66,
+          "fin": 90,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre deformado en la línea del destinatario, contrastado con la imagen.",
+          "lineas_ocr": [
+            3,
+            3
+          ]
+        }
+      ],
+      "limpieza": [],
+      "observaciones": [
+        "La firma visible en la imagen no tiene una región OCR correspondiente y no se añade al texto; la imagen se conserva privada."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_017_p01",
+      "sha256_texto_original": "8d130f312a5d3a01cbe0ef4d02486b3393fc053b1d4f9f6fac6562909262ca55",
+      "sha256_imagen": "a0ebba2716b331f7596064b71cf9f23aa9f018dfc53123d863b4687edbedf60a",
+      "protecciones": [
+        {
+          "inicio": 0,
+          "fin": 16,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre del destinatario deformado; se sustituye la región completa.",
+          "lineas_ocr": [
+            1,
+            1
+          ]
+        },
+        {
+          "inicio": 237,
+          "fin": 246,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Repetición del destinatario partida entre dos regiones.",
+          "lineas_ocr": [
+            7,
+            8
+          ]
+        },
+        {
+          "inicio": 691,
+          "fin": 701,
+          "categoria": "FIRMA",
+          "etiqueta": "[FIRMA_1]",
+          "motivo": "Firma del remitente de lectura OCR corrupta.",
+          "lineas_ocr": [
+            20,
+            20
+          ]
+        },
+        {
+          "inicio": 708,
+          "fin": 721,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Nombre del remitente en el pie impreso parcialmente incluido.",
+          "lineas_ocr": [
+            21,
+            21
+          ]
+        },
+        {
+          "inicio": 724,
+          "fin": 741,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre del destinatario en el pie impreso parcialmente incluido.",
+          "lineas_ocr": [
+            21,
+            21
+          ]
+        }
+      ],
+      "limpieza": [],
+      "observaciones": [
+        "La repetición del destinatario mantiene la misma etiqueta. Se protege también el pie impreso parcial; no se interpreta todo el pie como un nombre."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_024",
+      "sha256_texto_original": "c7c698a37a3f48da4a986f6e4822873d55643ac35c1eeb0490427d7e50f784b9",
+      "sha256_imagen": "c62e486675c93371135f2790c481481d3a806e7db0a5642c42e0df1fb7641d3a",
+      "protecciones": [
+        {
+          "inicio": 0,
+          "fin": 20,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Destinatario nominal del encabezado, deformado por OCR.",
+          "lineas_ocr": [
+            1,
+            1
+          ]
+        },
+        {
+          "inicio": 75,
+          "fin": 85,
+          "categoria": "FRAGMENTO_PERSONAL",
+          "etiqueta": "[FRAGMENTO_PERSONAL_1]",
+          "motivo": "La región corresponde a un renglón con mención nominal no recuperable con exactitud por OCR.",
+          "lineas_ocr": [
+            4,
+            4
+          ]
+        },
+        {
+          "inicio": 226,
+          "fin": 235,
+          "categoria": "CARGO",
+          "etiqueta": "[CARGO_1]",
+          "motivo": "Cargo referido a una persona concreta, contrastado con la imagen.",
+          "lineas_ocr": [
+            8,
+            8
+          ]
+        },
+        {
+          "inicio": 461,
+          "fin": 468,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Mención nominal al pie, deformada por OCR.",
+          "lineas_ocr": [
+            15,
+            15
+          ]
+        },
+        {
+          "inicio": 471,
+          "fin": 480,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Segunda mención nominal al pie, deformada por OCR.",
+          "lineas_ocr": [
+            15,
+            15
+          ]
+        }
+      ],
+      "limpieza": [],
+      "observaciones": [
+        "Un fragmento completo se cubre por mención nominal deformada; la firma de la imagen no se incorpora si no fue reconocida."
+      ],
+      "atencion_especial": true
+    },
+    {
+      "id": "doc_025",
+      "sha256_texto_original": "5e7b5cff45f4285ed411bdaea05e4feba7119849ad6625971aeac500a54488d0",
+      "sha256_imagen": "d2a5b5fe7cd7a346833c8b2ca006eed4a97dafab110458cec76a5513b7506893",
+      "protecciones": [
+        {
+          "inicio": 53,
+          "fin": 95,
+          "categoria": "DATO_PERSONAL",
+          "etiqueta": "[DATO_PERSONAL_1]",
+          "motivo": "Pasaje de información de salud personal reconocido de forma defectuosa.",
+          "lineas_ocr": [
+            3,
+            3
+          ]
+        },
+        {
+          "inicio": 237,
+          "fin": 244,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre del comandante deformado en el OCR, contrastado con el manuscrito.",
+          "lineas_ocr": [
+            7,
+            7
+          ]
+        }
+      ],
+      "limpieza": [],
+      "observaciones": [
+        "Se protege la mención de salud y un nombre en el cuerpo. El encabezado y la firma no detectados no se reconstruyen."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_026",
+      "sha256_texto_original": "18b7a98a2f19fd274d82faf05346123a47e2ab642003215608d7e5b16a6e4207",
+      "sha256_imagen": "779a0c2813f24f3cfc0dd801dfbd306deba0e93d244424735f8dc2a4001c27a3",
+      "protecciones": [
+        {
+          "inicio": 5,
+          "fin": 25,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre e iniciales del destinatario en el encabezado.",
+          "lineas_ocr": [
+            3,
+            3
+          ]
+        },
+        {
+          "inicio": 52,
+          "fin": 60,
+          "categoria": "CARGO",
+          "etiqueta": "[CARGO_1]",
+          "motivo": "Cargo del destinatario; se conserva el resto del saludo.",
+          "lineas_ocr": [
+            5,
+            5
+          ]
+        },
+        {
+          "inicio": 68,
+          "fin": 89,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Persona mencionada en la recomendación.",
+          "lineas_ocr": [
+            6,
+            6
+          ]
+        },
+        {
+          "inicio": 130,
+          "fin": 139,
+          "categoria": "LUGAR_RESIDENCIA",
+          "etiqueta": "[LUGAR_RESIDENCIA_1]",
+          "motivo": "Lugar vinculado expresamente a la residencia de una persona; token partido por OCR.",
+          "lineas_ocr": [
+            7,
+            8
+          ]
+        },
+        {
+          "inicio": 328,
+          "fin": 335,
+          "categoria": "FIRMA",
+          "etiqueta": "[FIRMA_1]",
+          "motivo": "Firma nominal del cierre mal reconocida.",
+          "lineas_ocr": [
+            14,
+            14
+          ]
+        }
+      ],
+      "limpieza": [
+        {
+          "inicio": 0,
+          "fin": 5,
+          "categoria": "FOLIO",
+          "etiqueta": "",
+          "motivo": "Anotación aislada de archivo fuera de la carta, reconocida como importe por error.",
+          "lineas_ocr": [
+            1,
+            2
+          ]
+        }
+      ],
+      "observaciones": [
+        "La anotación superior se limpia como folio, no como monto real. Se conserva la redacción defectuosa restante."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_029",
+      "sha256_texto_original": "d440b50215aa1413a614b5657d9bc767f76f7e132400ecf6714a6f4ce994c352",
+      "sha256_imagen": "bfd8567eb7ee8358f9109a4b2d62161f100c9040257c7b9d24ceaf9fcde60fdd",
+      "protecciones": [],
+      "limpieza": [],
+      "observaciones": [
+        "Boleto sin nombre de pasajero. Número de serie, precio y estaciones se conservan: no se interpretan como DNI ni como domicilio particular."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_030",
+      "sha256_texto_original": "8ac08e15820438b28477dc9cfc74aa853b09d7aaa77e0718a91b8aa313c8ff4e",
+      "sha256_imagen": "bf9d8e489237faeb5790ac2421e982229f103211fa6c2b5fc7ea33238260843c",
+      "protecciones": [
+        {
+          "inicio": 352,
+          "fin": 369,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre de firmante en el cuerpo impreso."
+        },
+        {
+          "inicio": 376,
+          "fin": 390,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Nombre de firmante en el cuerpo impreso."
+        },
+        {
+          "inicio": 482,
+          "fin": 497,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Nombre de firmante en el cuerpo impreso."
+        },
+        {
+          "inicio": 504,
+          "fin": 518,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_4]",
+          "motivo": "Nombre de firmante en el cuerpo impreso."
+        },
+        {
+          "inicio": 1644,
+          "fin": 1647,
+          "categoria": "FIRMA",
+          "etiqueta": "[FIRMA_1]",
+          "motivo": "Fragmento OCR ubicado en una firma manuscrita; no se reconstruye el nombre."
+        }
+      ],
+      "limpieza": [
+        {
+          "inicio": 0,
+          "fin": 6,
+          "categoria": "FOLIO",
+          "etiqueta": "",
+          "motivo": "Anotación de archivo ajena al contenido del protocolo."
+        }
+      ],
+      "observaciones": [
+        "Cuerpo principal comprensible con errores. Solo una firma genera un fragmento OCR; no se añaden etiquetas por las firmas que el modelo omitió. Las imágenes originales siguen privadas."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_040",
+      "sha256_texto_original": "8c22f705038251802905d43a6ab3d5e78570158035825241b5018fd26e87db9d",
+      "sha256_imagen": "ecdef72ac7841eed3b9a19e119ba7a6e3d7c9e0e669fecd962d009347ffa3642",
+      "protecciones": [
+        {
+          "inicio": 327,
+          "fin": 353,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre partido por salto de línea."
+        },
+        {
+          "inicio": 825,
+          "fin": 833,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Mención de apellido: se conserva el verbo mediante alcance reducido."
+        },
+        {
+          "inicio": 2079,
+          "fin": 2098,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Primer fragmento de nombre intercalado con otras columnas."
+        },
+        {
+          "inicio": 2151,
+          "fin": 2156,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Segundo fragmento nominal: se conserva la institución mediante alcance reducido."
+        },
+        {
+          "inicio": 2170,
+          "fin": 2174,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Nombre separado del apellido por el orden erróneo de columnas."
+        },
+        {
+          "inicio": 2225,
+          "fin": 2236,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_3]",
+          "motivo": "Apellido en una región OCR distinta."
+        },
+        {
+          "inicio": 2307,
+          "fin": 2314,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_4]",
+          "motivo": "Inicio del nombre partido por el modelo."
+        },
+        {
+          "inicio": 2368,
+          "fin": 2379,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_4]",
+          "motivo": "Continuación del nombre partido por el modelo."
+        },
+        {
+          "inicio": 2442,
+          "fin": 2456,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Nombre deformado en el pie de fotografía."
+        },
+        {
+          "inicio": 3033,
+          "fin": 3039,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Apellido: se conserva el verbo mediante alcance reducido."
+        },
+        {
+          "inicio": 3182,
+          "fin": 3193,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_5]",
+          "motivo": "Nombre deformado en la columna derecha."
+        },
+        {
+          "inicio": 3471,
+          "fin": 3486,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_6]",
+          "motivo": "Nombre deformado en la columna derecha."
+        },
+        {
+          "inicio": 3666,
+          "fin": 3686,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Otra mención nominal del mismo contexto."
+        }
+      ],
+      "limpieza": [
+        {
+          "inicio": 0,
+          "fin": 5,
+          "categoria": "FOLIO",
+          "etiqueta": "",
+          "motivo": "Número de página aislado en el encabezado."
+        }
+      ],
+      "observaciones": [
+        "La fuente es legible ampliando la imagen, pero el OCR mezcla columnas y presenta errores graves. Las etiquetas repetidas indican menciones de una misma persona; no se reconstruyen palabras omitidas. No publicar las fotografías de personas."
+      ],
+      "atencion_especial": true
+    },
+    {
+      "id": "doc_033",
+      "sha256_texto_original": "c19704c932ebb67344908fbbf33419b45381e4695708c0b59c1ceb96636a7af8",
+      "sha256_imagen": "5d308eda2b52b8f5c8f6687bd09a3797cd5a54478915138a81ecf3a03bf53441",
+      "protecciones": [
+        {
+          "inicio": 20,
+          "fin": 40,
+          "categoria": "CARGO",
+          "etiqueta": "[CARGO_1]",
+          "motivo": "Destinatario identificado por cargo, deformado por el OCR."
+        },
+        {
+          "inicio": 151,
+          "fin": 170,
+          "categoria": "FIRMA",
+          "etiqueta": "[FIRMA_1]",
+          "motivo": "Dos regiones de la firma; sin reconstruir su lectura."
+        }
+      ],
+      "limpieza": [],
+      "observaciones": [
+        "Original de cursiva legible. El OCR deforma mucho el cuerpo y la fecha; los errores se preservan."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_034",
+      "sha256_texto_original": "ed22cdb471f0c5c2deac694233eed37a15914ae4aad3c888edccb7ca6723a6d1",
+      "sha256_imagen": "6d13e60341c5270ca79dee9b07241dceb13472a3782db7843d497af171d7b5c9",
+      "protecciones": [
+        {
+          "inicio": 4,
+          "fin": 27,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_1]",
+          "motivo": "Renglón nominal del destinatario, con abreviaturas deformadas."
+        },
+        {
+          "inicio": 79,
+          "fin": 84,
+          "categoria": "PERSONA",
+          "etiqueta": "[PERSONA_2]",
+          "motivo": "Fragmento deformado al inicio del renglón que menciona a otra persona."
+        },
+        {
+          "inicio": 164,
+          "fin": 169,
+          "categoria": "FIRMA",
+          "etiqueta": "[FIRMA_1]",
+          "motivo": "Apellido de la firma reconocida."
+        }
+      ],
+      "limpieza": [
+        {
+          "inicio": 0,
+          "fin": 4,
+          "categoria": "FOLIO",
+          "etiqueta": "",
+          "motivo": "Anotación superior de archivo, no un monto de la carta."
+        }
+      ],
+      "observaciones": [
+        "El OCR omite renglones y deforma los reconocidos sobre una fuente legible. No se completa el nombre de la persona mencionada en el cuerpo ni la frase omitida."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_036",
+      "sha256_texto_original": "673c3da283e9fbd42c848741ecf15bb45423d804c5a7d99c268debab7e03bae1",
+      "sha256_imagen": "f90593f6f107d6bc2fa3fc8d26745faf9fae85e87a956c0c26286f1fe1b20248",
+      "protecciones": [
+        {
+          "inicio": 72,
+          "fin": 88,
+          "categoria": "FIRMA",
+          "etiqueta": "[FIRMA_1]",
+          "motivo": "Fragmento situado sobre la firma; lectura muy deformada."
+        }
+      ],
+      "limpieza": [
+        {
+          "inicio": 31,
+          "fin": 40,
+          "categoria": "FOLIO",
+          "etiqueta": "",
+          "motivo": "Anotación marginal de archivo, fuera del cuerpo."
+        }
+      ],
+      "observaciones": [
+        "El modelo detecta renglones del original legible, pero produce principalmente signos o texto sin sentido. Los nombres del cuerpo no fueron recuperados; no se reconstruyen desde la imagen."
+      ],
+      "atencion_especial": false
+    },
+    {
+      "id": "doc_037",
+      "sha256_texto_original": "b1d8920eafa94d968887faf9c6d5e1c31b8d188ce19b4f8b94350d9b16cb36ad",
+      "sha256_imagen": "230d29897909a63c3c0e471510ea7a6fe9877b5239e9ff0821fd43bf2cf50bfb",
+      "protecciones": [],
+      "limpieza": [],
+      "observaciones": [
+        "La fuente contiene un nombre y una firma que el OCR no recupera como texto identificable. No se añaden etiquetas por contenido que el modelo omitió. La transcripción conserva deformaciones y omisiones graves; la imagen original no es publicable sin protección."
+      ],
+      "atencion_especial": false
+    }
+  ]
+}
