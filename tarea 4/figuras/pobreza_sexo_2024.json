@@ -1,0 +1,11 @@
+{
+  "anio": 2024,
+  "por": "sexo",
+  "universo": "residentes habituales",
+  "peso": "facpob07",
+  "base_sha256": "2e2542a648df3de17c48538f20897a4ab258730fc015b6af585873562ed8c757",
+  "dpi": 200,
+  "orden": "pobreza de mayor a menor",
+  "inicio_eje": 0,
+  "grupos_edad": null
+}

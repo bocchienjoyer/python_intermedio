@@ -13,7 +13,7 @@ El proyecto integra las series oficiales del BCRP y los microdatos ENAHO 2024 en
 
 ## Entorno y datos
 
-Desde esta carpeta, instala las dependencias con `uv sync`. Descarga y extrae los dos módulos de ENAHO en `datos/` y guarda allí el GeoJSON departamental. Claude Code usa `.mcp.json` para localizar el servidor al abrir esta carpeta como proyecto.
+Desde esta carpeta, instala las dependencias con `uv sync`. Guarda los dos ZIP de ENAHO con sus nombres originales en `datos/` y guarda allí el GeoJSON departamental. Claude Code usa `.mcp.json` para localizar el servidor al abrir esta carpeta como proyecto.
 
 ## Archivos de trabajo
 
@@ -23,3 +23,15 @@ Desde esta carpeta, instala las dependencias con `uv sync`. Descarga y extrae lo
 - [Evaluación comparativa](evaluacion/)
 - [Informe de investigación](informes/informe_final.md)
 - [Evidencias de uso de IA](evidencias_ia/)
+
+## Reproducir ENAHO 2024
+
+```text
+uv run python .claude/skills/limpiando-enaho/scripts/limpiar.py --anio 2024
+uv run python .claude/skills/graficando-enaho/scripts/graficar.py --anio 2024 --por area
+uv run python .claude/skills/graficando-enaho/scripts/graficar.py --anio 2024 --por sexo
+uv run python .claude/skills/graficando-enaho/scripts/graficar.py --anio 2024 --por departamento
+uv run python .claude/skills/mapeando-enaho/scripts/mapear.py --anio 2024
+```
+
+La limpieza valida el universo de residentes y guarda sus controles en `salidas/validacion.txt`. Los gráficos y el mapa estiman tasas de personas con `facpob07`. El mapa contrasta esas tasas con el archivo de referencia departamental de la Sesión 16, calculado con sumaria y un ponderador distinto.

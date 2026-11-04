@@ -1,0 +1,26 @@
+VALIDACIÓN ENAHO 2024
+Estado: OK
+
+Hogares en sumaria: 33,691
+Registros en miembros: 117,721
+Residentes habituales / filas finales: 108,664 / 108,664
+Miembros excluidos por residencia: 9,057
+Llaves de hogar y persona: únicas, como texto y con sus ceros
+Unión: m:1; cero residentes sin hogar; cero filas perdidas o duplicadas
+Geografía: coincidente entre módulos; 25 departamentos
+Pobreza: códigos 1, 2 y 3 válidos, sin faltantes; pesos positivos y finitos
+
+Referencia nacional: pobreza 27.6 %; extrema 5.5 %; tolerancia < 0.1 puntos porcentuales
+Sumaria (peso: factor07 * mieperho):
+  Pobreza: 27.57947 %; extrema: 5.50453 %
+  Población expandida: 34,482,699.31
+Personas (peso: facpob07):
+  Pobreza: 27.52873 %; extrema: 5.49978 %
+  Población expandida: 34,147,765.79
+
+Las referencias del curso por departamento y área proceden de sumaria.
+Para analizar personas se usa facpob07; ambos universos pueden producir tasas distintas.
+No multiplicar facpob07 por mieperho ni promediar los códigos de pobreza.
+Estas son estimaciones puntuales; no se calcularon errores estándar del diseño muestral.
+Base: salidas/personas_2024.parquet
+SHA-256 base: 2e2542a648df3de17c48538f20897a4ab258730fc015b6af585873562ed8c757
