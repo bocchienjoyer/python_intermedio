@@ -1,0 +1,16 @@
+{
+  "anio": 2024,
+  "universo": "residentes habituales",
+  "peso": "facpob07",
+  "base_sha256": "2e2542a648df3de17c48538f20897a4ab258730fc015b6af585873562ed8c757",
+  "geojson_sha256": "3d34d5450a1b1f059eebdf7386e5b5d071a5063bf3679fcbbbc5314493791290",
+  "referencia_sumaria_sha256": "59b66d00a14880fdbaf8c8925b37c39847c7ef16efc68f450ef5539c9dbaee8e",
+  "union": "departamento = ubigeo[:2] con FIRST_IDDP; 1:1",
+  "departamentos": 25,
+  "sin_dato": 0,
+  "lima_callao_separados": true,
+  "paleta": "Blues",
+  "vmin": 0,
+  "vmax": 50,
+  "dpi": 200
+}
