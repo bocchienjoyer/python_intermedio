@@ -1,0 +1,17 @@
+[project]
+name = "tarea-4-agente-socioeconomico"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp",
+    "geopandas",
+    "matplotlib",
+    "pandas",
+    "pyarrow",
+]
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["mcp"]
