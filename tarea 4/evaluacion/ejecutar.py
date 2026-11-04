@@ -63,6 +63,7 @@ def ejecutar(claude, fila, modo, modelo, registros):
         segundos = perf_counter() - inicio
     registro = registros / f"{modo}_{fila['id']}.jsonl"
     registro.write_text(proceso.stdout, encoding="utf-8")
+    registro.with_suffix(".prompt.txt").write_text(prompt, encoding="utf-8")
     if proceso.stderr:
         registro.with_suffix(".stderr.txt").write_text(proceso.stderr, encoding="utf-8")
     eventos = [json.loads(linea) for linea in proceso.stdout.splitlines() if linea.startswith("{")]
