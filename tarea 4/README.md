@@ -2,7 +2,7 @@
 
 **Estudiante** — Jose Pablo Navarro Nateros (@bocchienjoyer)
 
-El proyecto integra las series oficiales del BCRP y los microdatos ENAHO 2024 en Claude Code. El servidor MCP se encarga de las consultas macroeconómicas y las Skills coordinan la limpieza, los gráficos y el mapa de pobreza.
+El proyecto integra las series oficiales del BCRP y los microdatos ENAHO 2024 en Codex. El servidor MCP se encarga de las consultas macroeconómicas y las Skills coordinan la limpieza, los gráficos y el mapa de pobreza.
 
 ## Fuentes
 
@@ -13,7 +13,7 @@ El proyecto integra las series oficiales del BCRP y los microdatos ENAHO 2024 en
 
 ## Entorno y datos
 
-Desde esta carpeta, instala las dependencias con `uv sync`. Guarda los dos ZIP de ENAHO con sus nombres originales en `datos/` y guarda allí el GeoJSON departamental. Claude Code usa `.mcp.json` para localizar el servidor al abrir esta carpeta como proyecto.
+Desde esta carpeta, instala las dependencias con `uv sync`. Guarda los dos ZIP de ENAHO con sus nombres originales en `datos/` y guarda allí el GeoJSON departamental. Codex usa `.codex/config.toml` para iniciar el MCP BCRP en esta carpeta de proyecto y descubre las Skills en `.agents/skills/`.
 
 ## Archivos de trabajo
 
