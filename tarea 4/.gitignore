@@ -1,0 +1,12 @@
+/datos/*
+!/datos/.gitkeep
+/.venv/
+/.env
+/.env.*
+/.claude/settings.local.json
+__pycache__/
+.pytest_cache/
+*.pyc
+*.zip
+*.dta
+*.parquet
