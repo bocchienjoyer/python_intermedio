@@ -27,3 +27,14 @@ Se recalculó cada tasa como 100 × población pobre expandida ÷ población tot
 
 La diferencia absoluta entre la estimación nacional de personas (27,52873 %) y la referencia (27,6 %) fue 0,07127 puntos porcentuales. [Control nacional](../salidas/validacion.txt)
 
+## Cotejo manual
+
+El 7 de noviembre de 2026 cotejé tres cifras del informe con la tabla del BCRP y las salidas de ENAHO. Las tres coinciden a dos decimales.
+
+| Indicador | Procedimiento | Valor cotejado | Valor en el informe |
+| --- | --- | ---: | ---: |
+| Inflación interanual de Lima Metropolitana, diciembre de 2024 | Lectura de la fila Dic2024 en la serie PN01273PM | 1,97 % | 1,97 % |
+| Pobreza monetaria rural, ENAHO 2024 | Población pobre expandida ÷ población total expandida × 100 | 39,44168 % | 39,44 % |
+| Pobreza monetaria urbana, ENAHO 2024 | Población pobre expandida ÷ población total expandida × 100 | 24,73524 % | 24,74 % |
+
+[Tabla del BCRP](https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN01273PM/grafico/) · [Tasas de ENAHO por área](../figuras/pobreza_area_2024.csv)
