@@ -20,4 +20,6 @@ Generé el [informe final](../../informes/informe_final.md), el [gráfico de inf
 - La pobreza monetaria fue de **39,44 % en el área rural** y **24,74 % en la urbana**, una brecha de **14,71 puntos porcentuales**.
 - Cajamarca registró la tasa departamental más alta (**44,99 %**) e Ica la más baja (**5,91 %**).
 
-Usé `buscar_series`, `serie` y `resumen` del MCP BCRP. ENAHO pasó los controles de limpieza y los microdatos permanecieron en la carpeta local. El [cotejo de cifras realizado por Codex](../../informes/verificacion_cifras.md) y el [registro de ejecución](ejecucion.jsonl) quedaron guardados por separado.
+Usé `buscar_series`, `serie` y `resumen` del MCP BCRP. ENAHO pasó los controles de limpieza y los microdatos permanecieron en la carpeta local. El [cotejo de cifras realizado por Codex](../../informes/verificacion_cifras.md) y el registro de ejecución `ejecucion.jsonl` quedaron guardados por separado.
+
+[Bitácora publicada de herramientas y Skills](bitacora.json)
