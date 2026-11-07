@@ -1,0 +1,79 @@
+{
+  "anio": 2024,
+  "filas": {
+    "hogares": 33691,
+    "miembros": 117721,
+    "residentes": 108664,
+    "excluidos": 9057,
+    "base": 108664
+  },
+  "controles": {
+    "llaves_hogar_unicas": true,
+    "llaves_persona_unicas": true,
+    "personas_sin_hogar": 0,
+    "filas_perdidas_o_multiplicadas": 0,
+    "discrepancias_geograficas": 0,
+    "departamentos": 25,
+    "pesos_validos": true,
+    "pobreza_sin_faltantes": true
+  },
+  "estimaciones": {
+    "sumaria": {
+      "peso": "factor07 * mieperho",
+      "pobreza_pct": 27.57946816356908,
+      "extrema_pct": 5.504532807531087,
+      "poblacion_expandida": 34482699.311318874
+    },
+    "personas": {
+      "peso": "facpob07",
+      "pobreza_pct": 27.52873304367986,
+      "extrema_pct": 5.499776500417306,
+      "poblacion_expandida": 34147765.79333925
+    }
+  },
+  "estado": "OK",
+  "referencias": {
+    "pobreza_pct": 27.6,
+    "extrema_pct": 5.5,
+    "tolerancia_pp": 0.1
+  },
+  "entradas": [
+    {
+      "archivo": "datos/966-Modulo34.zip",
+      "dta": "sumaria-2024.dta",
+      "sha256": "5ee98dad87810d42d7e252401d8366feac2fbce151c7af986d9644a40952567c"
+    },
+    {
+      "archivo": "datos/966-Modulo02.zip",
+      "dta": "enaho01-2024-200.dta",
+      "sha256": "f2a1627a09e3c849fe281de74512cc5e5c44ba39a8e65dd81251a9146360ce88"
+    }
+  ],
+  "base": {
+    "archivo": "personas_2024.parquet",
+    "sha256": "2e2542a648df3de17c48538f20897a4ab258730fc015b6af585873562ed8c757",
+    "columnas": [
+      "anio",
+      "mes",
+      "conglome",
+      "vivienda",
+      "hogar",
+      "codperso",
+      "ubigeo",
+      "dominio",
+      "estrato",
+      "p203",
+      "p204",
+      "p205",
+      "p206",
+      "p207",
+      "p208a",
+      "facpob07",
+      "pobreza",
+      "departamento",
+      "urbano",
+      "pobre",
+      "pobre_extremo"
+    ]
+  }
+}

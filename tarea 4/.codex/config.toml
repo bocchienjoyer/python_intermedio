@@ -1,0 +1,5 @@
+[mcp_servers.bcrp]
+command = "uv"
+args = ["run", "python", "mcp/server.py"]
+required = true
+startup_timeout_sec = 90

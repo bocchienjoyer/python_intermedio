@@ -1,1 +1,5 @@
-indicador,unidad_analisis,ambito,codigo,periodo,valor,unidad,fuente
+indicador,unidad_analisis,ambito,codigo,periodo,valor,unidad,fuente,ponderador
+pobreza monetaria,sumaria,nacional,PE,2024,27.57946816356908,%,"INEI, ENAHO 2024",factor07 * mieperho
+pobreza extrema,sumaria,nacional,PE,2024,5.504532807531087,%,"INEI, ENAHO 2024",factor07 * mieperho
+pobreza monetaria,personas,nacional,PE,2024,27.52873304367986,%,"INEI, ENAHO 2024",facpob07
+pobreza extrema,personas,nacional,PE,2024,5.499776500417306,%,"INEI, ENAHO 2024",facpob07
