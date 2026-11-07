@@ -1,5 +1,9 @@
 # Inflación en Lima Metropolitana y pobreza monetaria en Perú, 2024
 
+## Pregunta de investigación
+
+¿Cómo evolucionó la inflación interanual de Lima Metropolitana a lo largo de 2024 y qué brechas de pobreza monetaria se observaron ese año entre áreas urbanas y rurales y entre departamentos del Perú?
+
 ## Hallazgos
 
 1. **La inflación interanual de Lima Metropolitana bajó 1,06 puntos porcentuales entre enero y diciembre.** Pasó de 3,02 % a 1,97 %. Alcanzó su máximo en febrero (3,29 %) y su mínimo en septiembre (1,78 %). Repuntó hasta 2,27 % en noviembre y volvió a bajar en diciembre. El promedio de las doce tasas interanuales fue 2,35 %. [Serie oficial BCRP PN01273PM](https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN01273PM/json/2024-1/2024-12)
