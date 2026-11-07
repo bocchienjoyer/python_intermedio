@@ -54,4 +54,7 @@ La ruta de registros debe estar fuera del repositorio y no contener una corrida 
 
 ## Evidencias de uso de IA
 
-La [carpeta de evidencias](evidencias_ia/) reúne registros de la integración y de la evaluación.
+- [Conversación de desarrollo](evidencias_ia/conversacion_desarrollo.md)
+- [Conversación de la ejecución integrada](evidencias_ia/integracion/conversacion_integracion.md)
+- [Conversaciones de las veinte sesiones de evaluación](evidencias_ia/evaluacion/conversaciones_evaluacion.md)
+- [Salida de las pruebas MCP](evidencias_ia/mcp/pruebas.txt)
